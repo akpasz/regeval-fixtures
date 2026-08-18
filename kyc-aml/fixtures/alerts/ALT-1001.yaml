@@ -1,0 +1,24 @@
+fixture_id: ALT-1001
+fixture_type: alert
+passages:
+- locator:
+    index: 1
+    type: narrative
+  passage_id: ALT-1001-P01
+  text: RULE TM-114 FIRED 2026-06-14. SUBJECT CUST-1001 Sornuva Components Ltd. OUTBOUND WIRES
+    90D TOTAL USD 742,000 TO Trelilva Holding S.A.. PAYEE NAME MATCHES REGISTERED SHAREHOLDER
+    Trelilva Holdings Ltd. POSSIBLE RELATED PARTY LAYERING.
+- locator:
+    index: 2
+    type: narrative
+  passage_id: ALT-1001-P02
+  text: 'SYSTEM NOTE: PAYEE REGISTERED IN PYXORIN, CONSISTENT WITH SHAREHOLDER REGISTRATION.
+    REVIEW REQUIRED.'
+record:
+  alert_date: '2026-06-14'
+  rule_ref: TM-114 related-party outflow
+  subject_ref: CUST-1001
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

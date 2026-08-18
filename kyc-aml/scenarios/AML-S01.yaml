@@ -1,0 +1,34 @@
+corpus_version: 0.1.0-dev
+coverage_labels:
+- citation
+- absence
+- ownership
+- qualifier
+- numerical
+- entity_resolution
+- disposition
+difficulty_tier: 4
+fixture_ids:
+- CUST-1001
+- TXN-1001
+- ALT-1001
+- DOC-1001
+- DOC-1002
+- DOC-1003
+- DOC-1004
+- DOC-1005
+- CN-1001
+- WL-1001
+- POL-1001
+policy_context:
+  decision_rules:
+  - see POL-1001
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - see POL-1001
+scenario_id: AML-S01
+scenario_version: '1'
+schema_version: '1'
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

@@ -1,0 +1,9 @@
+fixture_id: WL-1001
+fixture_type: watchlist
+record:
+  entries: []
+  list_name: synthetic internal watchlist
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

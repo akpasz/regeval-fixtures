@@ -1,0 +1,46 @@
+fixture_id: TXN-1001
+fixture_type: transaction_set
+record:
+  account_ref: CUST-1001
+  currency: USD
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 184500
+  channel: international wire
+  counterparty_name: Trelilva Holding S.A.
+  direction: outbound
+  txn_id: TXN-1001-T01
+  value_date: '2026-04-08'
+- amount: 121300
+  channel: international wire
+  counterparty_name: Trelilva Holding S.A.
+  direction: outbound
+  txn_id: TXN-1001-T02
+  value_date: '2026-04-21'
+- amount: 96700
+  channel: international wire
+  counterparty_name: Trelilva Holding S.A.
+  direction: outbound
+  txn_id: TXN-1001-T03
+  value_date: '2026-05-02'
+- amount: 143800
+  channel: international wire
+  counterparty_name: Trelilva Holding S.A.
+  direction: outbound
+  txn_id: TXN-1001-T04
+  value_date: '2026-05-15'
+- amount: 97700
+  channel: international wire
+  counterparty_name: Trelilva Holding S.A.
+  direction: outbound
+  txn_id: TXN-1001-T05
+  value_date: '2026-05-29'
+- amount: 98000
+  channel: international wire
+  counterparty_name: Trelilva Holding S.A.
+  direction: outbound
+  txn_id: TXN-1001-T06
+  value_date: '2026-06-12'

@@ -17,7 +17,7 @@ import pathlib
 
 import yaml
 
-GENERATOR_VERSION = "0.1.0"
+GENERATOR_VERSION = "0.2.0"
 SEED = 20260630
 REFERENCE_DATE = "2026-06-30"
 CORPUS_VERSION = "0.1.0-dev"
@@ -26,8 +26,10 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 # Invented morphology: syllables constructed to avoid real-name lookalikes.
 # vocab/ stays empty until domain review approves additions (spec rule).
-_SYL_A = ["vren", "tosk", "melq", "darv", "ulpi", "brex", "quon", "zilm"]
-_SYL_B = ["ath", "orin", "eld", "uva", "ixel", "ombra", "yrel", "ast"]
+_SYL_A = ["vren", "tosk", "melq", "darv", "ulpi", "brex", "quon", "zilm",
+          "farn", "osk", "trel", "jurv", "kelb", "pyx", "sorn", "walt"]
+_SYL_B = ["ath", "orin", "eld", "uva", "ixel", "ombra", "yrel", "ast",
+          "eth", "aro", "unt", "ilva", "orm", "eska", "yne", "adri"]
 
 
 def _h(*parts: str) -> int:
@@ -39,6 +41,19 @@ def invented_name(kind: str, key: str) -> str:
     a = _SYL_A[n % len(_SYL_A)]
     b = _SYL_B[(n // 8) % len(_SYL_B)]
     return (a + b).capitalize()
+
+
+def distinct_name(kind: str, key: str, taken: set) -> str:
+    """Deterministic collision avoidance: salt the key until the name's first
+    token differs from every token already used in the scenario, so accidental
+    similarities never pollute deliberate ones (DD-015)."""
+    for salt in range(32):
+        name = invented_name(kind, f"{key}#{salt}")
+        if name not in taken and not any(name.startswith(x[:4]) or x.startswith(name[:4])
+                                          for x in taken):
+            taken.add(name)
+            return name
+    raise RuntimeError(f"morphology space exhausted for {key}")
 
 
 def canonical_yaml(obj: object) -> str:
@@ -68,18 +83,35 @@ def probe_fixture() -> dict:
     }
 
 
+def collect_names(files: dict) -> set:
+    names = set()
+    def walk(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k in {"full_name", "legal_name", "counterparty_name",
+                         "from_entity", "to_entity"} and isinstance(v, str):
+                    names.add(v)
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+    walk(files)
+    return names
+
+
 def main() -> None:
-    fx = probe_fixture()
-    write(ROOT / "fixtures" / "customers" / "CUST-0000.yaml", fx)
-    # name registry: every generated name, for screening to verify against
-    write(
-        ROOT / "generation" / "name-registry.yaml",
-        {
-            "synthetic": {"marker": MARKER, "corpus_version": CORPUS_VERSION},
-            "names": sorted({fx["record"]["full_name"]}),
-        },
-    )
-    print("generated: fixtures/customers/CUST-0000.yaml")
+    import scenario_s01  # noqa: local module, same directory
+    probe = ROOT / "fixtures" / "customers" / "CUST-0000.yaml"
+    if probe.exists():
+        probe.unlink()  # DD-013: probe retired now that AML-S01 lands
+    import sys
+    files = scenario_s01.build(sys.modules[__name__])
+    for rel, obj in sorted(files.items()):
+        write(ROOT / rel, obj)
+    write(ROOT / "generation" / "name-registry.yaml",
+          {"synthetic": {"marker": MARKER, "corpus_version": CORPUS_VERSION},
+           "names": sorted(collect_names(files))})
+    print(f"generated AML-S01: {len(files)} artifacts")
 
 
 if __name__ == "__main__":

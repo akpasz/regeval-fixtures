@@ -1,0 +1,15 @@
+doc_date: '2024-11-03'
+fixture_id: DOC-1001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-1001-P01
+  text: 'Registered members of Sornuva Components Ltd as at 3 November 2024: Trelilva Holdings
+    Ltd, 55 percent; Ulpield Quonath, 33 percent; Waltast Brexyrel, 12 percent.'
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Share register extract, Sornuva Components Ltd

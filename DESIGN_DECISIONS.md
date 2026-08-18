@@ -62,3 +62,15 @@ Flagged for domain-author ratification at the Stage 1 gate.
 CUST-0000 exercises the full generation path to prove determinism before any
 scenario exists. Retired when AML-S01 lands; scenario_ref STAGE1-PROBE marks
 it unmistakably as non-corpus content.
+
+## DD-014 Corporate suffix allowlist in screening
+Generic suffixes and descriptors (Ltd, S.A., Trust, Holdings, Holding,
+Components, Trading) carry no identity and are exempt from the morphology
+pattern. Explicit synthetic design choice. Impact: screening.py.
+
+## DD-015 Token distinctness across scenario roles
+All scenario names route through a deterministic collision-avoidance helper
+so the only name similarity in a scenario is a deliberate one. Found when
+AML-S01's first generation gave a person the same token as the entity-trap
+companies. Rejected: accept collisions (unintended confounds pollute the
+anti-shortcut audit). Impact: generate.py, all scenarios.

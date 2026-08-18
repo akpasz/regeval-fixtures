@@ -1,0 +1,21 @@
+doc_date: '2026-06-02'
+fixture_id: DOC-1004
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: table
+  passage_id: DOC-1004-P01
+  text: Invoice INV-2101 dated 2026-04-05, machine spindle assemblies, total USD 184,500.
+    Declared insurance value USD 148,500. Shipment ref SHP-4411.
+- locator:
+    index: 2
+    type: table
+  passage_id: DOC-1004-P02
+  text: 'Invoices INV-2102 through INV-2105: USD 121,300; USD 96,700; USD 143,800; USD 97,700.
+    Each references a bill of lading in the shipment schedule.'
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Commercial invoice bundle, Trelilva Holding S.A. to Sornuva Components Ltd

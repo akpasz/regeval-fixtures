@@ -1,0 +1,17 @@
+fixture_id: POL-1001
+fixture_type: policy_context
+record:
+  decision_rules:
+  - escalate when undocumented outbound flow exceeds USD 100,000 in 90 days
+  - escalate when a payee is documented as a related party and the relationship was not disclosed
+    at onboarding
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - 'illustrative beneficial ownership threshold: 25 percent, aggregating direct and indirect
+    paths (synthetic ownership arithmetic, not a regulatory determination)'
+  - 'unresolved trust control after documented request: enhanced due diligence with a 60 day
+    documentation deadline, not automatic escalation'
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

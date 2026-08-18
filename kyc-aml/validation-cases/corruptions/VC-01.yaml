@@ -1,0 +1,20 @@
+case_ref: VC-01
+corrupted_answer: The payee Trelilva Holding S.A. and the shareholder Trelilva Holdings Ltd
+  are distinct legal entities. The share register extract [DOC-1002-P01] records separate
+  registrations, S-40917 in Jurvast and H-88231 in Pyxorin, and no shareholding relationship
+  between them. The customer's statement that the payee is an unrelated supplier remains unverified,
+  so unrelatedness beyond the registry data is not established.
+defect_description: 'Exactly one semantic defect: the citation is swapped from DOC-1005-P02
+  (the registry extract that actually establishes distinctness) to DOC-1002-P01 (the holding
+  company share register, which says nothing about the payee). The conclusion prose is unchanged
+  and the answer remains plausible in isolation; only passage-level citation checking detects
+  it.'
+known_good_answer: The payee Trelilva Holding S.A. and the shareholder Trelilva Holdings Ltd
+  are distinct legal entities. The corporate registry extract [DOC-1005-P02] records separate
+  registrations, S-40917 in Jurvast and H-88231 in Pyxorin, and no shareholding relationship
+  between them. The customer's statement that the payee is an unrelated supplier remains unverified,
+  so unrelatedness beyond the registry data is not established.
+mutation_target: evidence citation passage
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

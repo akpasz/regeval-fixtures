@@ -1,0 +1,15 @@
+doc_date: '2025-01-20'
+fixture_id: DOC-1002
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-1002-P01
+  text: 'Registered members of Trelilva Holdings Ltd (Pyxorin company number H-88231) as at
+    20 January 2025: Pyxadri Trust, 60 percent; Waltast Brexyrel, 40 percent.'
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Share register extract, Trelilva Holdings Ltd

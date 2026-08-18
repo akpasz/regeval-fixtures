@@ -66,10 +66,60 @@ def main() -> int:
                  if p.name != "validate_fixtures.py" and banned.search(p.read_text())]
     ok &= gate("no scoring/harness machinery", not machinery, ", ".join(machinery))
 
-    # stage-gated: scenarios/claims/cases (report as skipped when absent)
-    scen = list((ROOT / "kyc-aml").glob("fixtures/../answers/*.yaml"))
-    if not scen:
-        print("[SKIP] scenario/claim/case/coverage gates: artifacts not yet present (Stage 1)")
+    # stage-gated: scenario, answer-key, case, corruption gates
+    ak_path = ROOT / "kyc-aml" / "answers" / "answer-key.yaml"
+    if not ak_path.exists():
+        print("[SKIP] scenario/claim/case gates: artifacts not yet present (Stage 1)")
+    else:
+        from _schema_models import Claim, ValidationCase, Corruption
+        ak = yaml.safe_load(ak_path.read_text())
+        # index every passage-level anchor in the observable world
+        anchors = set()
+        for f in fixtures:
+            d = yaml.safe_load(f.read_text())
+            for pssg in d.get("passages", []):
+                anchors.add((d["fixture_id"], pssg["passage_id"]))
+            for txn in d.get("transactions", []):
+                anchors.add((d["fixture_id"], txn["txn_id"]))
+        claims = [Claim.model_validate(c) for c in ak["claims"]]
+        ids = [c.id for c in claims]
+        ok &= gate("claims: unique ids, valid statuses", len(ids) == len(set(ids)),
+                   f"{len(claims)} claims")
+        bad_ev = [(c.id, e.fixture_id, e.passage_id) for c in claims
+                  for e in c.evidence if (e.fixture_id, e.passage_id) not in anchors]
+        ok &= gate("claims: every evidence ref resolves to an observable passage",
+                   not bad_ev, str(bad_ev))
+        statuses = {c.status for c in claims}
+        ok &= gate("claims: all four epistemic statuses exercised (canonical req)",
+                   statuses == {"supported", "contradicted", "not_provided",
+                                "indeterminate"}, str(statuses))
+        ok &= gate("answer key: not_provided inventory populated",
+                   len(ak["not_provided_inventory"]) >= 5)
+        cases = yaml.safe_load((ROOT / "kyc-aml" / "validation-cases" /
+                                "cases.yaml").read_text())["cases"]
+        for c in cases:
+            vc = ValidationCase.model_validate(
+                {**{k: v for k, v in c.items() if k not in
+                    ("visibility_fixtures", "corruption_ref")},
+                 "visibility_fixtures": c["visibility_fixtures"],
+                 "corruption_ref": c["corruption_ref"]})
+            ok &= gate(f"{vc.id}: oracle targets exist",
+                       set(vc.oracle.target_claims) <= set(ids))
+            fx_ids = {yaml.safe_load(f.read_text())["fixture_id"] for f in fixtures}
+            ok &= gate(f"{vc.id}: visibility fixtures exist",
+                       set(vc.visibility_fixtures) <= fx_ids)
+            cdata = yaml.safe_load((ROOT / "kyc-aml" / "validation-cases" /
+                                    vc.corruption_ref).read_text())
+            cdata.pop("synthetic", None)
+            corr = Corruption.model_validate(cdata)
+            diffs = sum(1 for a, b in zip(corr.known_good_answer.split(),
+                                          corr.corrupted_answer.split()) if a != b)
+            ok &= gate(f"{vc.id}: corruption is a minimal single-locus edit",
+                       0 < diffs <= 4, f"{diffs} differing tokens")
+        # scenario record exists outside the observable world
+        srec = ROOT / "kyc-aml" / "scenarios"
+        ok &= gate("scenario records live outside fixtures/ (difficulty not observable)",
+                   srec.exists() and not (FIX / "scenarios").exists())
     print("RESULT:", "PASS" if ok else "FAIL")
     return 0 if ok else 1
 

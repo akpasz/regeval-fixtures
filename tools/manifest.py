@@ -6,7 +6,7 @@ import hashlib, json, pathlib, sys
 import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-CANONICAL = ["kyc-aml/fixtures", "kyc-aml/answers", "kyc-aml/validation-cases",
+CANONICAL = ["kyc-aml/fixtures", "kyc-aml/scenarios", "kyc-aml/answers", "kyc-aml/validation-cases",
              "kyc-aml/coverage", "kyc-aml/generation/name-registry.yaml",
              "schemas", "environment.lock.yaml"]
 EXCLUDE_NAMES = {"manifest.yaml", ".gitkeep"}
@@ -27,7 +27,7 @@ def entries():
 def main():
     env = yaml.safe_load((ROOT / "environment.lock.yaml").read_text())
     m = {"corpus_id": "regeval-fixtures/kyc-aml", "corpus_version": "0.1.0-dev",
-         "generator_version": "0.1.0", "schema_version": "1",
+         "generator_version": "0.2.0", "schema_version": "1",
          "seed": env["seed"],
          "environment": {"python": env["python"], "dependencies": env["dependencies"]},
          "files": entries()}

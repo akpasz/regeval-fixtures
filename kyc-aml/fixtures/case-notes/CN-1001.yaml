@@ -1,0 +1,23 @@
+fixture_id: CN-1001
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-1001-P01
+  text: Telephone contact 2026-06-17. Customer representative stated that Trelilva Holding
+    S.A. is an unrelated parts supplier used since 2023. Statement unverified. Supplier relationship
+    documentation requested 2026-05-12; not received as of 2026-06-30.
+- locator:
+    index: 2
+    type: note
+  passage_id: CN-1001-P02
+  text: Trade documentation reviewed for wires T01 through T05 against invoice bundle DOC-1004.
+    No invoice located for wire T06, USD 98,000, value date 2026-06-12.
+record:
+  author_role: analyst
+  note_date: '2026-06-18'
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

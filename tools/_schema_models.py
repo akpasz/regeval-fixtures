@@ -34,7 +34,7 @@ class FixtureHeader(Base):
     content; test_isolation.py enforces the forbidden-field list."""
     fixture_id: str
     fixture_type: Literal["customer", "transaction_set", "alert", "document",
-                          "case_note", "watchlist"]
+                          "case_note", "watchlist", "policy_context"]
     scenario_ref: str
     synthetic: SyntheticMark
 

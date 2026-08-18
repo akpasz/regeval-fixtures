@@ -1,0 +1,24 @@
+dimensions:
+  absence:
+  - AML-S01
+  citation:
+  - AML-S01
+  claim_decomposition: []
+  disposition:
+  - AML-S01
+  entity_resolution:
+  - AML-S01
+  evidence_sufficiency: []
+  negative_control: []
+  numerical:
+  - AML-S01
+  ownership:
+  - AML-S01
+  qualifier:
+  - AML-S01
+  temporal_update: []
+note: Single scenario at Stage 2; every populated dimension is single-point-of-proof by construction
+  and the coverage report warns accordingly until Stage 3 lands.
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

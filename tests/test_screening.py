@@ -12,10 +12,10 @@ class TestScreening(unittest.TestCase):
         self.assertEqual(r["findings"], [])
 
     def test_detects_unregistered_name(self):
-        fx = ROOT / "kyc-aml" / "fixtures" / "customers" / "CUST-0000.yaml"
+        fx = ROOT / "kyc-aml" / "fixtures" / "customers" / "CUST-1001.yaml"
         original = fx.read_text()
         try:
-            fx.write_text(original.replace("full_name:", "full_name: John Smith #"))
+            fx.write_text(original.replace("legal_name:", "legal_name: Acme Industries #"))
             self.assertGreater(len(screening.screen()["findings"]), 0)
         finally:
             fx.write_text(original)

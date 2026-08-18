@@ -1,0 +1,12 @@
+fixture_id: CUST-1001
+fixture_type: customer
+record:
+  as_of: '2026-06-30'
+  business_description: import and wholesale of industrial machine components
+  customer_since: '2021-02-17'
+  domicile: Pyxorin
+  legal_name: Sornuva Components Ltd
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

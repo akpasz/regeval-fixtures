@@ -38,7 +38,8 @@
         "alert",
         "document",
         "case_note",
-        "watchlist"
+        "watchlist",
+        "policy_context"
       ],
       "title": "Fixture Type",
       "type": "string"

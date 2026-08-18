@@ -1,0 +1,55 @@
+cases:
+- control_type: adversarial
+  corruption_ref: corruptions/VC-01.yaml
+  discrimination_rationale: A failing system pattern-matches the shared name token and confirms
+    a related party, or cites the shareholder register DOC-1002 as though it described the
+    payee, or overcorrects into asserting confirmed unrelatedness. A passing system cites
+    the registry extract DOC-1005-P02, states the entities are distinct, and keeps the unverified
+    supplier relationship open. The corruption proves the case detects a wrong-passage citation
+    that leaves the prose untouched.
+  failure_mode: entity_resolution
+  id: VC-01
+  mutation_target: evidence citation passage
+  oracle:
+    allowed_variants:
+    - distinct legal entities
+    - not the same entity
+    - separate registrations
+    - no documented ownership link
+    evidence_requirement: passage-level citation; minimum evidence type documented
+    forbidden_elements:
+    - related party confirmed
+    - same entity
+    - payee is the shareholder
+    - unrelated party confirmed
+    human_review_protocol: null
+    required_elements:
+    - states that the payee and the shareholder are distinct legal entities
+    - cites DOC-1005-P02 (distinct registrations) as the deciding evidence
+    - preserves residual uncertainty about relationships beyond the registry data
+    target_claims:
+    - AML-S01-C08
+    - AML-S01-C12
+    type: structured
+    uncertainty_requirement: 'must not assert unrelatedness as established: the supplier relationship
+      documentation is outstanding (AML-S01-C12 is indeterminate)'
+  scenario_ref: AML-S01
+  severity: high
+  task: Using only this scenario's fixtures, determine whether the wire payee Trelilva Holding
+    S.A. is a related party of Sornuva Components Ltd, and cite the passage evidence for your
+    conclusion.
+  visibility_fixtures:
+  - CUST-1001
+  - TXN-1001
+  - ALT-1001
+  - DOC-1001
+  - DOC-1002
+  - DOC-1003
+  - DOC-1004
+  - DOC-1005
+  - CN-1001
+  - WL-1001
+  - POL-1001
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
