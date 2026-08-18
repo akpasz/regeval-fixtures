@@ -1,0 +1,178 @@
+{
+  "$defs": {
+    "Oracle": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_variants": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed Variants",
+          "type": "array"
+        },
+        "evidence_requirement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Requirement"
+        },
+        "forbidden_elements": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Forbidden Elements",
+          "type": "array"
+        },
+        "human_review_protocol": {
+          "anyOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Review Protocol"
+        },
+        "required_elements": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Elements",
+          "type": "array"
+        },
+        "target_claims": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Target Claims",
+          "type": "array"
+        },
+        "type": {
+          "enum": [
+            "exact",
+            "set_membership",
+            "structured",
+            "semantic",
+            "human_review"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "uncertainty_requirement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uncertainty Requirement"
+        }
+      },
+      "required": [
+        "type",
+        "target_claims",
+        "required_elements",
+        "forbidden_elements",
+        "allowed_variants"
+      ],
+      "title": "Oracle",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "control_type": {
+      "enum": [
+        "positive",
+        "negative",
+        "adversarial"
+      ],
+      "title": "Control Type",
+      "type": "string"
+    },
+    "corruption_ref": {
+      "title": "Corruption Ref",
+      "type": "string"
+    },
+    "discrimination_rationale": {
+      "title": "Discrimination Rationale",
+      "type": "string"
+    },
+    "failure_mode": {
+      "enum": [
+        "citation_fabrication",
+        "unsupported_claim",
+        "qualifier_loss",
+        "numerical_error",
+        "entity_resolution",
+        "ownership_error",
+        "evidence_insufficiency",
+        "over_refusal",
+        "under_refusal"
+      ],
+      "title": "Failure Mode",
+      "type": "string"
+    },
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "mutation_target": {
+      "title": "Mutation Target",
+      "type": "string"
+    },
+    "oracle": {
+      "$ref": "#/$defs/Oracle"
+    },
+    "scenario_ref": {
+      "title": "Scenario Ref",
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "task": {
+      "title": "Task",
+      "type": "string"
+    },
+    "visibility_fixtures": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Visibility Fixtures",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "scenario_ref",
+    "control_type",
+    "task",
+    "visibility_fixtures",
+    "failure_mode",
+    "oracle",
+    "severity",
+    "discrimination_rationale",
+    "corruption_ref",
+    "mutation_target"
+  ],
+  "title": "ValidationCase",
+  "type": "object"
+}

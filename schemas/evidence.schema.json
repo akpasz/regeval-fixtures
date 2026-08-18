@@ -1,0 +1,32 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "evidence_type": {
+      "enum": [
+        "documented",
+        "stated_by_customer",
+        "system_observation",
+        "analyst_observation",
+        "derived",
+        "unverified"
+      ],
+      "title": "Evidence Type",
+      "type": "string"
+    },
+    "fixture_id": {
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "passage_id": {
+      "title": "Passage Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "fixture_id",
+    "passage_id",
+    "evidence_type"
+  ],
+  "title": "EvidenceRef",
+  "type": "object"
+}

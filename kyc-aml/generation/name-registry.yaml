@@ -1,0 +1,5 @@
+names:
+- Brexuva Toskixel
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

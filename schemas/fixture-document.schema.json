@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "Passage": {
+      "additionalProperties": false,
+      "properties": {
+        "locator": {
+          "title": "Locator",
+          "type": "object"
+        },
+        "passage_id": {
+          "title": "Passage Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "passage_id",
+        "locator",
+        "text"
+      ],
+      "title": "Passage",
+      "type": "object"
+    },
+    "SyntheticMark": {
+      "additionalProperties": false,
+      "properties": {
+        "corpus_version": {
+          "title": "Corpus Version",
+          "type": "string"
+        },
+        "marker": {
+          "const": "REGEVAL_SYNTHETIC",
+          "enum": [
+            "REGEVAL_SYNTHETIC"
+          ],
+          "title": "Marker",
+          "type": "string"
+        }
+      },
+      "required": [
+        "marker",
+        "corpus_version"
+      ],
+      "title": "SyntheticMark",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "doc_date": {
+      "title": "Doc Date",
+      "type": "string"
+    },
+    "fixture_id": {
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "fixture_type": {
+      "enum": [
+        "customer",
+        "transaction_set",
+        "alert",
+        "document",
+        "case_note",
+        "watchlist"
+      ],
+      "title": "Fixture Type",
+      "type": "string"
+    },
+    "passages": {
+      "items": {
+        "$ref": "#/$defs/Passage"
+      },
+      "title": "Passages",
+      "type": "array"
+    },
+    "scenario_ref": {
+      "title": "Scenario Ref",
+      "type": "string"
+    },
+    "synthetic": {
+      "$ref": "#/$defs/SyntheticMark"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "fixture_id",
+    "fixture_type",
+    "scenario_ref",
+    "synthetic",
+    "title",
+    "doc_date",
+    "passages"
+  ],
+  "title": "DocumentFixture",
+  "type": "object"
+}

@@ -1,0 +1,62 @@
+{
+  "$defs": {
+    "SyntheticMark": {
+      "additionalProperties": false,
+      "properties": {
+        "corpus_version": {
+          "title": "Corpus Version",
+          "type": "string"
+        },
+        "marker": {
+          "const": "REGEVAL_SYNTHETIC",
+          "enum": [
+            "REGEVAL_SYNTHETIC"
+          ],
+          "title": "Marker",
+          "type": "string"
+        }
+      },
+      "required": [
+        "marker",
+        "corpus_version"
+      ],
+      "title": "SyntheticMark",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Every observable fixture carries exactly these identity fields.\nIsolation rule: no field in any fixture model may carry evaluation-world\ncontent; test_isolation.py enforces the forbidden-field list.",
+  "properties": {
+    "fixture_id": {
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "fixture_type": {
+      "enum": [
+        "customer",
+        "transaction_set",
+        "alert",
+        "document",
+        "case_note",
+        "watchlist"
+      ],
+      "title": "Fixture Type",
+      "type": "string"
+    },
+    "scenario_ref": {
+      "title": "Scenario Ref",
+      "type": "string"
+    },
+    "synthetic": {
+      "$ref": "#/$defs/SyntheticMark"
+    }
+  },
+  "required": [
+    "fixture_id",
+    "fixture_type",
+    "scenario_ref",
+    "synthetic"
+  ],
+  "title": "FixtureHeader",
+  "type": "object"
+}

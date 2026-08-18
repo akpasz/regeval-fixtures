@@ -1,0 +1,115 @@
+{
+  "$defs": {
+    "PolicyContext": {
+      "additionalProperties": false,
+      "properties": {
+        "decision_rules": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Decision Rules",
+          "type": "array"
+        },
+        "jurisdiction": {
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "policy_assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Policy Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "jurisdiction",
+        "policy_assumptions",
+        "decision_rules"
+      ],
+      "title": "PolicyContext",
+      "type": "object"
+    },
+    "SyntheticMark": {
+      "additionalProperties": false,
+      "properties": {
+        "corpus_version": {
+          "title": "Corpus Version",
+          "type": "string"
+        },
+        "marker": {
+          "const": "REGEVAL_SYNTHETIC",
+          "enum": [
+            "REGEVAL_SYNTHETIC"
+          ],
+          "title": "Marker",
+          "type": "string"
+        }
+      },
+      "required": [
+        "marker",
+        "corpus_version"
+      ],
+      "title": "SyntheticMark",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "corpus_version": {
+      "title": "Corpus Version",
+      "type": "string"
+    },
+    "coverage_labels": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Coverage Labels",
+      "type": "array"
+    },
+    "difficulty_tier": {
+      "maximum": 5,
+      "minimum": 1,
+      "title": "Difficulty Tier",
+      "type": "integer"
+    },
+    "fixture_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Fixture Ids",
+      "type": "array"
+    },
+    "policy_context": {
+      "$ref": "#/$defs/PolicyContext"
+    },
+    "scenario_id": {
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "scenario_version": {
+      "title": "Scenario Version",
+      "type": "string"
+    },
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "synthetic": {
+      "$ref": "#/$defs/SyntheticMark"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "schema_version",
+    "scenario_version",
+    "corpus_version",
+    "difficulty_tier",
+    "coverage_labels",
+    "fixture_ids",
+    "policy_context",
+    "synthetic"
+  ],
+  "title": "Scenario",
+  "type": "object"
+}

@@ -1,0 +1,62 @@
+# corpus-contract.yaml
+# The machine-readable contract a downstream consumer reads instead of
+# reverse-engineering directory layout. Authoritative for meanings; the
+# *.schema.json files (generated from tools/_schema_models.py) are
+# authoritative for shapes.
+contract_version: "1"
+corpus_id: "regeval-fixtures/kyc-aml"
+corpus_version: "0.1.0-dev"
+schema_version: "1"
+synthetic_marker: "REGEVAL_SYNTHETIC"
+reference_date: "2026-06-30"
+
+layers:
+  observable_world: "kyc-aml/fixtures/"    # all a system under test may see
+  evaluation_world: "kyc-aml/answers/"     # evaluator-only ground truth
+  mutation_layer: "kyc-aml/validation-cases/corruptions/"
+
+epistemic_statuses: [supported, contradicted, not_provided, indeterminate]
+atomicity_rule: >
+  Material claims are decomposed into atomic propositions whenever different
+  portions could carry different epistemic statuses. There is deliberately no
+  partially_supported status.
+
+evidence_types: [documented, stated_by_customer, system_observation,
+                 analyst_observation, derived, unverified]
+provenance_granularity: passage   # evidence references cite passage IDs, never bare documents
+
+failure_modes: [citation_fabrication, unsupported_claim, qualifier_loss,
+                numerical_error, entity_resolution, ownership_error,
+                evidence_insufficiency, over_refusal, under_refusal]
+control_types: [positive, negative, adversarial]
+oracle_types: [exact, set_membership, structured, semantic, human_review]
+coverage_dimensions: [citation, absence, ownership, qualifier, numerical,
+                      entity_resolution, evidence_sufficiency,
+                      claim_decomposition, temporal_update, negative_control,
+                      disposition]
+
+scenario_lifecycle:
+  id_pattern: "AML-S[0-9]{2}"
+  ids_immutable: true
+  ids_never_recycled: true
+  versioning:
+    patch: "documentation or non-semantic metadata only"
+    minor: "added content that does not invalidate existing claims"
+    major: "changed claim status, evidence, evaluation target, observable fixture, or answer semantics; retires the scenario ID"
+
+mutation_rules:
+  defects_per_corruption: 1
+  plausibility: "a corruption must remain plausible in isolation; no formatting artifact, absurd value, or lexical tell may substitute for the semantic defect"
+
+determinism:
+  reproducibility: "byte-identical regeneration under environment.lock.yaml"
+  portability: "byte identity across Windows, macOS, Linux under that same lock"
+  no_claim: "no identity claim across unpinned environments"
+
+licensing:
+  code: "Apache-2.0 (LICENSE-CODE)"
+  content: "CC-BY-4.0 (LICENSE-CONTENT)"
+
+manifest:
+  hash_set: "fixtures, answers, validation cases, corruptions, coverage, schemas, environment.lock.yaml"
+  excludes: "the manifest itself, logs, caches, virtual environments, reports with execution metadata"

@@ -1,0 +1,222 @@
+{
+  "$defs": {
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "proposition": {
+          "title": "Proposition",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "supported",
+            "contradicted",
+            "not_provided",
+            "indeterminate"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "proposition",
+        "status",
+        "rationale"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "EvaluationTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "disposition_expected": {
+          "title": "Disposition Expected",
+          "type": "string"
+        },
+        "epistemic_scope": {
+          "title": "Epistemic Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "disposition_expected",
+        "basis",
+        "epistemic_scope"
+      ],
+      "title": "EvaluationTarget",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_type": {
+          "enum": [
+            "documented",
+            "stated_by_customer",
+            "system_observation",
+            "analyst_observation",
+            "derived",
+            "unverified"
+          ],
+          "title": "Evidence Type",
+          "type": "string"
+        },
+        "fixture_id": {
+          "title": "Fixture Id",
+          "type": "string"
+        },
+        "passage_id": {
+          "title": "Passage Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "fixture_id",
+        "passage_id",
+        "evidence_type"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "OwnershipEdge": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "from_entity": {
+          "title": "From Entity",
+          "type": "string"
+        },
+        "percentage": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Percentage"
+        },
+        "relationship": {
+          "title": "Relationship",
+          "type": "string"
+        },
+        "to_entity": {
+          "title": "To Entity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from_entity",
+        "to_entity",
+        "relationship",
+        "evidence"
+      ],
+      "title": "OwnershipEdge",
+      "type": "object"
+    },
+    "OwnershipModel": {
+      "additionalProperties": false,
+      "properties": {
+        "control_conclusions": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Control Conclusions",
+          "type": "array"
+        },
+        "derived_relationships": {
+          "items": {
+            "type": "object"
+          },
+          "title": "Derived Relationships",
+          "type": "array"
+        },
+        "documentary_facts": {
+          "items": {
+            "$ref": "#/$defs/OwnershipEdge"
+          },
+          "title": "Documentary Facts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documentary_facts",
+        "derived_relationships",
+        "control_conclusions"
+      ],
+      "title": "OwnershipModel",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "claims": {
+      "items": {
+        "$ref": "#/$defs/Claim"
+      },
+      "title": "Claims",
+      "type": "array"
+    },
+    "evaluation_target": {
+      "$ref": "#/$defs/EvaluationTarget"
+    },
+    "not_provided_inventory": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Not Provided Inventory",
+      "type": "array"
+    },
+    "ownership": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/OwnershipModel"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "scenario_ref": {
+      "title": "Scenario Ref",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scenario_ref",
+    "claims",
+    "not_provided_inventory",
+    "evaluation_target"
+  ],
+  "title": "AnswerKey",
+  "type": "object"
+}

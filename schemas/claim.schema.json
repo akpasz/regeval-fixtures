@@ -1,0 +1,76 @@
+{
+  "$defs": {
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_type": {
+          "enum": [
+            "documented",
+            "stated_by_customer",
+            "system_observation",
+            "analyst_observation",
+            "derived",
+            "unverified"
+          ],
+          "title": "Evidence Type",
+          "type": "string"
+        },
+        "fixture_id": {
+          "title": "Fixture Id",
+          "type": "string"
+        },
+        "passage_id": {
+          "title": "Passage Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "fixture_id",
+        "passage_id",
+        "evidence_type"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceRef"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "proposition": {
+      "title": "Proposition",
+      "type": "string"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "supported",
+        "contradicted",
+        "not_provided",
+        "indeterminate"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "proposition",
+    "status",
+    "rationale"
+  ],
+  "title": "Claim",
+  "type": "object"
+}

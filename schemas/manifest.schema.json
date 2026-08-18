@@ -1,0 +1,73 @@
+{
+  "$defs": {
+    "ManifestEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "bytes": {
+          "title": "Bytes",
+          "type": "integer"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "bytes"
+      ],
+      "title": "ManifestEntry",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "corpus_id": {
+      "title": "Corpus Id",
+      "type": "string"
+    },
+    "corpus_version": {
+      "title": "Corpus Version",
+      "type": "string"
+    },
+    "environment": {
+      "title": "Environment",
+      "type": "object"
+    },
+    "files": {
+      "items": {
+        "$ref": "#/$defs/ManifestEntry"
+      },
+      "title": "Files",
+      "type": "array"
+    },
+    "generator_version": {
+      "title": "Generator Version",
+      "type": "string"
+    },
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "seed": {
+      "title": "Seed",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "corpus_id",
+    "corpus_version",
+    "generator_version",
+    "schema_version",
+    "seed",
+    "environment",
+    "files"
+  ],
+  "title": "Manifest",
+  "type": "object"
+}

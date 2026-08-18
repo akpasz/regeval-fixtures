@@ -1,0 +1,17 @@
+# Pinned environment specification. Reproducibility is defined against this
+# exact environment; portability means byte identity across Windows, macOS,
+# and Linux under this same specification. No identity claim is made outside it.
+python: "3.12.3"
+dependencies:
+  pydantic: "2.9.2"
+  pyyaml: "6.0.2"
+encoding: "UTF-8"
+line_endings: "LF"
+locale_dependence: "none"
+reference_date: "2026-06-30"   # fixed synthetic as-of date; no wall-clock time anywhere
+seed: 20260630
+note: >
+  The build specification named Python 3.11.x; the build environment provides
+  3.12.3. The specification's operative requirement is an exact pin, which this
+  file provides. Deviation recorded as DD-012 and flagged for domain-author
+  ratification at the Stage 1 gate.

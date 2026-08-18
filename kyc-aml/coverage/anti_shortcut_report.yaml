@@ -1,0 +1,14 @@
+disclaimer: PASS indicates only that the audited check found no material issue; it does not
+  establish statistical independence or prove the absence of all leakage. Heuristic at n<=16.
+features:
+  alert_codes: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  amount_buckets: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  document_count: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  geography: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  loaded_vocabulary: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  missing_evidence_patterns: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  name_morphology: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  narrative_length: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  ownership_depth: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+  scenario_id_order: 'SKIP: no scenarios with evaluation targets yet (pre-Stage 3)'
+scenarios_examined: 0

@@ -1,0 +1,12 @@
+regeval-fixtures uses a split license.
+
+Code (generation, tools, tests; all .py files, marked with SPDX headers):
+  Apache License 2.0. Full text in LICENSE-CODE.
+
+Content (fixtures, answer keys, validation cases, corruptions, coverage
+files, schemas as published artifacts, and all documentation), including
+all generated fixture content:
+  Creative Commons Attribution 4.0 International (CC BY 4.0).
+  Full text in LICENSE-CONTENT.
+
+SPDX-License-Identifier: Apache-2.0 AND CC-BY-4.0

@@ -1,0 +1,56 @@
+corpus_id: regeval-fixtures/kyc-aml
+corpus_version: 0.1.0-dev
+environment:
+  dependencies:
+    pydantic: 2.9.2
+    pyyaml: 6.0.2
+  python: 3.12.3
+files:
+- bytes: 747
+  path: environment.lock.yaml
+  sha256: 2ade3bfd2d94c5b6c27b850604fb3f0c0a0c037e46878d2ede6f76d935819f2a
+- bytes: 1041
+  path: kyc-aml/coverage/anti_shortcut_report.yaml
+  sha256: bba6e0f74638ecb9e1c2b018f3a758395eeced48c87f93ca397eeb185213a5e7
+- bytes: 230
+  path: kyc-aml/fixtures/customers/CUST-0000.yaml
+  sha256: a9a6e67b783f0fa45a12c65d360c6315b3a53e73cb6a9c0e19055d364919f473
+- bytes: 93
+  path: kyc-aml/generation/name-registry.yaml
+  sha256: bdd30ec6c45a860f6cc1a1a0bff2ff4bf3bb463bc2bf01bae58c7b63fde5aed5
+- bytes: 4857
+  path: schemas/answer-key.schema.json
+  sha256: 72e6c6cdd0435f581f364be4580c9740a8aa32bb9026928e8b36146ec0e63522
+- bytes: 1489
+  path: schemas/claim.schema.json
+  sha256: 7e156bb880e6c634483ef281061d5872ae066f8a394dbe00231d33f00e6e8087
+- bytes: 2855
+  path: schemas/corpus-contract.yaml
+  sha256: 0aa98e42e3fd83e3444cfe50f34a16d2639402eb06ea0af34f353798c927df8c
+- bytes: 680
+  path: schemas/corruption.schema.json
+  sha256: da248ac50d4a3a7cb51c0e714677b0d06605f243b71322ef82d7db974fe54ff7
+- bytes: 602
+  path: schemas/evidence.schema.json
+  sha256: 558c0dd8b63f4246a02c1d02afb73625b65a4f452a42aefa51bd9ab2cdc3a436
+- bytes: 2013
+  path: schemas/fixture-document.schema.json
+  sha256: 4063422ce455a294f0f205a0fe205111a358eb2d8cb2a5e91162a4474ff6e86c
+- bytes: 1417
+  path: schemas/fixture-header.schema.json
+  sha256: 0f9b93975715eeea7b55656e4151eb138c19a5f0bbcc88faa5ec17e0b8a94b9a
+- bytes: 1382
+  path: schemas/manifest.schema.json
+  sha256: abbc7f4de6e41c5542297729865ff19f14013220315228ac0f55a7ea8a4f6f0c
+- bytes: 3306
+  path: schemas/ownership.schema.json
+  sha256: 1232c3fc8616944452c37b4540094724fe04247153de99835ec4ab8b49af3036
+- bytes: 2424
+  path: schemas/scenario.schema.json
+  sha256: c852bca30ea5c381c3334ca47c4dfe0d58dac2f03ec10d55cdbdf22d6cfc0b47
+- bytes: 3752
+  path: schemas/validation-case.schema.json
+  sha256: 101b8566057cc8bebaadeae7f41a4196c9b74d095c4765d28a2aa0ab7fc24447
+generator_version: 0.1.0
+schema_version: '1'
+seed: 20260630
