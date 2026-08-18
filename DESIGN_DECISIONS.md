@@ -74,3 +74,8 @@ so the only name similarity in a scenario is a deliberate one. Found when
 AML-S01's first generation gave a person the same token as the entity-trap
 companies. Rejected: accept collisions (unintended confounds pollute the
 anti-shortcut audit). Impact: generate.py, all scenarios.
+
+## DD-016 Temporal consistency gate
+No dated artifact may contain a date later than its own. Found by external
+review of AML-S01 (a case note knew the reference date twelve days in its
+future); fixed in content and converted into a permanent validator gate.

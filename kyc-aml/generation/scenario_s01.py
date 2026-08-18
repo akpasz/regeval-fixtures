@@ -130,8 +130,7 @@ def build(g) -> dict:
              "text": (f"Telephone contact 2026-06-17. Customer representative stated "
                       f"that {payee_sa} is an unrelated parts supplier used since "
                       "2023. Statement unverified. Supplier relationship "
-                      "documentation requested 2026-05-12; not received as of "
-                      f"{g.REFERENCE_DATE}.")},
+                      "documentation requested 2026-05-12; not received to date.")},
             {"passage_id": "CN-1001-P02", "locator": {"type": "note", "index": 2},
              "text": ("Trade documentation reviewed for wires T01 through T05 "
                       "against invoice bundle DOC-1004. No invoice located for wire "

@@ -21,9 +21,9 @@ files:
 - bytes: 747
   path: kyc-aml/fixtures/alerts/ALT-1001.yaml
   sha256: 25ced3cdd824d87ec6b557d2546eec9fc94d5e07f7772c02418c412b9a3744bf
-- bytes: 761
+- bytes: 752
   path: kyc-aml/fixtures/case-notes/CN-1001.yaml
-  sha256: 0a88281654490f53eaf440c819b22be8d2e013d4c7490d1141dc6b59488fc56e
+  sha256: 113a0516bfe4aac9810656bc6eeb91eec14f9ceef139f07ded775afbd3fca9ff
 - bytes: 330
   path: kyc-aml/fixtures/customers/CUST-1001.yaml
   sha256: 17d4afb0746e71978f9a9a7e8aa91054b8126c648c4b132a3eba851211630f55

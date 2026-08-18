@@ -42,6 +42,24 @@ def main() -> int:
         leaked = ANSWER_ONLY_FIELDS & set(data.get("record", {}))
         ok &= gate(f"{f.name}: ground-truth isolation", not leaked, ", ".join(leaked))
 
+    # temporal consistency: a dated artifact cannot contain knowledge of a
+    # later date (found by external review of AML-S01; now a permanent gate)
+    import datetime
+    date_rx = re.compile(r"\b(20\d{2}-\d{2}-\d{2})\b")
+    tviol = []
+    for f in fixtures:
+        d = yaml.safe_load(f.read_text())
+        own = d.get("doc_date") or d.get("record", {}).get("note_date") \
+              or d.get("record", {}).get("alert_date")
+        if own:
+            own_d = datetime.date.fromisoformat(str(own))
+            for pssg in d.get("passages", []):
+                for m in date_rx.findall(pssg["text"]):
+                    if datetime.date.fromisoformat(m) > own_d:
+                        tviol.append(f"{d['fixture_id']}/{pssg['passage_id']}: {m} > {own}")
+    ok &= gate("temporal consistency: no artifact knows a later date", not tviol,
+               "; ".join(tviol))
+
     # forbidden strings, each at its own scope (spec constraint 3 + gates)
     fixture_text = "\n".join(f.read_text() for f in fixtures)
     ok &= gate("no 'SAR' in fixture content", "SAR" not in fixture_text)
