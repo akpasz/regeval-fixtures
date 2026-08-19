@@ -149,3 +149,24 @@ SCHEMAS = {"scenario": Scenario, "claim": Claim, "evidence": EvidenceRef,
            "corruption": Corruption, "manifest": Manifest,
            "fixture-document": DocumentFixture, "fixture-header": FixtureHeader,
            "answer-key": AnswerKey}
+
+
+def canonical_schema(model) -> dict:
+    """Emit a JSON Schema that is stable across pydantic minor versions.
+
+    Pydantic changed Literal rendering between releases: some versions emit
+    `const` alone, others emit `const` plus a single-value `enum`. Committing
+    raw output made the checked-in schema reproducible only under one exact
+    library build, so a reviewer on a different pydantic saw a false drift
+    failure (DD-021). Normalizing removes the redundancy in both directions.
+    """
+    def norm(node):
+        if isinstance(node, dict):
+            out = {k: norm(v) for k, v in node.items()}
+            if "const" in out and out.get("enum") == [out["const"]]:
+                out.pop("enum")
+            return out
+        if isinstance(node, list):
+            return [norm(v) for v in node]
+        return node
+    return norm(model.model_json_schema())

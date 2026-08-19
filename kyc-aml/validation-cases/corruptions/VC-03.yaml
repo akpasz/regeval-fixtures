@@ -1,0 +1,14 @@
+case_ref: VC-03
+corrupted_answer: No documented purpose exists. The case notes record two information requests
+  with no response [CN-3002-P01], and no invoice or contract is held. Absence of adverse information
+  nonetheless establishes purpose.
+defect_description: 'Exactly one semantic defect, plausible in isolation: inference drawn
+  from the absence of adverse information is altered while the surrounding answer remains
+  correct and well formed.'
+known_good_answer: No documented purpose exists. The case notes record two information requests
+  with no response [CN-3002-P01], and no invoice or contract is held. Absence of adverse information
+  does not establish purpose.
+mutation_target: inference drawn from the absence of adverse information
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

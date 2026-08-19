@@ -1,0 +1,14 @@
+case_ref: VC-07
+corrupted_answer: No beneficial owner is identified. The largest ultimate holdings are 21.2
+  percent, held by separately managed funds [DOC-7003-P01], and the nominee holds for 46 underlying
+  holders, none above 1.9 percent [DOC-7002-P01].
+defect_description: 'Exactly one semantic defect, plausible in isolation: aggregation of two
+  separately managed holdings is altered while the surrounding answer remains correct and
+  well formed.'
+known_good_answer: No beneficial owner is identified. The largest ultimate holdings are 11.4
+  and 9.8 percent, held by separately managed funds [DOC-7003-P01], and the nominee holds
+  for 46 underlying holders, none above 1.9 percent [DOC-7002-P01].
+mutation_target: aggregation of two separately managed holdings
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

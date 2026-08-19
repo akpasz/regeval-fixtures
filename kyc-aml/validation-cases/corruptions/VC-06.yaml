@@ -1,0 +1,13 @@
+case_ref: VC-06
+corrupted_answer: Not all payments are supported. Six invoices are held for eight payments
+  [DOC-6001-P02], leaving 94,750 without documented trade, and two invoices cite the same
+  shipment [DOC-6001-P01].
+defect_description: 'Exactly one semantic defect, plausible in isolation: the quantified unsupported
+  amount is altered while the surrounding answer remains correct and well formed.'
+known_good_answer: Not all payments are supported. Six invoices are held for eight payments
+  [DOC-6001-P02], leaving 183,150 without documented trade, and two invoices cite the same
+  shipment [DOC-6001-P01].
+mutation_target: the quantified unsupported amount
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

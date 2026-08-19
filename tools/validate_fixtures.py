@@ -45,10 +45,10 @@ def main() -> int:
     # schema drift: published JSON Schemas must match the pydantic source of
     # truth exactly (found when models were edited without regenerating)
     import json
-    from _schema_models import SCHEMAS
+    from _schema_models import SCHEMAS, canonical_schema
     drift = [n for n, m in SCHEMAS.items()
              if json.loads((ROOT / "schemas" / f"{n}.schema.json").read_text())
-             != m.model_json_schema()]
+             != canonical_schema(m)]
     ok &= gate("schemas match the pydantic source of truth", not drift,
                ", ".join(drift))
 
@@ -149,8 +149,9 @@ def main() -> int:
                    not conj, ", ".join(conj))
         ok &= gate("answer key: not_provided inventory populated",
                    len(ak["not_provided_inventory"]) >= 5)
-        cases = yaml.safe_load((ROOT / "kyc-aml" / "validation-cases" /
-                                "cases.yaml").read_text())["cases"]
+        cases = []
+        for _c in sorted((ROOT / "kyc-aml" / "validation-cases").glob("cases*.yaml")):
+            cases += yaml.safe_load(_c.read_text())["cases"]
         for c in cases:
             vc = ValidationCase.model_validate(
                 {**{k: v for k, v in c.items() if k not in
@@ -166,10 +167,16 @@ def main() -> int:
                                     vc.corruption_ref).read_text())
             cdata.pop("synthetic", None)
             corr = Corruption.model_validate(cdata)
-            diffs = sum(1 for a, b in zip(corr.known_good_answer.split(),
-                                          corr.corrupted_answer.split()) if a != b)
-            ok &= gate(f"{vc.id}: corruption is a minimal single-locus edit",
-                       0 < diffs <= 4, f"{diffs} differing tokens")
+            # A single defect means one change locus, not one changed word.
+            # Positional token comparison overcounts every mutation that
+            # shifts the remainder of the sentence (DD-022), so compare with
+            # a real diff and count contiguous change blocks instead.
+            import difflib
+            blocks = [op for op in difflib.SequenceMatcher(
+                None, corr.known_good_answer.split(),
+                corr.corrupted_answer.split()).get_opcodes() if op[0] != "equal"]
+            ok &= gate(f"{vc.id}: corruption is a single change locus",
+                       len(blocks) == 1, f"{len(blocks)} change loci")
         # scenario record exists outside the observable world
         srec = ROOT / "kyc-aml" / "scenarios"
         ok &= gate("scenario records live outside fixtures/ (difficulty not observable)",

@@ -44,8 +44,8 @@ def _verdict(groups, n):
     if perfect and distinct_targets > 1 and len(groups) >= n:
         return "FAIL: feature value partitions the evaluation target"
     if n < 8:
-        return "WARN: executed, no material association found, sample too small to distinguish"
-    return "PASS: executed, no material association found"
+        return "EXECUTED-UNDERPOWERED: no material association found; n too small for inference"
+    return "EXECUTED-CLEAN: no material association found"
 
 
 def run() -> dict:
@@ -65,8 +65,8 @@ def run() -> dict:
         findings["narrative_length"] = _verdict(by_len, n)
         findings["difficulty_tier"] = _verdict(by_tier, n)
         for f in FEATURES:
-            findings.setdefault(f, f"WARN: executed on {n} scenarios, "
-                                   "no automated check implemented for this feature yet")
+            findings.setdefault(f, f"NOT-IMPLEMENTED: no automated heuristic for this feature; "
+                                   f"{n} scenarios available for future audit")
     report = {"synthetic": {"marker": "REGEVAL_SYNTHETIC", "corpus_version": "0.1.0-dev"},
               "scenarios_examined": n,
               "disclaimer": ("PASS indicates only that the implemented check found no "

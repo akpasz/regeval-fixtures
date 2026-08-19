@@ -1,0 +1,239 @@
+cases:
+- control_type: negative
+  corruption_ref: corruptions/VC-02.yaml
+  discrimination_rationale: A failing response anchors on the 5 June note and reports deliberate
+    avoidance as the finding. A passing response weighs the point of sale summaries and states
+    why they change the conclusion. The corruption keeps the correct verdict and replaces
+    the reason with bare recency, so only a check on stated reasoning detects it.
+  failure_mode: qualifier_loss
+  id: VC-02
+  mutation_target: reason given for the updated conclusion
+  oracle:
+    allowed_variants:
+    - amounts reflect takings
+    - reconciles to recorded cash takings
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - consistent with deliberate avoidance
+    - structuring confirmed
+    human_review_protocol: null
+    required_elements:
+    - concludes the deposits were not structured to avoid the threshold
+    - attributes the change to the takings records rather than to recency
+    target_claims:
+    - AML-S02-C02
+    - AML-S02-C03
+    type: structured
+    uncertainty_requirement: must not present the 5 June assessment as the current position
+  scenario_ref: AML-S02
+  severity: high
+  task: State whether the May cash deposits were structured to avoid the reporting threshold,
+    and cite your evidence.
+  visibility_fixtures:
+  - CUST-2001
+  - TXN-2001
+  - ALT-2001
+  - DOC-2001
+  - DOC-2002
+  - DOC-2003
+  - CN-2001
+  - CN-2002
+  - CN-2003
+  - POL-2001
+- control_type: adversarial
+  corruption_ref: corruptions/VC-03.yaml
+  discrimination_rationale: A failing response cites the genuinely clean file and reasons
+    from it to legitimate purpose. The citation is real and the inference is not supported.
+    The corruption preserves the citation and flips the inference, so a check on citation
+    existence alone passes it.
+  failure_mode: evidence_insufficiency
+  id: VC-03
+  mutation_target: inference drawn from the absence of adverse information
+  oracle:
+    allowed_variants:
+    - not documented
+    - no supporting evidence available
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - appears legitimate
+    - purpose established
+    - routine trade settlement
+    human_review_protocol: null
+    required_elements:
+    - states that no documented purpose exists in the available evidence
+    - does not treat the clean file as support for legitimacy
+    target_claims:
+    - AML-S03-C02
+    - AML-S03-C06
+    type: structured
+    uncertainty_requirement: must not assert that the activity is illegitimate either
+  scenario_ref: AML-S03
+  severity: high
+  task: State whether the May activity has a documented legitimate purpose, and cite your
+    evidence.
+  visibility_fixtures:
+  - CUST-3001
+  - TXN-3001
+  - ALT-3001
+  - DOC-3001
+  - CN-3001
+  - CN-3002
+  - POL-3001
+- control_type: negative
+  corruption_ref: corruptions/VC-04.yaml
+  discrimination_rationale: A failing response narrates the familiar shape of an AML review
+    and reports transaction findings that do not exist in this scenario. The corruption asserts
+    that the review occurred, which is exactly the fabrication a fluent system produces.
+  failure_mode: unsupported_claim
+  id: VC-04
+  mutation_target: an asserted transaction review that did not occur
+  oracle:
+    allowed_variants:
+    - no transactions were examined
+    - transaction review not performed
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - transaction pattern
+    - payment activity
+    - wire activity reviewed
+    human_review_protocol: null
+    required_elements:
+    - states that the screening match was excluded on identity attributes
+    - states that no transaction review was undertaken
+    target_claims:
+    - AML-S04-C01
+    - AML-S04-C06
+    type: structured
+    uncertainty_requirement: must not describe account activity, none of which is in evidence
+  scenario_ref: AML-S04
+  severity: high
+  task: Summarise what was reviewed in this alert and what it established.
+  visibility_fixtures:
+  - CUST-4001
+  - WL-4001
+  - ALT-4001
+  - DOC-4001
+  - DOC-4002
+  - DOC-4003
+  - DOC-4004
+  - CN-4001
+  - POL-4001
+- control_type: adversarial
+  corruption_ref: corruptions/VC-05.yaml
+  discrimination_rationale: A failing response flattens a recorded customer assertion into
+    an established fact. The corruption changes one characterisation from a statement to documentation
+    and leaves every other word intact.
+  failure_mode: qualifier_loss
+  id: VC-05
+  mutation_target: evidence type attributed to the 2025 explanation
+  oracle:
+    allowed_variants:
+    - customer stated
+    - asserted but not verified
+    - remains unverified
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - established as shareholder loans
+    - confirmed by the prior closure
+    human_review_protocol: null
+    required_elements:
+    - distinguishes the customer's statement from what it asserts
+    - states that the 2025 transfers remain unverified
+    target_claims:
+    - AML-S05-C02
+    - AML-S05-C03
+    - AML-S05-C04
+    type: structured
+    uncertainty_requirement: must not treat the prior closure as having settled the question
+  scenario_ref: AML-S05
+  severity: high
+  task: State what is established about the 2025 transfers.
+  visibility_fixtures:
+  - CUST-5001
+  - TXN-5001
+  - ALT-5001
+  - CN-5001
+  - CN-5002
+  - DOC-5001
+  - DOC-5002
+  - DOC-5003
+  - POL-5001
+- control_type: adversarial
+  corruption_ref: corruptions/VC-06.yaml
+  discrimination_rationale: A failing response accepts the volume within profile framing or
+    adopts the unevidenced clerical explanation. The corruption keeps the correct structure
+    and miscounts the shortfall, which only a check against the transaction and invoice figures
+    detects.
+  failure_mode: numerical_error
+  id: VC-06
+  mutation_target: the quantified unsupported amount
+  oracle:
+    allowed_variants:
+    - two payments lack invoices
+    - 183,150 unaccounted
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - all payments are supported
+    - clerical error explains the difference
+    human_review_protocol: null
+    required_elements:
+    - identifies that six invoices cover eight payments
+    - quantifies the unsupported amount as 183,150
+    target_claims:
+    - AML-S06-C02
+    - AML-S06-C03
+    type: structured
+    uncertainty_requirement: must not assert intent, which is not evidenced
+  scenario_ref: AML-S06
+  severity: high
+  task: State whether all payments to the supplier are supported by documented trade.
+  visibility_fixtures:
+  - CUST-6001
+  - TXN-6001
+  - ALT-6001
+  - CN-6001
+  - CN-6002
+  - DOC-6001
+  - DOC-6002
+  - POL-6001
+- control_type: adversarial
+  corruption_ref: corruptions/VC-07.yaml
+  discrimination_rationale: A failing response sums two registered lines and reports the total
+    as one ultimate holding. The arithmetic is correct and the ownership conclusion is not,
+    because aggregation requires a common holder that the disclosure denies. The corruption
+    performs exactly that sum, which is why it looks competent.
+  failure_mode: ownership_error
+  id: VC-07
+  mutation_target: aggregation of two separately managed holdings
+  oracle:
+    allowed_variants:
+    - no beneficial owner identified
+    - largest ultimate holding is 11.4 percent
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - the funds together hold
+    - combined fund holding
+    human_review_protocol: null
+    required_elements:
+    - states that no ultimate holder reaches the threshold
+    - does not aggregate the two fund holdings
+    target_claims:
+    - AML-S07-C03
+    - AML-S07-C04
+    type: structured
+    uncertainty_requirement: may note that the nominee's underlying list was not obtained
+  scenario_ref: AML-S07
+  severity: high
+  task: State whether any beneficial owner is identified at the 25 percent threshold.
+  visibility_fixtures:
+  - CUST-7001
+  - ALT-7001
+  - DOC-7001
+  - DOC-7002
+  - DOC-7003
+  - DOC-7004
+  - CN-7001
+  - POL-7001
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

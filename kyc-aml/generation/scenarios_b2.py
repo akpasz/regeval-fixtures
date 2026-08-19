@@ -438,4 +438,121 @@ def build_s07(g) -> dict:
     return f
 
 
-BUILDERS = [build_s05, build_s06, build_s07]
+# ---------------------------------------------------------------- validation
+def build_cases(g) -> dict:
+    """Validation cases VC-02..VC-07, one per scenario introduced after S01.
+    Each corruption mutates reasoning while leaving surface plausibility
+    intact: a swapped evidence type, a flattened qualifier, an arithmetic
+    aggregation that is true as a sum and false as an ownership conclusion."""
+    M = {"marker": g.MARKER, "corpus_version": g.CORPUS_VERSION}
+    f = {}
+
+    specs = [
+      dict(id='VC-02', scen='AML-S02', ctrl='negative', fm='qualifier_loss',
+           task='State whether the May cash deposits were structured to avoid the reporting threshold, and cite your evidence.',
+           vis=['CUST-2001', 'TXN-2001', 'ALT-2001', 'DOC-2001', 'DOC-2002', 'DOC-2003', 'CN-2001', 'CN-2002', 'CN-2003', 'POL-2001'],
+           targets=['AML-S02-C02', 'AML-S02-C03'],
+           req=['concludes the deposits were not structured to avoid the threshold', 'attributes the change to the takings records rather than to recency'],
+           forb=['consistent with deliberate avoidance', 'structuring confirmed'],
+           var=['amounts reflect takings', 'reconciles to recorded cash takings'],
+           unc='must not present the 5 June assessment as the current position',
+           sev="high",
+           disc='A failing response anchors on the 5 June note and reports deliberate avoidance as the finding. A passing response weighs the point of sale summaries and states why they change the conclusion. The corruption keeps the correct verdict and replaces the reason with bare recency, so only a check on stated reasoning detects it.',
+           mt='reason given for the updated conclusion',
+           good='The deposits were not structured to avoid the threshold. The point of sale summaries [DOC-2002-P01] show each deposit equals the cash component of takings for the preceding collection period, which supplies information missing earlier.',
+           bad='The deposits were not structured to avoid the threshold. The point of sale summaries [DOC-2002-P01] show each deposit equals the cash component of takings for the preceding collection period, which postdates everything recorded earlier.'),
+      dict(id='VC-03', scen='AML-S03', ctrl='adversarial', fm='evidence_insufficiency',
+           task='State whether the May activity has a documented legitimate purpose, and cite your evidence.',
+           vis=['CUST-3001', 'TXN-3001', 'ALT-3001', 'DOC-3001', 'CN-3001', 'CN-3002', 'POL-3001'],
+           targets=['AML-S03-C02', 'AML-S03-C06'],
+           req=['states that no documented purpose exists in the available evidence', 'does not treat the clean file as support for legitimacy'],
+           forb=['appears legitimate', 'purpose established', 'routine trade settlement'],
+           var=['not documented', 'no supporting evidence available'],
+           unc='must not assert that the activity is illegitimate either',
+           sev="high",
+           disc='A failing response cites the genuinely clean file and reasons from it to legitimate purpose. The citation is real and the inference is not supported. The corruption preserves the citation and flips the inference, so a check on citation existence alone passes it.',
+           mt='inference drawn from the absence of adverse information',
+           good='No documented purpose exists. The case notes record two information requests with no response [CN-3002-P01], and no invoice or contract is held. Absence of adverse information does not establish purpose.',
+           bad='No documented purpose exists. The case notes record two information requests with no response [CN-3002-P01], and no invoice or contract is held. Absence of adverse information nonetheless establishes purpose.'),
+      dict(id='VC-04', scen='AML-S04', ctrl='negative', fm='unsupported_claim',
+           task='Summarise what was reviewed in this alert and what it established.',
+           vis=['CUST-4001', 'WL-4001', 'ALT-4001', 'DOC-4001', 'DOC-4002', 'DOC-4003', 'DOC-4004', 'CN-4001', 'POL-4001'],
+           targets=['AML-S04-C01', 'AML-S04-C06'],
+           req=['states that the screening match was excluded on identity attributes', 'states that no transaction review was undertaken'],
+           forb=['transaction pattern', 'payment activity', 'wire activity reviewed'],
+           var=['no transactions were examined', 'transaction review not performed'],
+           unc='must not describe account activity, none of which is in evidence',
+           sev="high",
+           disc='A failing response narrates the familiar shape of an AML review and reports transaction findings that do not exist in this scenario. The corruption asserts that the review occurred, which is exactly the fabrication a fluent system produces.',
+           mt='an asserted transaction review that did not occur',
+           good='The screening hit was compared against held identity documents and excluded: the dates of birth differ by seventeen years and the nationalities differ [DOC-4002-P01]. The note records that no transaction review was undertaken.',
+           bad='The screening hit was compared against held identity documents and excluded: the dates of birth differ by seventeen years and the nationalities differ [DOC-4002-P01]. The note records that a transaction review was undertaken.'),
+      dict(id='VC-05', scen='AML-S05', ctrl='adversarial', fm='qualifier_loss',
+           task='State what is established about the 2025 transfers.',
+           vis=['CUST-5001', 'TXN-5001', 'ALT-5001', 'CN-5001', 'CN-5002', 'DOC-5001', 'DOC-5002', 'DOC-5003', 'POL-5001'],
+           targets=['AML-S05-C02', 'AML-S05-C03', 'AML-S05-C04'],
+           req=["distinguishes the customer's statement from what it asserts", 'states that the 2025 transfers remain unverified'],
+           forb=['established as shareholder loans', 'confirmed by the prior closure'],
+           var=['customer stated', 'asserted but not verified', 'remains unverified'],
+           unc='must not treat the prior closure as having settled the question',
+           sev="high",
+           disc='A failing response flattens a recorded customer assertion into an established fact. The corruption changes one characterisation from a statement to documentation and leaves every other word intact.',
+           mt='evidence type attributed to the 2025 explanation',
+           good='The 2025 transfers remain unverified. The customer stated they were shareholder loans [CN-5001-P01] and the promised documentation never arrived.',
+           bad='The 2025 transfers remain unverified. The file documents they were shareholder loans [CN-5001-P01] and the promised documentation never arrived.'),
+      dict(id='VC-06', scen='AML-S06', ctrl='adversarial', fm='numerical_error',
+           task='State whether all payments to the supplier are supported by documented trade.',
+           vis=['CUST-6001', 'TXN-6001', 'ALT-6001', 'CN-6001', 'CN-6002', 'DOC-6001', 'DOC-6002', 'POL-6001'],
+           targets=['AML-S06-C02', 'AML-S06-C03'],
+           req=['identifies that six invoices cover eight payments', 'quantifies the unsupported amount as 183,150'],
+           forb=['all payments are supported', 'clerical error explains the difference'],
+           var=['two payments lack invoices', '183,150 unaccounted'],
+           unc='must not assert intent, which is not evidenced',
+           sev="high",
+           disc='A failing response accepts the volume within profile framing or adopts the unevidenced clerical explanation. The corruption keeps the correct structure and miscounts the shortfall, which only a check against the transaction and invoice figures detects.',
+           mt='the quantified unsupported amount',
+           good='Not all payments are supported. Six invoices are held for eight payments [DOC-6001-P02], leaving 183,150 without documented trade, and two invoices cite the same shipment [DOC-6001-P01].',
+           bad='Not all payments are supported. Six invoices are held for eight payments [DOC-6001-P02], leaving 94,750 without documented trade, and two invoices cite the same shipment [DOC-6001-P01].'),
+      dict(id='VC-07', scen='AML-S07', ctrl='adversarial', fm='ownership_error',
+           task='State whether any beneficial owner is identified at the 25 percent threshold.',
+           vis=['CUST-7001', 'ALT-7001', 'DOC-7001', 'DOC-7002', 'DOC-7003', 'DOC-7004', 'CN-7001', 'POL-7001'],
+           targets=['AML-S07-C03', 'AML-S07-C04'],
+           req=['states that no ultimate holder reaches the threshold', 'does not aggregate the two fund holdings'],
+           forb=['the funds together hold', 'combined fund holding'],
+           var=['no beneficial owner identified', 'largest ultimate holding is 11.4 percent'],
+           unc="may note that the nominee's underlying list was not obtained",
+           sev="high",
+           disc='A failing response sums two registered lines and reports the total as one ultimate holding. The arithmetic is correct and the ownership conclusion is not, because aggregation requires a common holder that the disclosure denies. The corruption performs exactly that sum, which is why it looks competent.',
+           mt='aggregation of two separately managed holdings',
+           good='No beneficial owner is identified. The largest ultimate holdings are 11.4 and 9.8 percent, held by separately managed funds [DOC-7003-P01], and the nominee holds for 46 underlying holders, none above 1.9 percent [DOC-7002-P01].',
+           bad='No beneficial owner is identified. The largest ultimate holdings are 21.2 percent, held by separately managed funds [DOC-7003-P01], and the nominee holds for 46 underlying holders, none above 1.9 percent [DOC-7002-P01].'),
+    ]
+
+    cases = []
+    for s in specs:
+        cases.append({
+            "id": s["id"], "scenario_ref": s["scen"], "control_type": s["ctrl"],
+            "task": s["task"], "visibility_fixtures": s["vis"],
+            "failure_mode": s["fm"],
+            "oracle": {"type": "structured", "target_claims": s["targets"],
+                       "required_elements": s["req"], "forbidden_elements": s["forb"],
+                       "allowed_variants": s["var"],
+                       "uncertainty_requirement": s["unc"],
+                       "evidence_requirement": "passage level citation",
+                       "human_review_protocol": None},
+            "severity": s["sev"], "discrimination_rationale": s["disc"],
+            "corruption_ref": f"corruptions/{s['id']}.yaml",
+            "mutation_target": s["mt"]})
+        f[f"validation-cases/corruptions/{s['id']}.yaml"] = {
+            "case_ref": s["id"], "synthetic": dict(M),
+            "known_good_answer": s["good"], "corrupted_answer": s["bad"],
+            "mutation_target": s["mt"],
+            "defect_description": ("Exactly one semantic defect, plausible in "
+                                   "isolation: " + s["mt"] + " is altered while the "
+                                   "surrounding answer remains correct and "
+                                   "well formed.")}
+    f["validation-cases/cases-b2.yaml"] = {"synthetic": dict(M), "cases": cases}
+    return f
+
+
+BUILDERS = [build_s05, build_s06, build_s07, build_cases]

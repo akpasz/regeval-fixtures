@@ -1,0 +1,12 @@
+case_ref: VC-05
+corrupted_answer: The 2025 transfers remain unverified. The file documents they were shareholder
+  loans [CN-5001-P01] and the promised documentation never arrived.
+defect_description: 'Exactly one semantic defect, plausible in isolation: evidence type attributed
+  to the 2025 explanation is altered while the surrounding answer remains correct and well
+  formed.'
+known_good_answer: The 2025 transfers remain unverified. The customer stated they were shareholder
+  loans [CN-5001-P01] and the promised documentation never arrived.
+mutation_target: evidence type attributed to the 2025 explanation
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

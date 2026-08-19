@@ -3,7 +3,7 @@
 Synthetic fixtures and a seed validation corpus for evaluating AI systems in
 regulated financial workflows, beginning with a KYC/AML vertical slice.
 
-**Build status: Stage 3, batch 1, four scenarios.** Schemas,
+**Build status: Stage 3, batch 2, seven scenarios.** Validation corpus expansion is in progress; domain texture remains unratified. Schemas,
 corpus contract, licensing, provenance, determinism harness, and verification
 tooling are in place, and one canonical scenario (AML-S01) is complete through
 every layer. Its domain realism is not yet approved: see DOMAIN_REVIEW.md. The

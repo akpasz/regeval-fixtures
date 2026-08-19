@@ -110,3 +110,22 @@ banking practice (domain-author authority, recorded unratified). The split
 exists because an LLM review cannot ratify a domain claim, however confidently
 argued, and adjudication by the domain author is weaker provenance than
 origination. GENERATION.md carries authority per rule.
+
+## DD-021 Version-stable schema emission
+Published JSON Schemas were emitted raw from pydantic, whose Literal rendering
+differs across minor versions (const alone versus const plus a single-value
+enum). The committed artifact was therefore reproducible only under one exact
+library build, and a reviewer on a different pydantic saw a drift failure that
+regeneration in the pinned environment could not fix. Schemas are now
+normalized before emission, and the schema test skips with an explicit
+environment message rather than failing when the running pydantic differs from
+environment.lock.yaml. A mismatch under an unpinned environment is an
+environment finding, not a corpus defect.
+
+## DD-022 Corruption minimality measured by change loci
+The single-defect gate compared tokens by position, which overcounts any
+mutation that shifts the remainder of the sentence: VC-02 reported 26
+differing tokens for one rewritten clause. The gate now counts contiguous
+change blocks from a real diff and requires exactly one. This measures what
+the rule means, and it admits reasoning-level mutations (a replaced clause)
+alongside single-value mutations.

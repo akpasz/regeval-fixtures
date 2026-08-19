@@ -344,7 +344,7 @@ def build(g) -> dict:
             "the registry data is not established."),
         "corrupted_answer": (
             f"The payee {payee_sa} and the shareholder {hold_ltd} are distinct legal "
-            f"entities. The share register extract [DOC-1002-P01] records separate "
+            f"entities. The corporate registry extract [DOC-1002-P01] records separate "
             f"registrations, S-40917 in {jur_b} and H-88231 in {jur_a}, and no "
             "shareholding relationship between them. The customer's statement that the "
             "payee is an unrelated supplier remains unverified, so unrelatedness beyond "

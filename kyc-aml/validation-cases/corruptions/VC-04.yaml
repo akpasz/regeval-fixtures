@@ -1,0 +1,14 @@
+case_ref: VC-04
+corrupted_answer: 'The screening hit was compared against held identity documents and excluded:
+  the dates of birth differ by seventeen years and the nationalities differ [DOC-4002-P01].
+  The note records that a transaction review was undertaken.'
+defect_description: 'Exactly one semantic defect, plausible in isolation: an asserted transaction
+  review that did not occur is altered while the surrounding answer remains correct and well
+  formed.'
+known_good_answer: 'The screening hit was compared against held identity documents and excluded:
+  the dates of birth differ by seventeen years and the nationalities differ [DOC-4002-P01].
+  The note records that no transaction review was undertaken.'
+mutation_target: an asserted transaction review that did not occur
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

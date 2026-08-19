@@ -30,9 +30,9 @@ files:
 - bytes: 3485
   path: kyc-aml/answers/AML-S07.yaml
   sha256: 60fcc2a701ecc4e63fb3afd5c36a52911e74facdcc78a964cef4ceec6fe62255
-- bytes: 1488
+- bytes: 1602
   path: kyc-aml/coverage/anti_shortcut_report.yaml
-  sha256: 219eca1b74ea5685472507f4f5f68996ec1b5d1a39bb3dde85f7f3d6f27bf667
+  sha256: 0b563f17c3b557696f124a2c8af641302ed83e1db8244cf00fa1eaf3799c2074
 - bytes: 909
   path: kyc-aml/coverage/coverage-matrix.yaml
   sha256: a252262a098942c07e3e2aad45afc5488a6b7a9421299f93907993b55aac4a01
@@ -249,12 +249,33 @@ files:
 - bytes: 526
   path: kyc-aml/scenarios/AML-S07.yaml
   sha256: bbaaf00023f1a504de5e69e2d32c94eefac8c3c3e9cc8750023f8b791016c770
+- bytes: 8112
+  path: kyc-aml/validation-cases/cases-b2.yaml
+  sha256: 0e100c463cb7b5df60662f1423a5fd67c199a0143e759b910ad5969c3a262085
 - bytes: 2184
   path: kyc-aml/validation-cases/cases.yaml
   sha256: 4a7a2de7d9bb70ae243fccdf7263e4d4d5e545c8493baa1a5aee637379c5d0cf
-- bytes: 1394
+- bytes: 1398
   path: kyc-aml/validation-cases/corruptions/VC-01.yaml
-  sha256: bb5b090e200d68c788af0ad626293bfbc0fbcd5ef2f04dba878474311773f353
+  sha256: d14fa0faa7574cb8329f24695c6638939c07c8ecca16148e9e48ca86c9905abc
+- bytes: 850
+  path: kyc-aml/validation-cases/corruptions/VC-02.yaml
+  sha256: 22758ccbe5f181c9732b665810333f00f943f03543b07185acd122521135232c
+- bytes: 822
+  path: kyc-aml/validation-cases/corruptions/VC-03.yaml
+  sha256: 5df56850808bbdaac9856691c77f46d02b65c8a470ec9c790f659af0ead7c139
+- bytes: 854
+  path: kyc-aml/validation-cases/corruptions/VC-04.yaml
+  sha256: 53fc01a13d6d6846bea88fc44f02ceb0b569b9cfc249ec184ab77614f2810af4
+- bytes: 682
+  path: kyc-aml/validation-cases/corruptions/VC-05.yaml
+  sha256: 194d9cbdf8ac3d535c99f990031839b690b45f2aac227a7e48c362d9464904d9
+- bytes: 736
+  path: kyc-aml/validation-cases/corruptions/VC-06.yaml
+  sha256: 277471346a6d01561ebc924bc957e6deeaf70180ff3d3020992f34a89cf45776
+- bytes: 839
+  path: kyc-aml/validation-cases/corruptions/VC-07.yaml
+  sha256: 717b6a3c629bda6375ff9baf24053064fa56fb3b7fdb042d4e84e064168da455
 - bytes: 4857
   path: schemas/answer-key.schema.json
   sha256: 72e6c6cdd0435f581f364be4580c9740a8aa32bb9026928e8b36146ec0e63522
@@ -270,21 +291,21 @@ files:
 - bytes: 602
   path: schemas/evidence.schema.json
   sha256: 558c0dd8b63f4246a02c1d02afb73625b65a4f452a42aefa51bd9ab2cdc3a436
-- bytes: 2039
+- bytes: 1974
   path: schemas/fixture-document.schema.json
-  sha256: d7b16e819bafd563bef2911984b63d564e4870e673b103f8a7ef22c9e98b5a1c
-- bytes: 1443
+  sha256: debb08c17528f8ba996a8f3e1de4567635624993f15c85644939964b3599e9a3
+- bytes: 1378
   path: schemas/fixture-header.schema.json
-  sha256: 76fc9b70f07b7ae7a5580eb288d89178aedb65b3056974ffb9213164549e7653
+  sha256: 61c4bfc5952173a8a9529b228d62791d2992c9c685bf356266125b6d6a6f2a02
 - bytes: 1382
   path: schemas/manifest.schema.json
   sha256: abbc7f4de6e41c5542297729865ff19f14013220315228ac0f55a7ea8a4f6f0c
 - bytes: 3306
   path: schemas/ownership.schema.json
   sha256: 1232c3fc8616944452c37b4540094724fe04247153de99835ec4ab8b49af3036
-- bytes: 2424
+- bytes: 2359
   path: schemas/scenario.schema.json
-  sha256: c852bca30ea5c381c3334ca47c4dfe0d58dac2f03ec10d55cdbdf22d6cfc0b47
+  sha256: 50366b2edeb406d31a96631d7ce42031ff15ba4b00e72f5259058d4f7a09aeb1
 - bytes: 3752
   path: schemas/validation-case.schema.json
   sha256: 101b8566057cc8bebaadeae7f41a4196c9b74d095c4765d28a2aa0ab7fc24447

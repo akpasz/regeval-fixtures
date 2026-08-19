@@ -39,9 +39,6 @@
         },
         "marker": {
           "const": "REGEVAL_SYNTHETIC",
-          "enum": [
-            "REGEVAL_SYNTHETIC"
-          ],
           "title": "Marker",
           "type": "string"
         }

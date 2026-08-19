@@ -2,24 +2,27 @@ disclaimer: PASS indicates only that the implemented check found no material ass
   It does not establish statistical independence or prove absence of leakage. At this corpus
   size the audit detects obvious leakage only.
 features:
-  alert_codes: 'WARN: executed on 7 scenarios, no automated check implemented for this feature
-    yet'
-  amount_buckets: 'WARN: executed on 7 scenarios, no automated check implemented for this
-    feature yet'
-  difficulty_tier: 'WARN: executed, no material association found, sample too small to distinguish'
-  document_count: 'WARN: executed, no material association found, sample too small to distinguish'
-  geography: 'WARN: executed on 7 scenarios, no automated check implemented for this feature
-    yet'
-  loaded_vocabulary: 'WARN: executed on 7 scenarios, no automated check implemented for this
-    feature yet'
-  missing_evidence_patterns: 'WARN: executed on 7 scenarios, no automated check implemented
-    for this feature yet'
-  name_morphology: 'WARN: executed on 7 scenarios, no automated check implemented for this
-    feature yet'
-  narrative_length: 'WARN: executed, no material association found, sample too small to distinguish'
-  ownership_depth: 'WARN: executed on 7 scenarios, no automated check implemented for this
-    feature yet'
-  scenario_id_order: 'WARN: executed, no material association found, sample too small to distinguish'
+  alert_codes: 'NOT-IMPLEMENTED: no automated heuristic for this feature; 7 scenarios available
+    for future audit'
+  amount_buckets: 'NOT-IMPLEMENTED: no automated heuristic for this feature; 7 scenarios available
+    for future audit'
+  difficulty_tier: 'EXECUTED-UNDERPOWERED: no material association found; n too small for
+    inference'
+  document_count: 'EXECUTED-UNDERPOWERED: no material association found; n too small for inference'
+  geography: 'NOT-IMPLEMENTED: no automated heuristic for this feature; 7 scenarios available
+    for future audit'
+  loaded_vocabulary: 'NOT-IMPLEMENTED: no automated heuristic for this feature; 7 scenarios
+    available for future audit'
+  missing_evidence_patterns: 'NOT-IMPLEMENTED: no automated heuristic for this feature; 7
+    scenarios available for future audit'
+  name_morphology: 'NOT-IMPLEMENTED: no automated heuristic for this feature; 7 scenarios
+    available for future audit'
+  narrative_length: 'EXECUTED-UNDERPOWERED: no material association found; n too small for
+    inference'
+  ownership_depth: 'NOT-IMPLEMENTED: no automated heuristic for this feature; 7 scenarios
+    available for future audit'
+  scenario_id_order: 'EXECUTED-UNDERPOWERED: no material association found; n too small for
+    inference'
 scenarios_examined: 7
 synthetic:
   corpus_version: 0.1.0-dev
