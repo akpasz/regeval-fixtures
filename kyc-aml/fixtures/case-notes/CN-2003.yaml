@@ -1,0 +1,17 @@
+fixture_id: CN-2003
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-2003-P01
+  text: Point of sale summaries received 19 June. Each deposit reconciles to the cash component
+    of takings for the preceding collection period. The amounts are what the business took,
+    not amounts selected to sit under a threshold. Deposit timing follows the collection schedule.
+record:
+  author_role: analyst
+  note_date: '2026-06-22'
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

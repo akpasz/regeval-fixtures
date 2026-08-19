@@ -1,0 +1,15 @@
+doc_date: '2026-02-11'
+fixture_id: DOC-2003
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-2003-P01
+  text: Licence renewed for Trelilva Hospitality Ltd for the year to 31 January 2027. Held
+    on file.
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Liquor licence renewal

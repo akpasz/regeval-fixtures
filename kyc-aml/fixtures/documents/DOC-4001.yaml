@@ -1,0 +1,15 @@
+doc_date: '2026-06-08'
+fixture_id: DOC-4001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-4001-P01
+  text: Automated screening returned entry SW-0219 against director Trelast Kelbaro. Name
+    string identical. No other attribute was compared by the screening engine.
+scenario_ref: AML-S04
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Screening record

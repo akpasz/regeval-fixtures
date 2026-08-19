@@ -1,0 +1,15 @@
+doc_date: '2024-06-30'
+fixture_id: DOC-2001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-2001-P01
+  text: Lease of restaurant premises at Kelbaro to Trelilva Hospitality Ltd for five years
+    from 1 July 2024. Monthly rent 11,400.
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Premises lease, Kelbaro

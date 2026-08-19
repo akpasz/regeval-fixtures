@@ -1,0 +1,14 @@
+doc_date: '2026-01-30'
+fixture_id: DOC-4003
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-4003-P01
+  text: 'Shareholders: Trelast Kelbaro, 80 percent; Oskombra Brexorm, 20 percent.'
+scenario_ref: AML-S04
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Shareholder register extract

@@ -1,0 +1,15 @@
+doc_date: '2025-11-12'
+fixture_id: DOC-3001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-3001-P01
+  text: 'Partners: Quonyne Oskadri and Zilmath Brexixel, profits shared equally. The agreement
+    records that further partners may be admitted by written consent of both partners.'
+scenario_ref: AML-S03
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Partnership agreement, Ulpiunt Trading Partners

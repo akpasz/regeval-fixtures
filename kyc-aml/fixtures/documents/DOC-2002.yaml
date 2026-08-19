@@ -1,0 +1,22 @@
+doc_date: '2026-06-19'
+fixture_id: DOC-2002
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: table
+  passage_id: DOC-2002-P01
+  text: 'Combined daily takings for Kelbaro and Ulpiunt, May 2026. Cash component by banking
+    day: 9,420; 8,880; 9,610; 9,075; 8,940; 9,330; 9,180; 8,790. Card component settled separately
+    to the same account.'
+- locator:
+    index: 2
+    type: paragraph
+  passage_id: DOC-2002-P02
+  text: Deposits are made on the first banking day following each weekend and midweek close,
+    consistent with the operator's two collection runs per week.
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Point of sale daily summaries, May 2026

@@ -1,0 +1,18 @@
+fixture_id: ALT-3001
+fixture_type: alert
+passages:
+- locator:
+    index: 1
+    type: narrative
+  passage_id: ALT-3001-P01
+  text: Scenario FNL-02. Five inbound wires from five counterparties over three days totalling
+    231,550, followed by a single outbound international wire of 228,000 within one banking
+    day. Aggregation window three days. Contributing transactions listed.
+record:
+  alert_date: '2026-05-12'
+  rule_ref: FNL-02
+  subject_ref: CUST-3001
+scenario_ref: AML-S03
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

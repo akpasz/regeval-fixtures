@@ -1,0 +1,15 @@
+fixture_id: POL-2001
+fixture_type: policy_context
+record:
+  decision_rules:
+  - close where deposit amounts reconcile to independently evidenced takings
+  - escalate where a below-threshold pattern remains unexplained after documentation is obtained
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - cash-intensive businesses are expected to deposit takings in amounts that vary with trade
+  - a pattern below a reporting threshold is a question, not a finding, where takings records
+    explain the amounts
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

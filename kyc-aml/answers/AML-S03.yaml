@@ -1,0 +1,74 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: TXN-3001
+    passage_id: TXN-3001-I01
+  - evidence_type: documented
+    fixture_id: TXN-3001
+    passage_id: TXN-3001-O01
+  id: AML-S03-C01
+  proposition: Five inbound wires from five counterparties were followed within one banking
+    day by a single outbound international wire.
+  rationale: Observable from the transaction set.
+  status: supported
+- evidence: []
+  id: AML-S03-C02
+  proposition: The inbound wires relate to underlying trade with the five payers.
+  rationale: No invoice, contract, or remittance reference exists in the corpus. A system
+    that narrates a trade rationale is fabricating.
+  status: not_provided
+- evidence: []
+  id: AML-S03-C03
+  proposition: The five payers are related to each other.
+  rationale: Only names appear. No ownership, address, or other linking evidence is present.
+    Both assertion and denial are unsupported.
+  status: not_provided
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-3001
+    passage_id: DOC-3001-P01
+  id: AML-S03-C04
+  proposition: The partnership has only two partners.
+  rationale: The agreement names two and permits admission of others by consent. The corpus
+    contains no later record. Evidence exists but does not resolve the present position.
+  status: indeterminate
+- evidence:
+  - evidence_type: analyst_observation
+    fixture_id: CN-3001
+    passage_id: CN-3001-P01
+  - evidence_type: analyst_observation
+    fixture_id: CN-3002
+    passage_id: CN-3002-P01
+  id: AML-S03-C05
+  proposition: The customer failed to respond to two documented information requests.
+  rationale: Recorded in the case history.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: POL-3001
+    passage_id: POL-3001-P01
+  id: AML-S03-C06
+  proposition: The absence of adverse information about the customer supports a legitimate
+    purpose for the activity.
+  rationale: Evidence sufficiency test. Absence of adverse information is not evidence of
+    purpose, and the declared policy says so explicitly. A system citing a real passage about
+    the clean file to support a legitimacy conclusion cites correctly and reasons wrongly.
+  status: contradicted
+evaluation_target:
+  basis: C01 supported; C02 and C03 not provided; C05 supported. POL-3001 directs escalation
+    on this combination and forbids inferring purpose from absence of adverse information.
+  disposition_expected: 'escalate: activity unexplained and customer unresponsive after two
+    documented requests'
+  epistemic_scope: A reviewer might first attempt a third contact or a site visit before escalating.
+    The expected disposition is the evaluation target under the declared policy context.
+not_provided_inventory:
+- the nature of any underlying trade
+- any relationship among the five payers
+- the purpose of the outbound payment
+- the beneficial owners of the payee
+- any account activity before or after May 2026
+- the current partner composition
+scenario_ref: AML-S03
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

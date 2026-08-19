@@ -95,12 +95,16 @@ def main() -> int:
     ok &= gate("no scoring/harness machinery", not machinery, ", ".join(machinery))
 
     # stage-gated: scenario, answer-key, case, corruption gates
-    ak_path = ROOT / "kyc-aml" / "answers" / "answer-key.yaml"
-    if not ak_path.exists():
+    ak_paths = sorted((ROOT / "kyc-aml" / "answers").glob("AML-S*.yaml"))
+    if not ak_paths:
         print("[SKIP] scenario/claim/case gates: artifacts not yet present (Stage 1)")
     else:
         from _schema_models import Claim, ValidationCase, Corruption
-        ak = yaml.safe_load(ak_path.read_text())
+        ak = {"claims": [], "not_provided_inventory": []}
+        for _p in ak_paths:
+            _d = yaml.safe_load(_p.read_text())
+            ak["claims"] += _d["claims"]
+            ak["not_provided_inventory"] += _d["not_provided_inventory"]
         # index every passage-level anchor in the observable world
         anchors = set()
         for f in fixtures:

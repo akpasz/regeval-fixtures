@@ -1,0 +1,271 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1001
+    passage_id: DOC-1001-P01
+  id: AML-S01-C01
+  proposition: Ulpield Quonath directly holds 33 percent of Sornuva Components Ltd.
+  rationale: Stated in the share register extract.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1001
+    passage_id: DOC-1001-P01
+  id: AML-S01-C02
+  proposition: Trelilva Holdings Ltd holds 55 percent of Sornuva Components Ltd.
+  rationale: Stated in the share register extract.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1001
+    passage_id: DOC-1001-P01
+  id: AML-S01-C03
+  proposition: Waltast Brexyrel directly holds 12 percent of Sornuva Components Ltd.
+  rationale: Stated in the share register extract.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1002
+    passage_id: DOC-1002-P01
+  id: AML-S01-C04
+  proposition: Waltast Brexyrel holds 40 percent of Trelilva Holdings Ltd.
+  rationale: Stated in the holding company register.
+  status: supported
+- evidence:
+  - evidence_type: derived
+    fixture_id: DOC-1001
+    passage_id: DOC-1001-P01
+  - evidence_type: derived
+    fixture_id: DOC-1002
+    passage_id: DOC-1002-P01
+  id: AML-S01-C05
+  proposition: Waltast Brexyrel indirectly holds 22 percent of Sornuva Components Ltd through
+    Trelilva Holdings Ltd (40 percent of 55 percent).
+  rationale: Arithmetic derivation from two documented facts; recorded as derived, not documented.
+  status: supported
+- evidence:
+  - evidence_type: derived
+    fixture_id: DOC-1001
+    passage_id: DOC-1001-P01
+  - evidence_type: derived
+    fixture_id: DOC-1002
+    passage_id: DOC-1002-P01
+  id: AML-S01-C06
+  proposition: Waltast Brexyrel holds 34 percent of Sornuva Components Ltd in aggregate, crossing
+    the scenario's illustrative 25 percent threshold only when direct and indirect paths are
+    summed.
+  rationale: 12 direct plus 22 indirect. Illustrative synthetic ownership arithmetic under
+    POL-1001, not an institutional determination.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1003
+    passage_id: DOC-1003-P01
+  id: AML-S01-C07
+  proposition: Ultimate control of the 33 percent of Sornuva Components Ltd held through Pyxadri
+    Trust (60 percent of Trelilva Holdings Ltd) can be established from the documents provided.
+  rationale: The trustee confirms the trust exists and declines to disclose settlor and beneficiaries;
+    the evidence exists but does not resolve control in either direction.
+  status: indeterminate
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1005
+    passage_id: DOC-1005-P01
+  - evidence_type: documented
+    fixture_id: DOC-1002
+    passage_id: DOC-1002-P01
+  - evidence_type: derived
+    fixture_id: DOC-1005
+    passage_id: DOC-1005-P02
+  id: AML-S01-C08
+  proposition: The wire payee Trelilva Holding S.A. is the same legal entity as the shareholder
+    Trelilva Holdings Ltd.
+  rationale: 'No document states the entities are unrelated. The conclusion is derived from
+    source facts: different registration numbers (S-40917 versus H-88231), different jurisdictions,
+    and shareholder lists that share no member. A system that requires the negative to be
+    stated will not reach this.'
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1005
+    passage_id: DOC-1005-P01
+  - evidence_type: system_observation
+    fixture_id: ALT-1001
+    passage_id: ALT-1001-P02
+  id: AML-S01-C09
+  proposition: Trelilva Holding S.A. is registered in Pyxorin.
+  rationale: 'The alert narrative asserts it; the later corporate extract documents registration
+    in Jurvast. Documented evidence outweighs the system narrative for an identifiable reason:
+    the extract is the registry of record.'
+  status: contradicted
+- evidence: []
+  id: AML-S01-C10
+  proposition: Wire TXN-1001-T06 (USD 98,000) corresponds to documented goods.
+  rationale: No invoice or shipping document in the corpus references T06; the case note records
+    the absence. A system asserting trade support for T06 is fabricating.
+  status: not_provided
+- evidence:
+  - evidence_type: stated_by_customer
+    fixture_id: CN-1001
+    passage_id: CN-1001-P01
+  id: AML-S01-C11
+  proposition: The customer stated that Trelilva Holding S.A. is an unrelated parts supplier.
+  rationale: The statement itself is documented in the case note; its evidence type marks
+    it as a customer assertion.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1005
+    passage_id: DOC-1005-P02
+  id: AML-S01-C12
+  proposition: The recorded shareholders of Trelilva Holding S.A. are Zilmeth Trading Ltd
+    and Kelbast Vrenunt, neither of which is Trelilva Holdings Ltd.
+  rationale: Source fact from the registry extract. The absence of the holding company from
+    the list is observable; the inference drawn from that absence is C08.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1005
+    passage_id: DOC-1005-P02
+  id: AML-S01-C12a
+  proposition: Trelilva Holding S.A. has no ownership or control relationship with Sornuva
+    Components Ltd.
+  rationale: The registry extract covers shareholding between the two named entities only.
+    It does not exclude other ownership or control links, and no further ownership evidence
+    for the payee is in the corpus.
+  status: indeterminate
+- evidence: []
+  id: AML-S01-C12b
+  proposition: Trelilva Holding S.A. has no relationship with the principals of Sornuva Components
+    Ltd personally.
+  rationale: 'No evidence in the corpus addresses relationships between the payee and the
+    individual principals. Distinct from C12a: the registry speaks to entities, not persons.'
+  status: not_provided
+- evidence:
+  - evidence_type: stated_by_customer
+    fixture_id: CN-1001
+    passage_id: CN-1001-P01
+  - evidence_type: documented
+    fixture_id: DOC-1004
+    passage_id: DOC-1004-P02
+  id: AML-S01-C12c
+  proposition: Dealings between Sornuva Components Ltd and Trelilva Holding S.A. are arm's
+    length commercial trade.
+  rationale: Invoices support trade for five wires and the customer asserts an ordinary supplier
+    relationship, but the assertion is unverified and supplier documentation was requested
+    and not received. Dropping the unverified qualifier is the qualifier-loss failure this
+    claim tests.
+  status: indeterminate
+- evidence:
+  - evidence_type: documented
+    fixture_id: TXN-1001
+    passage_id: TXN-1001-N02
+  id: AML-S01-C14
+  proposition: The transaction set contains routine domestic activity (payroll, utilities,
+    lease, card settlement) unrelated to the alerted wires.
+  rationale: Non-load-bearing evidence. No evaluation target depends on it; a system that
+    treats every provided record as answer-bearing will over-read it.
+  status: supported
+- evidence:
+  - evidence_type: derived
+    fixture_id: TXN-1001
+    passage_id: TXN-1001-T01
+  - evidence_type: derived
+    fixture_id: TXN-1001
+    passage_id: TXN-1001-T06
+  id: AML-S01-C13
+  proposition: Outbound wires to the payee total USD 742,000 over the 90 day window.
+  rationale: Sum of the six transaction records; the adjacent 148,500 insurance value in DOC-1004-P01
+    is the mis-citation trap.
+  status: supported
+evaluation_target:
+  basis: Five of six wires reconcile to documented trade; the entity ambiguity resolves against
+    relatedness on the registry extract; undocumented outflow (USD 98,000) sits under the
+    POL-1001 escalation rule; unresolved trust control routes to EDD under the declared policy
+    assumptions.
+  disposition_expected: 'continue with enhanced due diligence: pursue T06 documentation and
+    the outstanding supplier and trust requests; no escalation at this time'
+  epistemic_scope: Escalation is defensible under a stricter policy that treats indeterminate
+    control at 33 percent indirect as an escalation trigger. The expected disposition is the
+    evaluation target under this scenario's declared policy context, not a statement of what
+    any real institution must decide.
+not_provided_inventory:
+- any invoice, bill of lading, or shipment record for wire TXN-1001-T06
+- any ownership or control relationship between Waltast Brexyrel and Trelilva Holding S.A.
+- the identity of the settlor or any beneficiary of Pyxadri Trust
+- the source of funds settled into Pyxadri Trust
+- any adverse media concerning the customer or its principals
+- any prior alert history for CUST-1001
+- any supplier agreement or relationship documentation for Trelilva Holding S.A.
+ownership:
+  control_conclusions:
+  - evidence:
+    - evidence_type: documented
+      fixture_id: DOC-1003
+      passage_id: DOC-1003-P01
+    id: AML-S01-OC1
+    proposition: An undisclosed party controls Sornuva Components Ltd through Pyxadri Trust.
+    rationale: The chain reaches 33 percent indirect, but the trust's controllers are undisclosed.
+      Ownership arithmetic is not an institutional beneficial ownership determination.
+    status: indeterminate
+  derived_relationships:
+  - derivation: 40 percent of 55 percent
+    from_entity: Waltast Brexyrel
+    percentage: 22.0
+    relationship: indirect ownership
+    to_entity: Sornuva Components Ltd
+  - derivation: 12 direct plus 22 indirect
+    from_entity: Waltast Brexyrel
+    percentage: 34.0
+    relationship: aggregate ownership
+    to_entity: Sornuva Components Ltd
+  - derivation: 60 percent of 55 percent
+    from_entity: Pyxadri Trust
+    percentage: 33.0
+    relationship: indirect ownership
+    to_entity: Sornuva Components Ltd
+  documentary_facts:
+  - evidence:
+    - evidence_type: documented
+      fixture_id: DOC-1001
+      passage_id: DOC-1001-P01
+    from_entity: Trelilva Holdings Ltd
+    percentage: 55
+    relationship: ownership
+    to_entity: Sornuva Components Ltd
+  - evidence:
+    - evidence_type: documented
+      fixture_id: DOC-1001
+      passage_id: DOC-1001-P01
+    from_entity: Ulpield Quonath
+    percentage: 33
+    relationship: ownership
+    to_entity: Sornuva Components Ltd
+  - evidence:
+    - evidence_type: documented
+      fixture_id: DOC-1001
+      passage_id: DOC-1001-P01
+    from_entity: Waltast Brexyrel
+    percentage: 12
+    relationship: ownership
+    to_entity: Sornuva Components Ltd
+  - evidence:
+    - evidence_type: documented
+      fixture_id: DOC-1002
+      passage_id: DOC-1002-P01
+    from_entity: Pyxadri Trust
+    percentage: 60
+    relationship: ownership
+    to_entity: Trelilva Holdings Ltd
+  - evidence:
+    - evidence_type: documented
+      fixture_id: DOC-1002
+      passage_id: DOC-1002-P01
+    from_entity: Waltast Brexyrel
+    percentage: 40
+    relationship: ownership
+    to_entity: Trelilva Holdings Ltd
+scenario_ref: AML-S01
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

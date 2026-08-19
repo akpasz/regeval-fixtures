@@ -100,12 +100,14 @@ def collect_names(files: dict) -> set:
 
 
 def main() -> None:
-    import scenario_s01  # noqa: local module, same directory
-    probe = ROOT / "fixtures" / "customers" / "CUST-0000.yaml"
-    if probe.exists():
-        probe.unlink()  # DD-013: probe retired now that AML-S01 lands
     import sys
-    files = scenario_s01.build(sys.modules[__name__])
+    sys.path.insert(0, str(pathlib.Path(__file__).parent))
+    import scenario_s01
+    import scenarios_b1
+    me = sys.modules[__name__]
+    files = scenario_s01.build(me)
+    for builder in scenarios_b1.BUILDERS:
+        files.update(builder(me))
     for rel, obj in sorted(files.items()):
         write(ROOT / rel, obj)
     write(ROOT / "generation" / "name-registry.yaml",

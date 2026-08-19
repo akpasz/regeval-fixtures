@@ -1,0 +1,52 @@
+fixture_id: TXN-3001
+fixture_type: transaction_set
+record:
+  account_ref: CUST-3001
+  currency: USD
+scenario_ref: AML-S03
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 47300
+  channel: domestic wire
+  counterparty_name: Trelaro Ltd
+  direction: inbound
+  narrative: no remittance reference
+  txn_id: TXN-3001-I01
+  value_date: '2026-05-05'
+- amount: 51900
+  channel: domestic wire
+  counterparty_name: Waltilva Ltd
+  direction: inbound
+  narrative: no remittance reference
+  txn_id: TXN-3001-I02
+  value_date: '2026-05-06'
+- amount: 38400
+  channel: domestic wire
+  counterparty_name: Darvunt Ltd
+  direction: inbound
+  narrative: no remittance reference
+  txn_id: TXN-3001-I03
+  value_date: '2026-05-06'
+- amount: 44100
+  channel: domestic wire
+  counterparty_name: Tosketh Ltd
+  direction: inbound
+  narrative: no remittance reference
+  txn_id: TXN-3001-I04
+  value_date: '2026-05-07'
+- amount: 49850
+  channel: domestic wire
+  counterparty_name: Pyxuva Ltd
+  direction: inbound
+  narrative: no remittance reference
+  txn_id: TXN-3001-I05
+  value_date: '2026-05-07'
+- amount: 228000
+  channel: international wire
+  counterparty_name: Farnombra Ltd
+  direction: outbound
+  narrative: no remittance reference
+  txn_id: TXN-3001-O01
+  value_date: '2026-05-08'

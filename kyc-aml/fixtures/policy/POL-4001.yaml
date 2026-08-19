@@ -1,0 +1,14 @@
+fixture_id: POL-4001
+fixture_type: policy_context
+record:
+  decision_rules:
+  - close a screening line where the match is excluded on attribute evidence
+  - apply enhanced due diligence where a connection to a public official is identified
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - a screening hit is discounted where held identity evidence differs on a material attribute
+  - a family connection to a public official is a due diligence factor, not an adverse finding
+scenario_ref: AML-S04
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

@@ -249,7 +249,7 @@ def build(g) -> dict:
       "rationale": "Sum of the six transaction records; the adjacent 148,500 insurance value in DOC-1004-P01 is the mis-citation trap."},
     ]
 
-    files["answers/answer-key.yaml"] = {
+    files["answers/AML-S01.yaml"] = {
         "scenario_ref": SCENARIO_ID,
         "synthetic": dict(M),
         "claims": claims,

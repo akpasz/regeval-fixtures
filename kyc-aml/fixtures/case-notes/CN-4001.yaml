@@ -1,0 +1,17 @@
+fixture_id: CN-4001
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-4001-P01
+  text: Compared the screening hit against identity documents held. Also obtained the public
+    register extract in relation to the minority shareholder. No transaction review undertaken
+    at this stage.
+record:
+  author_role: analyst
+  note_date: '2026-06-15'
+scenario_ref: AML-S04
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

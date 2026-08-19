@@ -1,0 +1,66 @@
+fixture_id: TXN-2001
+fixture_type: transaction_set
+record:
+  account_ref: CUST-2001
+  currency: USD
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 9420
+  channel: branch cash deposit
+  counterparty_name: null
+  direction: inbound
+  narrative: till receipts
+  txn_id: TXN-2001-D01
+  value_date: '2026-05-04'
+- amount: 8880
+  channel: branch cash deposit
+  counterparty_name: null
+  direction: inbound
+  narrative: till receipts
+  txn_id: TXN-2001-D02
+  value_date: '2026-05-06'
+- amount: 9610
+  channel: branch cash deposit
+  counterparty_name: null
+  direction: inbound
+  narrative: till receipts
+  txn_id: TXN-2001-D03
+  value_date: '2026-05-11'
+- amount: 9075
+  channel: branch cash deposit
+  counterparty_name: null
+  direction: inbound
+  narrative: till receipts
+  txn_id: TXN-2001-D04
+  value_date: '2026-05-13'
+- amount: 8940
+  channel: branch cash deposit
+  counterparty_name: null
+  direction: inbound
+  narrative: till receipts
+  txn_id: TXN-2001-D05
+  value_date: '2026-05-18'
+- amount: 9330
+  channel: branch cash deposit
+  counterparty_name: null
+  direction: inbound
+  narrative: till receipts
+  txn_id: TXN-2001-D06
+  value_date: '2026-05-20'
+- amount: 9180
+  channel: branch cash deposit
+  counterparty_name: null
+  direction: inbound
+  narrative: till receipts
+  txn_id: TXN-2001-D07
+  value_date: '2026-05-26'
+- amount: 8790
+  channel: branch cash deposit
+  counterparty_name: null
+  direction: inbound
+  narrative: till receipts
+  txn_id: TXN-2001-D08
+  value_date: '2026-05-28'

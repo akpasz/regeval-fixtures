@@ -1,0 +1,16 @@
+fixture_id: CN-2002
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-2002-P01
+  text: No response yet to the request of 5 June. Chased by telephone. Customer undertook
+    to provide the point of sale reports.
+record:
+  author_role: analyst
+  note_date: '2026-06-12'
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

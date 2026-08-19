@@ -1,0 +1,18 @@
+fixture_id: ALT-2001
+fixture_type: alert
+passages:
+- locator:
+    index: 1
+    type: narrative
+  passage_id: ALT-2001-P01
+  text: Branch staff referred the relationship for review. Eight cash deposits in May, each
+    below the 10,000 reporting threshold, total 73,225. Referral notes the pattern rather
+    than any specific concern.
+record:
+  alert_date: '2026-06-01'
+  rule_ref: branch referral
+  subject_ref: CUST-2001
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

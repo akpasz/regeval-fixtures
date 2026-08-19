@@ -1,0 +1,21 @@
+fixture_id: POL-3001
+fixture_type: policy_context
+passages:
+- locator:
+    index: 1
+    type: clause
+  passage_id: POL-3001-P01
+  text: Absence of adverse information is not evidence of legitimate purpose. Escalation is
+    not avoided by a clean file where the activity itself is unexplained.
+record:
+  decision_rules:
+  - escalate where activity is unexplained and the customer is unresponsive after two requests
+  - do not infer a legitimate purpose from the absence of adverse information
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - a customer that does not respond to two documented information requests is treated as
+    unresponsive
+scenario_ref: AML-S03
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

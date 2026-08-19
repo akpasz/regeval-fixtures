@@ -1,0 +1,17 @@
+fixture_id: CN-3001
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-3001-P01
+  text: 'Information request issued to the customer 15 May: nature of the underlying trade,
+    identity of the payers, purpose of the outbound payment, supporting contracts or invoices.
+    No response received. Second request issued 21 May.'
+record:
+  author_role: analyst
+  note_date: '2026-05-21'
+scenario_ref: AML-S03
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

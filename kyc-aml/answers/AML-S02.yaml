@@ -1,0 +1,84 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: TXN-2001
+    passage_id: TXN-2001-D01
+  id: AML-S02-C01
+  proposition: Eight cash deposits in May 2026 were each below the 10,000 reporting threshold.
+  rationale: Observable from the transaction set.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-2002
+    passage_id: DOC-2002-P01
+  id: AML-S02-C02
+  proposition: The deposit amounts were selected to avoid the reporting threshold.
+  rationale: Each amount equals the cash component of takings for the preceding period. The
+    amounts are determined by trade, not by the threshold. A system anchoring on the early
+    analyst note (CN-2001) without weighing the later reports will get this wrong.
+  status: contradicted
+- evidence:
+  - evidence_type: analyst_observation
+    fixture_id: CN-2001
+    passage_id: CN-2001-P01
+  - evidence_type: documented
+    fixture_id: DOC-2002
+    passage_id: DOC-2002-P01
+  - evidence_type: analyst_observation
+    fixture_id: CN-2003
+    passage_id: CN-2003-P01
+  id: AML-S02-C03
+  proposition: The analyst's initial assessment of deliberate threshold avoidance was superseded
+    by later evidence.
+  rationale: 'Temporal update. The later evidence changes the conclusion for an identifiable
+    reason: it supplies the takings figures that were missing on 5 June. Recency alone is
+    not the reason; the reports are the reason.'
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-2002
+    passage_id: DOC-2002-P02
+  id: AML-S02-C04
+  proposition: Deposit timing follows the operator's collection schedule.
+  rationale: Stated in the point of sale summaries.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-2002
+    passage_id: DOC-2002-P01
+  id: AML-S02-C05
+  proposition: The card component of takings was deposited in cash.
+  rationale: The summaries state card settles separately. A system conflating total takings
+    with cash deposits will misreconcile.
+  status: contradicted
+- evidence: []
+  id: AML-S02-C06
+  proposition: The business has additional cash income from sources other than the two restaurant
+    sites.
+  rationale: Nothing in the corpus addresses other income. Asserting or excluding it is fabrication.
+  status: not_provided
+- evidence: []
+  id: AML-S02-C07
+  proposition: The liquor licence and premises lease bear on the deposit pattern.
+  rationale: Non-load-bearing context under GR-11. Present because such documents sit on a
+    real file, relevant to no evaluation target.
+  status: not_provided
+evaluation_target:
+  basis: C02 contradicted by DOC-2002; deposit timing consistent with the collection schedule;
+    POL-2001 directs closure where amounts reconcile to evidenced takings.
+  disposition_expected: 'close: the deposit pattern is explained by independently evidenced
+    takings'
+  epistemic_scope: A reviewer who weights the below-threshold pattern more heavily than the
+    reconciliation could defensibly keep the case open pending a second month of records.
+    The expected disposition is the evaluation target under this scenario's declared policy
+    context.
+not_provided_inventory:
+- any cash income source other than the two restaurant sites
+- any takings record for months other than May 2026
+- the identity of anyone other than the owner with access to the account
+- any prior referral or alert on this relationship
+- any adverse information about the owner or the business
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

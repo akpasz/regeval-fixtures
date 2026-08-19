@@ -1,10 +1,19 @@
 names:
+- Darvath Logistics Ltd
+- Darvunt Ltd
+- Farnombra Ltd
 - Pyxadri Trust
+- Pyxuva Ltd
 - Sornuva Components Ltd
+- Tosketh Ltd
+- Trelaro Ltd
 - Trelilva Holding S.A.
 - Trelilva Holdings Ltd
+- Trelilva Hospitality Ltd
 - Ulpield Quonath
+- Ulpiunt Trading Partners
 - Waltast Brexyrel
+- Waltilva Ltd
 synthetic:
   corpus_version: 0.1.0-dev
   marker: REGEVAL_SYNTHETIC

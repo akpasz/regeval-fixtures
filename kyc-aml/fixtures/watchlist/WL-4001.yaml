@@ -1,0 +1,15 @@
+fixture_id: WL-4001
+fixture_type: watchlist
+passages:
+- locator:
+    index: 1
+    type: entry
+  passage_id: WL-4001-P01
+  text: 'Entry SW-0219. Name: Trelast Kelbaro. Date of birth 1961-03-02. Nationality recorded
+    as foreign. Basis: designated under a synthetic sanctions programme 2019.'
+record:
+  list_name: synthetic internal watchlist
+scenario_ref: AML-S04
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

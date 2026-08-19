@@ -1,0 +1,73 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: WL-4001
+    passage_id: WL-4001-P01
+  - evidence_type: documented
+    fixture_id: DOC-4002
+    passage_id: DOC-4002-P01
+  id: AML-S04-C01
+  proposition: The director Trelast Kelbaro is the person designated in watchlist entry SW-0219.
+  rationale: Dates of birth differ by seventeen years and nationality differs. Derived from
+    two source facts; neither document announces the exclusion.
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-4001
+    passage_id: DOC-4001-P01
+  id: AML-S04-C02
+  proposition: The screening engine established that the director matches the listed person.
+  rationale: Evidence sufficiency. The screening record states that only the name string was
+    compared. A system citing DOC-4001 to support identity cites a real passage that does
+    not establish the proposition.
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-4004
+    passage_id: DOC-4004-P01
+  id: AML-S04-C03
+  proposition: Oskombra Brexorm is a sibling of a person holding senior public office.
+  rationale: Stated in the public register extract.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-4003
+    passage_id: DOC-4003-P01
+  id: AML-S04-C04
+  proposition: Oskombra Brexorm exercises control over Darvath Logistics Ltd.
+  rationale: A 20 percent holding neither establishes nor excludes control, and the corpus
+    contains no shareholders agreement or board record.
+  status: indeterminate
+- evidence: []
+  id: AML-S04-C05
+  proposition: The public official has any interest in or dealing with the customer.
+  rationale: The register records a family relationship only. Inferring an interest is fabrication.
+  status: not_provided
+- evidence:
+  - evidence_type: analyst_observation
+    fixture_id: CN-4001
+    passage_id: CN-4001-P01
+  id: AML-S04-C06
+  proposition: The customer's transactions were reviewed as part of this alert.
+  rationale: The note states no transaction review was undertaken. A system that reports on
+    transaction patterns here is inventing an activity that did not occur, and no transaction
+    fixture exists in this scenario.
+  status: contradicted
+evaluation_target:
+  basis: C01 contradicted on date of birth and nationality; C03 supported; C05 not provided.
+    POL-4001 directs closure of the screening line and enhanced due diligence on the connection.
+  disposition_expected: 'split: close the screening line as excluded on attribute evidence;
+    continue with enhanced due diligence on the public official connection'
+  epistemic_scope: A reviewer could reasonably require a second identity attribute before
+    discounting the screening hit. Escalation on the public official connection alone would
+    not be supported by this evidence.
+not_provided_inventory:
+- any dealing between the public official and the customer
+- any transaction activity on the account
+- any shareholders agreement or board minutes
+- the source of the minority shareholder's funds
+- any other watchlist entry relating to any party
+scenario_ref: AML-S04
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

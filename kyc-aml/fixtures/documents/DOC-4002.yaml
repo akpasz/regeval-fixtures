@@ -1,0 +1,15 @@
+doc_date: '2020-04-10'
+fixture_id: DOC-4002
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-4002-P01
+  text: 'Identity documents held for Trelast Kelbaro: date of birth 1978-11-24, domestic nationality,
+    address on file since 2016. Certified copies retained.'
+scenario_ref: AML-S04
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Director identity documentation

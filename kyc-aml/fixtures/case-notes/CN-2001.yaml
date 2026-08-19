@@ -1,0 +1,17 @@
+fixture_id: CN-2001
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-2001-P01
+  text: Reviewed May deposit pattern. Eight deposits, all below the reporting threshold, no
+    single deposit above 9,610. On the face of the account data the pattern is consistent
+    with deliberate avoidance of the threshold. Takings records requested from the customer.
+record:
+  author_role: analyst
+  note_date: '2026-06-05'
+scenario_ref: AML-S02
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

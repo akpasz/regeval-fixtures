@@ -1,0 +1,15 @@
+doc_date: '2026-06-11'
+fixture_id: DOC-4004
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-4004-P01
+  text: Vrenorm Quonixel holds a senior public office. The register records Oskombra Brexorm
+    as a sibling.
+scenario_ref: AML-S04
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Public register of officials, extract
