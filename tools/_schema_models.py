@@ -165,6 +165,11 @@ def canonical_schema(model) -> dict:
             out = {k: norm(v) for k, v in node.items()}
             if "const" in out and out.get("enum") == [out["const"]]:
                 out.pop("enum")
+            # Generic dict fields: some pydantic versions emit
+            # additionalProperties: true, others omit it. Both mean the same
+            # thing, so drop the redundant marker (DD-021 second class).
+            if out.get("type") == "object" and out.get("additionalProperties") is True:
+                out.pop("additionalProperties")
             return out
         if isinstance(node, list):
             return [norm(v) for v in node]

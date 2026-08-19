@@ -337,25 +337,29 @@ def build(g) -> dict:
         "case_ref": "VC-01", "synthetic": dict(M),
         "known_good_answer": (
             f"The payee {payee_sa} and the shareholder {hold_ltd} are distinct legal "
-            f"entities. The corporate registry extract [DOC-1005-P02] records separate "
-            f"registrations, S-40917 in {jur_b} and H-88231 in {jur_a}, and no "
-            "shareholding relationship between them. The customer's statement that the "
-            "payee is an unrelated supplier remains unverified, so unrelatedness beyond "
-            "the registry data is not established."),
+            f"entities. The registry extract [DOC-1005-P01] records the payee as "
+            f"S-40917 in {jur_b}, while the share register [DOC-1002-P01] records "
+            f"the shareholder as H-88231 in {jur_a}. The payee's recorded "
+            f"shareholders [DOC-1005-P02] do not include {hold_ltd}. The customer's "
+            "statement that the payee is an unrelated supplier remains unverified, "
+            "so unrelatedness beyond these records is not established."),
         "corrupted_answer": (
             f"The payee {payee_sa} and the shareholder {hold_ltd} are distinct legal "
-            f"entities. The corporate registry extract [DOC-1002-P01] records separate "
-            f"registrations, S-40917 in {jur_b} and H-88231 in {jur_a}, and no "
-            "shareholding relationship between them. The customer's statement that the "
-            "payee is an unrelated supplier remains unverified, so unrelatedness beyond "
-            "the registry data is not established."),
+            f"entities. The registry extract [DOC-1005-P01] records the payee as "
+            f"S-40917 in {jur_b}, while the share register [DOC-1002-P01] records "
+            f"the shareholder as H-88231 in {jur_a}. The payee's recorded "
+            f"shareholders [DOC-1004-P01] do not include {hold_ltd}. The customer's "
+            "statement that the payee is an unrelated supplier remains unverified, "
+            "so unrelatedness beyond these records is not established."),
         "mutation_target": "evidence citation passage",
         "defect_description": (
-            "Exactly one semantic defect: the citation is swapped from DOC-1005-P02 (the "
-            "registry extract that actually establishes distinctness) to DOC-1002-P01 "
-            "(the holding company share register, which says nothing about the payee). "
-            "The conclusion prose is unchanged and the answer remains plausible in "
-            "isolation; only passage-level citation checking detects it.")}
+            "Exactly one semantic defect: the citation supporting the shareholder "
+            "list is swapped from DOC-1005-P02, the registry passage that records "
+            "it, to DOC-1004-P01, the invoice bundle, which says nothing about "
+            "shareholders. Every other word is unchanged and the conclusion remains "
+            "correct, so only passage level citation checking detects it. The "
+            "known good answer states only what the cited passages record and "
+            "leaves the distinctness conclusion to be derived, per GR-08.")}
 
     files["scenarios/AML-S01.yaml"] = {
         "scenario_id": SCENARIO_ID, "schema_version": "1", "scenario_version": "1",

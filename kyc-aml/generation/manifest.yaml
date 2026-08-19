@@ -36,6 +36,9 @@ files:
 - bytes: 909
   path: kyc-aml/coverage/coverage-matrix.yaml
   sha256: a252262a098942c07e3e2aad45afc5488a6b7a9421299f93907993b55aac4a01
+- bytes: 2587
+  path: kyc-aml/coverage/diversity_report.yaml
+  sha256: ad6096c29df69fb754950686f4f74b775ad2b45f198a059151ea4c253701fa7b
 - bytes: 747
   path: kyc-aml/fixtures/alerts/ALT-1001.yaml
   sha256: 25ced3cdd824d87ec6b557d2546eec9fc94d5e07f7772c02418c412b9a3744bf
@@ -249,15 +252,18 @@ files:
 - bytes: 526
   path: kyc-aml/scenarios/AML-S07.yaml
   sha256: bbaaf00023f1a504de5e69e2d32c94eefac8c3c3e9cc8750023f8b791016c770
+- bytes: 553
+  path: kyc-aml/validation-cases/README.md
+  sha256: ad4725aada0b0564557ba3d937d8bce737a74c2bbcfda968c67543bc86b24a01
 - bytes: 8112
   path: kyc-aml/validation-cases/cases-b2.yaml
   sha256: 0e100c463cb7b5df60662f1423a5fd67c199a0143e759b910ad5969c3a262085
 - bytes: 2184
   path: kyc-aml/validation-cases/cases.yaml
   sha256: 4a7a2de7d9bb70ae243fccdf7263e4d4d5e545c8493baa1a5aee637379c5d0cf
-- bytes: 1398
+- bytes: 1675
   path: kyc-aml/validation-cases/corruptions/VC-01.yaml
-  sha256: d14fa0faa7574cb8329f24695c6638939c07c8ecca16148e9e48ca86c9905abc
+  sha256: 76ea7c73473ec96dcbdc46deb9d2646d99cf3d7b375cbe506b7cc8a731c4fdd5
 - bytes: 850
   path: kyc-aml/validation-cases/corruptions/VC-02.yaml
   sha256: 22758ccbe5f181c9732b665810333f00f943f03543b07185acd122521135232c

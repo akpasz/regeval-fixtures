@@ -1,0 +1,94 @@
+findings:
+- topology ('accdpt', True, False) repeated in 4 scenarios
+note: Observational. Structural variation is reported, not proven; at this corpus size only
+  repetition is detectable.
+scenarios: 7
+signatures:
+  AML-S01:
+    case_note_count: 1
+    claim_count: 17
+    derived_claims: 7
+    disposition_shape: continue with enhanced due diligence
+    document_count: 6
+    evidence_type_variety: 4
+    fixture_types: accdptw
+    has_ownership_model: true
+    has_transactions: true
+    status_profile: contradicted2/indeterminate3/not_provided2/supported10
+    tier: 4
+  AML-S02:
+    case_note_count: 3
+    claim_count: 7
+    derived_claims: 0
+    disposition_shape: close
+    document_count: 3
+    evidence_type_variety: 2
+    fixture_types: accdpt
+    has_ownership_model: false
+    has_transactions: true
+    status_profile: contradicted2/not_provided2/supported3
+    tier: 2
+  AML-S03:
+    case_note_count: 2
+    claim_count: 6
+    derived_claims: 0
+    disposition_shape: escalate
+    document_count: 1
+    evidence_type_variety: 2
+    fixture_types: accdpt
+    has_ownership_model: false
+    has_transactions: true
+    status_profile: contradicted1/indeterminate1/not_provided2/supported2
+    tier: 3
+  AML-S04:
+    case_note_count: 1
+    claim_count: 6
+    derived_claims: 0
+    disposition_shape: split
+    document_count: 4
+    evidence_type_variety: 2
+    fixture_types: accdpw
+    has_ownership_model: false
+    has_transactions: false
+    status_profile: contradicted3/indeterminate1/not_provided1/supported1
+    tier: 5
+  AML-S05:
+    case_note_count: 2
+    claim_count: 6
+    derived_claims: 0
+    disposition_shape: close
+    document_count: 3
+    evidence_type_variety: 3
+    fixture_types: accdpt
+    has_ownership_model: false
+    has_transactions: true
+    status_profile: contradicted2/indeterminate1/not_provided1/supported2
+    tier: 3
+  AML-S06:
+    case_note_count: 2
+    claim_count: 7
+    derived_claims: 0
+    disposition_shape: escalate
+    document_count: 2
+    evidence_type_variety: 2
+    fixture_types: accdpt
+    has_ownership_model: false
+    has_transactions: true
+    status_profile: contradicted2/not_provided2/supported3
+    tier: 2
+  AML-S07:
+    case_note_count: 1
+    claim_count: 7
+    derived_claims: 3
+    disposition_shape: close the periodic review
+    document_count: 4
+    evidence_type_variety: 2
+    fixture_types: accdp
+    has_ownership_model: false
+    has_transactions: false
+    status_profile: contradicted4/not_provided1/supported2
+    tier: 4
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+verdict: REVIEW
