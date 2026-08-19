@@ -113,7 +113,12 @@ def main() -> None:
     write(ROOT / "generation" / "name-registry.yaml",
           {"synthetic": {"marker": MARKER, "corpus_version": CORPUS_VERSION},
            "names": sorted(collect_names(files))})
-    print(f"generated AML-S01: {len(files)} artifacts")
+    sys.path.insert(0, str(ROOT.parent / "tools" / "reports"))
+    import coverage as _cov
+    import anti_shortcut as _as
+    _cov.run()
+    _as.run()
+    print(f"generated {len(files)} artifacts, coverage and audit refreshed")
 
 
 if __name__ == "__main__":

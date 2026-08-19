@@ -21,12 +21,12 @@ files:
 - bytes: 3209
   path: kyc-aml/answers/AML-S04.yaml
   sha256: 3f301af84e71a5e7f757bd1e5320dc85cb0d8c732cdb83dce5529ae3c1c748f1
-- bytes: 1041
+- bytes: 1462
   path: kyc-aml/coverage/anti_shortcut_report.yaml
-  sha256: 35d7a204e7b80a5d4e677623016a8ff6cad376fc105150285a0dbfc3a3a87e4e
-- bytes: 543
+  sha256: 4ef9cafc262d0ca7aba6f3c18bd45d44b0eea8d4f5acca8e84132e54074c41c6
+- bytes: 720
   path: kyc-aml/coverage/coverage-matrix.yaml
-  sha256: c34ab4883c6406d7b7df7b8baca3f50b03e90889e861a685d6b485aa62d2559e
+  sha256: 354e46ea5bad40430ce62eea9c6f8554e4279ab586418cf84f1a107b2fd941d8
 - bytes: 747
   path: kyc-aml/fixtures/alerts/ALT-1001.yaml
   sha256: 25ced3cdd824d87ec6b557d2546eec9fc94d5e07f7772c02418c412b9a3744bf

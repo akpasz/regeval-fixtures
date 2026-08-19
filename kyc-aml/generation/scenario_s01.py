@@ -372,15 +372,4 @@ def build(g) -> dict:
             "decision_rules": ["see POL-1001"]},
         "synthetic": dict(M)}
 
-    files["coverage/coverage-matrix.yaml"] = {
-        "synthetic": dict(M),
-        "dimensions": {
-            "citation": ["AML-S01"], "absence": ["AML-S01"], "ownership": ["AML-S01"],
-            "qualifier": ["AML-S01"], "numerical": ["AML-S01"],
-            "entity_resolution": ["AML-S01"], "evidence_sufficiency": ["AML-S01"],
-            "claim_decomposition": ["AML-S01"], "temporal_update": [], "negative_control": [],
-            "disposition": ["AML-S01"]},
-        "note": ("Single scenario at Stage 2; every populated dimension is "
-                 "single-point-of-proof by construction and the coverage report "
-                 "warns accordingly until Stage 3 lands.")}
     return files

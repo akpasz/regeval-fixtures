@@ -94,6 +94,23 @@ def main() -> int:
                  if p.name != "validate_fixtures.py" and banned.search(p.read_text())]
     ok &= gate("no scoring/harness machinery", not machinery, ", ".join(machinery))
 
+    # pipeline consistency: derived reports must match their sources, so a
+    # stale artifact cannot survive a build (found by review of batch 1)
+    cm = ROOT / "kyc-aml" / "coverage" / "coverage-matrix.yaml"
+    if cm.exists():
+        recorded = yaml.safe_load(cm.read_text()).get("dimensions", {})
+        actual: dict = {}
+        for s in sorted((ROOT / "kyc-aml" / "scenarios").glob("*.yaml")):
+            sc = yaml.safe_load(s.read_text())
+            for lab in sc["coverage_labels"]:
+                actual.setdefault(lab, []).append(sc["scenario_id"])
+        mismatch = {k: v for k, v in actual.items() if sorted(recorded.get(k, [])) != sorted(v)}
+        ok &= gate("coverage artifact matches scenario records", not mismatch,
+                   ", ".join(mismatch))
+        asr = ROOT / "kyc-aml" / "coverage" / "anti_shortcut_report.yaml"
+        stale = "pre-Stage 3" in asr.read_text() if asr.exists() else False
+        ok &= gate("anti-shortcut report is not stale", not stale)
+
     # stage-gated: scenario, answer-key, case, corruption gates
     ak_paths = sorted((ROOT / "kyc-aml" / "answers").glob("AML-S*.yaml"))
     if not ak_paths:
