@@ -102,3 +102,11 @@ after the models changed: the generation step had been run in the build
 environment but the regenerated artifact was not carried into the delivered
 archive. The validator now compares every published schema against the source
 model on every run, so drift fails a gate rather than a test alone.
+
+## DD-020 Design authority versus domain authority
+Review proposals split into benchmark-construction rules (builder authority,
+adopted: GR-05, GR-08, GR-10, GR-11, GR-12, GR-13) and claims about real
+banking practice (domain-author authority, recorded unratified). The split
+exists because an LLM review cannot ratify a domain claim, however confidently
+argued, and adjudication by the domain author is weaker provenance than
+origination. GENERATION.md carries authority per rule.

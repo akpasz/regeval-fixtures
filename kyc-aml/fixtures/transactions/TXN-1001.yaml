@@ -44,3 +44,31 @@ transactions:
   direction: outbound
   txn_id: TXN-1001-T06
   value_date: '2026-06-12'
+- amount: 3420
+  channel: domestic ACH
+  counterparty_name: null
+  direction: outbound
+  narrative: utilities
+  txn_id: TXN-1001-N01
+  value_date: '2026-04-02'
+- amount: 18750
+  channel: domestic ACH
+  counterparty_name: null
+  direction: outbound
+  narrative: payroll run
+  txn_id: TXN-1001-N02
+  value_date: '2026-04-30'
+- amount: 2280
+  channel: card settlement
+  counterparty_name: null
+  direction: outbound
+  narrative: fuel and tolls
+  txn_id: TXN-1001-N03
+  value_date: '2026-05-11'
+- amount: 41900
+  channel: domestic wire
+  counterparty_name: null
+  direction: outbound
+  narrative: warehouse lease
+  txn_id: TXN-1001-N04
+  value_date: '2026-06-03'

@@ -9,9 +9,9 @@ files:
 - bytes: 747
   path: environment.lock.yaml
   sha256: 2ade3bfd2d94c5b6c27b850604fb3f0c0a0c037e46878d2ede6f76d935819f2a
-- bytes: 10002
+- bytes: 10848
   path: kyc-aml/answers/answer-key.yaml
-  sha256: a2821fe2216ffbe81308c318b5639e427c067b9576048162d386f70f4c6c6226
+  sha256: a09693ea482fc177d3edc17aeb93c4f7d93cbc0c5da6986829c7d87a8e43ea12
 - bytes: 1041
   path: kyc-aml/coverage/anti_shortcut_report.yaml
   sha256: 9d62c5541b13fb02251e3e5bc6bcaa3a153e5dda5a77c291895527c25c8ad7ca
@@ -39,15 +39,18 @@ files:
 - bytes: 696
   path: kyc-aml/fixtures/documents/DOC-1004.yaml
   sha256: eb2ad9cfb298cdc9266266c455bf8169d8fae0345374859100b1cb47e26d506c
-- bytes: 763
+- bytes: 975
   path: kyc-aml/fixtures/documents/DOC-1005.yaml
-  sha256: 2875a681ea61e945feb51989c265b0dfe0756248c7bb71e00036ff06c1f3ba2c
+  sha256: 62eaf340e6eb734561fa6b066a9ab9b38db39a3454bf7d2168a6bcdc408a1120
+- bytes: 484
+  path: kyc-aml/fixtures/documents/DOC-1006.yaml
+  sha256: 849314227cbe5215bbf4a0c4a35b82e4e17f398bf6ba04866084992aeef70ad6
 - bytes: 750
   path: kyc-aml/fixtures/policy/POL-1001.yaml
   sha256: 3312292b6f68db33faeb946826ffb937ef27e77aa239c338bbd103a546969799
-- bytes: 1172
+- bytes: 1831
   path: kyc-aml/fixtures/transactions/TXN-1001.yaml
-  sha256: 96191d58bf18d50eacd17603d0e03bee56dacb400482f7e0e69dec15661fe991
+  sha256: 5400e85d2a2772ea418396d0e9a06e71d8a74b97f60eecabfa7ef607608002c9
 - bytes: 197
   path: kyc-aml/fixtures/watchlist/WL-1001.yaml
   sha256: fb503eab9cd8c129cfa15b8be3e010b4c599afb55786158c7e06b74de40dcbcf
@@ -57,9 +60,9 @@ files:
 - bytes: 605
   path: kyc-aml/scenarios/AML-S01.yaml
   sha256: 347ef503e9a9c151c52e98ee26268c269947ac86eca93bce4983415b5b90867a
-- bytes: 2094
+- bytes: 2184
   path: kyc-aml/validation-cases/cases.yaml
-  sha256: 43106e78b0b89c2a6b1a0b1e78ec3d56a20d1c5879321e51d4bf8c26ea68d142
+  sha256: 4a7a2de7d9bb70ae243fccdf7263e4d4d5e545c8493baa1a5aee637379c5d0cf
 - bytes: 1394
   path: kyc-aml/validation-cases/corruptions/VC-01.yaml
   sha256: bb5b090e200d68c788af0ad626293bfbc0fbcd5ef2f04dba878474311773f353

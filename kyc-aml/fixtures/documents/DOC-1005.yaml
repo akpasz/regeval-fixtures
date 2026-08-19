@@ -12,9 +12,14 @@ passages:
     index: 2
     type: paragraph
   passage_id: DOC-1005-P02
-  text: The registry records no shareholding relationship between Trelilva Holding S.A. (Jurvast,
-    S-40917) and Trelilva Holdings Ltd (Pyxorin, H-88231). The entities hold distinct registrations
-    in distinct jurisdictions.
+  text: 'Recorded shareholders of Trelilva Holding S.A.: Zilmeth Trading Ltd, 70 percent;
+    Kelbast Vrenunt, 30 percent. Directors: Darvath Toskyne. Registered office as stated above.'
+- locator:
+    index: 3
+    type: paragraph
+  passage_id: DOC-1005-P03
+  text: Extract fee USD 45.00 paid by requesting institution. Certified copy issued under
+    registry seal 2026-06-20. This extract reflects records current as at the date of issue.
 scenario_ref: AML-S01
 synthetic:
   corpus_version: 0.1.0-dev

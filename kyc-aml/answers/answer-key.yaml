@@ -70,12 +70,20 @@ claims:
 - evidence:
   - evidence_type: documented
     fixture_id: DOC-1005
+    passage_id: DOC-1005-P01
+  - evidence_type: documented
+    fixture_id: DOC-1002
+    passage_id: DOC-1002-P01
+  - evidence_type: derived
+    fixture_id: DOC-1005
     passage_id: DOC-1005-P02
   id: AML-S01-C08
   proposition: The wire payee Trelilva Holding S.A. is the same legal entity as the shareholder
     Trelilva Holdings Ltd.
-  rationale: Distinct registrations, numbers, and jurisdictions on the corporate extract;
-    name similarity is the trap.
+  rationale: 'No document states the entities are unrelated. The conclusion is derived from
+    source facts: different registration numbers (S-40917 versus H-88231), different jurisdictions,
+    and shareholder lists that share no member. A system that requires the negative to be
+    stated will not reach this.'
   status: contradicted
 - evidence:
   - evidence_type: documented
@@ -110,10 +118,10 @@ claims:
     fixture_id: DOC-1005
     passage_id: DOC-1005-P02
   id: AML-S01-C12
-  proposition: The corporate registry records no shareholding relationship between Trelilva
-    Holding S.A. and Trelilva Holdings Ltd.
-  rationale: 'Stated directly in the registry extract. Atomic: a fact about what the registry
-    records, not about what relationships exist.'
+  proposition: The recorded shareholders of Trelilva Holding S.A. are Zilmeth Trading Ltd
+    and Kelbast Vrenunt, neither of which is Trelilva Holdings Ltd.
+  rationale: Source fact from the registry extract. The absence of the holding company from
+    the list is observable; the inference drawn from that absence is C08.
   status: supported
 - evidence:
   - evidence_type: documented
@@ -148,6 +156,16 @@ claims:
     and not received. Dropping the unverified qualifier is the qualifier-loss failure this
     claim tests.
   status: indeterminate
+- evidence:
+  - evidence_type: documented
+    fixture_id: TXN-1001
+    passage_id: TXN-1001-N02
+  id: AML-S01-C14
+  proposition: The transaction set contains routine domestic activity (payroll, utilities,
+    lease, card settlement) unrelated to the alerted wires.
+  rationale: Non-load-bearing evidence. No evaluation target depends on it; a system that
+    treats every provided record as answer-bearing will over-read it.
+  status: supported
 - evidence:
   - evidence_type: derived
     fixture_id: TXN-1001

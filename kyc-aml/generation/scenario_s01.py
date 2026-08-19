@@ -38,11 +38,20 @@ def build(g) -> dict:
               f"{g.distinct_name('person','S01-P2',taken)}")
     jur_a = g.distinct_name("jurisdiction", "S01-JA", taken)
     jur_b = g.distinct_name("jurisdiction", "S01-JB", taken)
+    third_1 = g.distinct_name("company", "S01-T1", taken) + " Trading Ltd"
+    third_2 = (f"{g.distinct_name('given','S01-T2',taken)} "
+               f"{g.distinct_name('person','S01-T2',taken)}")
+    third_3 = (f"{g.distinct_name('given','S01-T3',taken)} "
+               f"{g.distinct_name('person','S01-T3',taken)}")
 
     def fx(fid, ftype, extra):
         return {"fixture_id": fid, "fixture_type": ftype,
                 "scenario_ref": SCENARIO_ID, "synthetic": dict(M), **extra}
 
+    noise = [("N01", "2026-04-02", 3420, "domestic ACH", "utilities"),
+             ("N02", "2026-04-30", 18750, "domestic ACH", "payroll run"),
+             ("N03", "2026-05-11", 2280, "card settlement", "fuel and tolls"),
+             ("N04", "2026-06-03", 41900, "domestic wire", "warehouse lease")]
     wires = [("T01", "2026-04-08", 184500), ("T02", "2026-04-21", 121300),
              ("T03", "2026-05-02", 96700), ("T04", "2026-05-15", 143800),
              ("T05", "2026-05-29", 97700), ("T06", "2026-06-12", 98000)]
@@ -58,7 +67,11 @@ def build(g) -> dict:
         "transactions": [{"txn_id": f"TXN-1001-{t}", "value_date": d,
                           "direction": "outbound", "amount": a,
                           "counterparty_name": payee_sa,
-                          "channel": "international wire"} for t, d, a in wires]})
+                          "channel": "international wire"} for t, d, a in wires]
+                        + [{"txn_id": f"TXN-1001-{n}", "value_date": d,
+                            "direction": "outbound", "amount": a,
+                            "counterparty_name": None, "channel": ch,
+                            "narrative": desc} for n, d, a, ch, desc in noise]})
 
     files["fixtures/alerts/ALT-1001.yaml"] = fx("ALT-1001", "alert", {
         "record": {"alert_date": "2026-06-14", "rule_ref": "TM-114 related-party outflow",
@@ -118,10 +131,24 @@ def build(g) -> dict:
                       f"S-40917, incorporated 2016. Principal activity: distribution "
                       "of industrial components.")},
             {"passage_id": "DOC-1005-P02", "locator": {"type": "paragraph", "index": 2},
-             "text": (f"The registry records no shareholding relationship between "
-                      f"{payee_sa} ({jur_b}, S-40917) and {hold_ltd} ({jur_a}, "
-                      "H-88231). The entities hold distinct registrations in "
-                      "distinct jurisdictions.")}]})
+             "text": (f"Recorded shareholders of {payee_sa}: {third_1}, 70 percent; "
+                      f"{third_2}, 30 percent. Directors: {third_3}. Registered "
+                      "office as stated above.")},
+            {"passage_id": "DOC-1005-P03", "locator": {"type": "paragraph", "index": 3},
+             "text": ("Extract fee USD 45.00 paid by requesting institution. "
+                      "Certified copy issued under registry seal 2026-06-20. "
+                      "This extract reflects records current as at the date of "
+                      "issue.")}]})
+
+    # GR-11: plausible evidence that no claim depends on
+    files["fixtures/documents/DOC-1006.yaml"] = fx("DOC-1006", "document", {
+        "title": f"Insurance certificate, {cust_co} premises",
+        "doc_date": "2026-01-15",
+        "passages": [
+            {"passage_id": "DOC-1006-P01", "locator": {"type": "paragraph", "index": 1},
+             "text": ("Commercial property and general liability cover renewed for "
+                      "the period 1 February 2026 to 31 January 2027. Sum insured "
+                      "USD 2,400,000. Held on file for KYC refresh purposes.")}]})
 
     files["fixtures/case-notes/CN-1001.yaml"] = fx("CN-1001", "case_note", {
         "record": {"note_date": "2026-06-18", "author_role": "analyst"},
@@ -186,8 +213,10 @@ def build(g) -> dict:
       "status": "indeterminate", "evidence": [ev("DOC-1003", "DOC-1003-P01", "documented")],
       "rationale": "The trustee confirms the trust exists and declines to disclose settlor and beneficiaries; the evidence exists but does not resolve control in either direction."},
      {"id": "AML-S01-C08", "proposition": f"The wire payee {payee_sa} is the same legal entity as the shareholder {hold_ltd}.",
-      "status": "contradicted", "evidence": [ev("DOC-1005", "DOC-1005-P02", "documented")],
-      "rationale": "Distinct registrations, numbers, and jurisdictions on the corporate extract; name similarity is the trap."},
+      "status": "contradicted", "evidence": [ev("DOC-1005", "DOC-1005-P01", "documented"),
+                                             ev("DOC-1002", "DOC-1002-P01", "documented"),
+                                             ev("DOC-1005", "DOC-1005-P02", "derived")],
+      "rationale": "No document states the entities are unrelated. The conclusion is derived from source facts: different registration numbers (S-40917 versus H-88231), different jurisdictions, and shareholder lists that share no member. A system that requires the negative to be stated will not reach this."},
      {"id": "AML-S01-C09", "proposition": f"{payee_sa} is registered in {jur_a}.",
       "status": "contradicted", "evidence": [ev("DOC-1005", "DOC-1005-P01", "documented"),
                                              ev("ALT-1001", "ALT-1001-P02", "system_observation")],
@@ -198,9 +227,9 @@ def build(g) -> dict:
      {"id": "AML-S01-C11", "proposition": f"The customer stated that {payee_sa} is an unrelated parts supplier.",
       "status": "supported", "evidence": [ev("CN-1001", "CN-1001-P01", "stated_by_customer")],
       "rationale": "The statement itself is documented in the case note; its evidence type marks it as a customer assertion."},
-     {"id": "AML-S01-C12", "proposition": f"The corporate registry records no shareholding relationship between {payee_sa} and {hold_ltd}.",
+     {"id": "AML-S01-C12", "proposition": f"The recorded shareholders of {payee_sa} are {third_1} and {third_2}, neither of which is {hold_ltd}.",
       "status": "supported", "evidence": [ev("DOC-1005", "DOC-1005-P02", "documented")],
-      "rationale": "Stated directly in the registry extract. Atomic: a fact about what the registry records, not about what relationships exist."},
+      "rationale": "Source fact from the registry extract. The absence of the holding company from the list is observable; the inference drawn from that absence is C08."},
      {"id": "AML-S01-C12a", "proposition": f"{payee_sa} has no ownership or control relationship with {cust_co}.",
       "status": "indeterminate", "evidence": [ev("DOC-1005", "DOC-1005-P02", "documented")],
       "rationale": "The registry extract covers shareholding between the two named entities only. It does not exclude other ownership or control links, and no further ownership evidence for the payee is in the corpus."},
@@ -211,6 +240,9 @@ def build(g) -> dict:
       "status": "indeterminate", "evidence": [ev("CN-1001", "CN-1001-P01", "stated_by_customer"),
                                               ev("DOC-1004", "DOC-1004-P02", "documented")],
       "rationale": "Invoices support trade for five wires and the customer asserts an ordinary supplier relationship, but the assertion is unverified and supplier documentation was requested and not received. Dropping the unverified qualifier is the qualifier-loss failure this claim tests."},
+     {"id": "AML-S01-C14", "proposition": "The transaction set contains routine domestic activity (payroll, utilities, lease, card settlement) unrelated to the alerted wires.",
+      "status": "supported", "evidence": [ev("TXN-1001", "TXN-1001-N02", "documented")],
+      "rationale": "Non-load-bearing evidence. No evaluation target depends on it; a system that treats every provided record as answer-bearing will over-read it."},
      {"id": "AML-S01-C13", "proposition": "Outbound wires to the payee total USD 742,000 over the 90 day window.",
       "status": "supported", "evidence": [ev("TXN-1001", "TXN-1001-T01", "derived"),
                                           ev("TXN-1001", "TXN-1001-T06", "derived")],
@@ -275,11 +307,12 @@ def build(g) -> dict:
                 "target_claims": ["AML-S01-C08", "AML-S01-C12", "AML-S01-C12a", "AML-S01-C12c"],
                 "required_elements": [
                     "states that the payee and the shareholder are distinct legal entities",
-                    "cites DOC-1005-P02 (distinct registrations) as the deciding evidence",
+                    "derives distinctness from source facts: differing registration numbers, jurisdictions, and shareholder lists",
                     "preserves residual uncertainty about relationships beyond the registry data"],
                 "forbidden_elements": ["related party confirmed", "same entity",
                                         "payee is the shareholder",
-                                        "unrelated party confirmed"],
+                                        "unrelated party confirmed",
+                                        "the registry states no relationship"],
                 "allowed_variants": ["distinct legal entities", "not the same entity",
                                       "separate registrations",
                                       "no documented ownership link"],

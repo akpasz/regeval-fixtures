@@ -22,10 +22,12 @@ cases:
     - same entity
     - payee is the shareholder
     - unrelated party confirmed
+    - the registry states no relationship
     human_review_protocol: null
     required_elements:
     - states that the payee and the shareholder are distinct legal entities
-    - cites DOC-1005-P02 (distinct registrations) as the deciding evidence
+    - 'derives distinctness from source facts: differing registration numbers, jurisdictions,
+      and shareholder lists'
     - preserves residual uncertainty about relationships beyond the registry data
     target_claims:
     - AML-S01-C08
