@@ -1,0 +1,85 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-7001
+    passage_id: DOC-7001-P01
+  id: AML-S07-C01
+  proposition: The largest registered holding is the nominee holding of 18.2 percent.
+  rationale: Stated in the register extract.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-7002
+    passage_id: DOC-7002-P01
+  id: AML-S07-C02
+  proposition: The nominee's 18.2 percent is held for a single ultimate holder.
+  rationale: The declaration records 46 underlying holders, the largest at 1.9 percent.
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-7003
+    passage_id: DOC-7003-P01
+  id: AML-S07-C03
+  proposition: The two fund holdings aggregate to 21.2 percent for a single ultimate holder.
+  rationale: Aggregation requires a common ultimate holder or an agreement to act together.
+    The disclosure records neither. The arithmetic sum of 11.4 and 9.8 is available but the
+    aggregation is not.
+  status: contradicted
+- evidence:
+  - evidence_type: derived
+    fixture_id: DOC-7001
+    passage_id: DOC-7001-P01
+  - evidence_type: derived
+    fixture_id: DOC-7002
+    passage_id: DOC-7002-P01
+  - evidence_type: derived
+    fixture_id: DOC-7003
+    passage_id: DOC-7003-P01
+  id: AML-S07-C04
+  proposition: No ultimate holder reaches 25 percent of the issued capital.
+  rationale: 'Derived: the largest ultimate positions are 11.4 percent, 9.8 percent, 1.9 percent
+    through the nominee, and 2 percent among individual members. The calculation matters because
+    it determines whether a beneficial owner exists, and it is reached by aggregating correctly
+    rather than by summing registered lines.'
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-7003
+    passage_id: DOC-7003-P01
+  id: AML-S07-C05
+  proposition: The portfolio manager controls both funds' holdings.
+  rationale: He holds a position at one fund only.
+  status: contradicted
+- evidence: []
+  id: AML-S07-C06
+  proposition: The identities of the 214 individual members are recorded in the corpus.
+  rationale: The register gives the count and the ceiling, not the names.
+  status: not_provided
+- evidence:
+  - evidence_type: documented
+    fixture_id: POL-7001
+    passage_id: POL-7001-P01
+  id: AML-S07-C07
+  proposition: The dispersed ownership structure is itself a reason for concern.
+  rationale: The policy treats a completed assessment finding no beneficial owner as a complete
+    answer. Ownership analysis that must always find a hidden controller will misread this
+    scenario.
+  status: contradicted
+evaluation_target:
+  basis: C04 supported on correct aggregation; C02, C03 and C05 contradicted; POL-7001 directs
+    recording no beneficial owner and forbids treating dispersion as a risk indicator.
+  disposition_expected: 'close the periodic review: no beneficial owner identified at the
+    threshold, record updated accordingly'
+  epistemic_scope: A reviewer could reasonably seek the nominee's underlying holder list to
+    test the 1.9 percent ceiling. Escalating because no controller was found would not be
+    supported.
+not_provided_inventory:
+- the identities of the individual members
+- the identities of the nominee's underlying holders
+- any transaction activity on the relationship
+- any shareholders agreement or voting arrangement
+- the ownership of the two funds
+scenario_ref: AML-S07
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

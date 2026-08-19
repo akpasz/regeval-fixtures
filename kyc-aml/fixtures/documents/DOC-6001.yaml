@@ -1,0 +1,22 @@
+doc_date: '2026-06-26'
+fixture_id: DOC-6001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: table
+  passage_id: DOC-6001-P01
+  text: INV-4410 88,400 shipment SHP-9902; INV-4412 61,200 shipment SHP-9915; INV-4416 94,750
+    shipment SHP-9902; INV-4421 72,300 shipment SHP-9938; INV-4429 66,900 shipment SHP-9951;
+    INV-4437 79,500 shipment SHP-9967.
+- locator:
+    index: 2
+    type: paragraph
+  passage_id: DOC-6001-P02
+  text: Six invoices are held for the period. The file is the copy provided to the trade finance
+    unit at the time of each payment instruction.
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Invoice file, March to June 2026

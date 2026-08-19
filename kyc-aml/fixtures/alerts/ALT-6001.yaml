@@ -1,0 +1,17 @@
+fixture_id: ALT-6001
+fixture_type: alert
+passages:
+- locator:
+    index: 1
+    type: narrative
+  passage_id: ALT-6001-P01
+  text: Scenario TRD-03. Eight outbound trade payments to a single overseas supplier totalling
+    646,200 over 14 weeks. Volume within the profile recorded at onboarding.
+record:
+  alert_date: '2026-06-18'
+  rule_ref: TRD-03
+  subject_ref: CUST-6001
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

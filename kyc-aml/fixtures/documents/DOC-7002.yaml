@@ -1,0 +1,16 @@
+doc_date: '2026-05-30'
+fixture_id: DOC-7002
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-7002-P01
+  text: Kelbilva Nominees confirms it holds the registered 18.2 percent as bare nominee for
+    46 underlying beneficial holders, the largest of which holds 1.9 percent of the issued
+    capital. No underlying holder gives voting instructions collectively with another.
+scenario_ref: AML-S07
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Nominee holding declaration

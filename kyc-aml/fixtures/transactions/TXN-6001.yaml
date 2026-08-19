@@ -1,0 +1,66 @@
+fixture_id: TXN-6001
+fixture_type: transaction_set
+record:
+  account_ref: CUST-6001
+  currency: USD
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 88400
+  channel: international wire
+  counterparty_name: Darveld Mills
+  direction: outbound
+  narrative: trade settlement
+  txn_id: TXN-6001-P01
+  value_date: '2026-03-10'
+- amount: 61200
+  channel: international wire
+  counterparty_name: Darveld Mills
+  direction: outbound
+  narrative: trade settlement
+  txn_id: TXN-6001-P02
+  value_date: '2026-03-24'
+- amount: 94750
+  channel: international wire
+  counterparty_name: Darveld Mills
+  direction: outbound
+  narrative: trade settlement
+  txn_id: TXN-6001-P03
+  value_date: '2026-04-07'
+- amount: 72300
+  channel: international wire
+  counterparty_name: Darveld Mills
+  direction: outbound
+  narrative: trade settlement
+  txn_id: TXN-6001-P04
+  value_date: '2026-04-21'
+- amount: 88400
+  channel: international wire
+  counterparty_name: Darveld Mills
+  direction: outbound
+  narrative: trade settlement
+  txn_id: TXN-6001-P05
+  value_date: '2026-05-05'
+- amount: 66900
+  channel: international wire
+  counterparty_name: Darveld Mills
+  direction: outbound
+  narrative: trade settlement
+  txn_id: TXN-6001-P06
+  value_date: '2026-05-19'
+- amount: 79500
+  channel: international wire
+  counterparty_name: Darveld Mills
+  direction: outbound
+  narrative: trade settlement
+  txn_id: TXN-6001-P07
+  value_date: '2026-06-02'
+- amount: 94750
+  channel: international wire
+  counterparty_name: Darveld Mills
+  direction: outbound
+  narrative: trade settlement
+  txn_id: TXN-6001-P08
+  value_date: '2026-06-16'

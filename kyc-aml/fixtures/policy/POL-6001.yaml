@@ -1,0 +1,20 @@
+fixture_id: POL-6001
+fixture_type: policy_context
+passages:
+- locator:
+    index: 1
+    type: clause
+  passage_id: POL-6001-P01
+  text: Where payments exceed documented trade, escalation does not require a finding of intent.
+record:
+  decision_rules:
+  - escalate where payments exceed the documented underlying trade and the excess is not accounted
+    for
+  - a clerical explanation must be evidenced, not assumed
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - trade payments are expected to correspond to distinct underlying shipments
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

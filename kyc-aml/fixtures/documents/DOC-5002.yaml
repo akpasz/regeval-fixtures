@@ -1,0 +1,15 @@
+doc_date: '2026-05-14'
+fixture_id: DOC-5002
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-5002-P01
+  text: The board approved acceptance of the shareholder loan facility executed 11 May 2026
+    and authorised drawdown as required for the production release.
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Board minute

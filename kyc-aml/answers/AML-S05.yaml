@@ -1,0 +1,78 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-5001
+    passage_id: DOC-5001-P01
+  - evidence_type: documented
+    fixture_id: DOC-5002
+    passage_id: DOC-5002-P01
+  id: AML-S05-C01
+  proposition: The May and June 2026 transfers are drawdowns under an executed shareholder
+    loan facility.
+  rationale: The facility was executed 11 May and approved 14 May, both before the transfers
+    of 19 May and 9 June.
+  status: supported
+- evidence:
+  - evidence_type: stated_by_customer
+    fixture_id: CN-5001
+    passage_id: CN-5001-P01
+  id: AML-S05-C02
+  proposition: The customer stated that the 2025 transfers were shareholder loans.
+  rationale: The statement was made and is recorded. Its evidence type marks it as a customer
+    assertion.
+  status: supported
+- evidence:
+  - evidence_type: stated_by_customer
+    fixture_id: CN-5001
+    passage_id: CN-5001-P01
+  id: AML-S05-C03
+  proposition: The 2025 transfers were shareholder loans.
+  rationale: 'The only support is the customer''s own unverified statement, and the promised
+    documentation never arrived. The 2026 facility postdates those transfers and does not
+    cover them. Distinguishing this from C02 is the qualifier test: the statement was made
+    is a fact, what it asserts is not.'
+  status: indeterminate
+- evidence:
+  - evidence_type: analyst_observation
+    fixture_id: CN-5001
+    passage_id: CN-5001-P01
+  - evidence_type: documented
+    fixture_id: POL-5001
+    passage_id: POL-5001-P01
+  id: AML-S05-C04
+  proposition: The prior case closure established that the 2025 transfers were legitimate.
+  rationale: The closure note records that the explanation was not verified, and the policy
+    states that an unverified explanation does not become established by closure.
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-5001
+    passage_id: DOC-5001-P01
+  id: AML-S05-C05
+  proposition: The 2026 facility covers the 2025 transfers.
+  rationale: The agreement was executed in May 2026 and is not retrospective.
+  status: contradicted
+- evidence: []
+  id: AML-S05-C06
+  proposition: The source of the shareholder's own funds is documented.
+  rationale: Nothing in the corpus addresses where the individual's funds came from.
+  status: not_provided
+evaluation_target:
+  basis: C01 supported. C03 remains indeterminate and is recorded as such rather than resolved
+    by the prior closure (C04). POL-5001 directs closure of the current activity and no re-opening
+    of the earlier matter.
+  disposition_expected: 'close: the transfers under review are documented by a facility executed
+    before them'
+  epistemic_scope: A reviewer could reasonably request the 2025 documentation while closing
+    the current alert. Treating the prior closure as having settled the 2025 position would
+    not be supported.
+not_provided_inventory:
+- the source of the shareholder's funds
+- any loan documentation for the 2025 transfers
+- any repayment or interest activity on either facility
+- any other shareholder or director of the company
+- the company's financial position
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

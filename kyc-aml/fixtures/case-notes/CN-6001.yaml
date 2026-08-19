@@ -1,0 +1,16 @@
+fixture_id: CN-6001
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-6001-P01
+  text: Payment volume and supplier are consistent with the trade profile on file. Invoice
+    file requested from the trade finance unit rather than the customer.
+record:
+  author_role: analyst
+  note_date: '2026-06-23'
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

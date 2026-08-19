@@ -1,0 +1,78 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: TXN-6001
+    passage_id: TXN-6001-P01
+  id: AML-S06-C01
+  proposition: Eight payments were made to the supplier over the period.
+  rationale: Observable from the transaction set.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-6001
+    passage_id: DOC-6001-P01
+  id: AML-S06-C02
+  proposition: Six of the eight payments correspond to invoices in the file.
+  rationale: Six invoices, six matching amounts.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-6001
+    passage_id: DOC-6001-P02
+  - evidence_type: documented
+    fixture_id: DOC-6002
+    passage_id: DOC-6002-P01
+  id: AML-S06-C03
+  proposition: Payments P05 and P08, totalling 183,150, correspond to documented underlying
+    trade.
+  rationale: The invoice file holds six invoices for eight payments, and the shipping schedule
+    records no second consignment against the duplicated shipment reference. The later evidence
+    makes the position worse than the initial review suggested, and it does so because it
+    supplies the invoice and shipping records, not because it arrived later.
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-6001
+    passage_id: DOC-6001-P01
+  id: AML-S06-C04
+  proposition: Two invoices reference the same shipment.
+  rationale: INV-4410 and INV-4416 both cite SHP-9902.
+  status: supported
+- evidence: []
+  id: AML-S06-C05
+  proposition: The duplication is a clerical error by the supplier.
+  rationale: A plausible innocent reading that the corpus neither supports nor excludes. It
+    is not available as a finding, and the policy requires a clerical explanation to be evidenced.
+  status: not_provided
+- evidence: []
+  id: AML-S06-C06
+  proposition: The payments were made with intent to move value without underlying trade.
+  rationale: Intent is not evidenced. Escalation under POL-6001 does not require it.
+  status: not_provided
+- evidence:
+  - evidence_type: system_observation
+    fixture_id: ALT-6001
+    passage_id: ALT-6001-P01
+  id: AML-S06-C07
+  proposition: Payment volume is inconsistent with the customer's recorded trade profile.
+  rationale: The alert records volume as within profile. The concern is documentation coverage,
+    not volume.
+  status: contradicted
+evaluation_target:
+  basis: C02 supported, C03 contradicted, C05 not provided. POL-6001 directs escalation where
+    payments exceed documented trade, without requiring intent (C06).
+  disposition_expected: 'escalate: payments exceed documented trade by 183,150 and the excess
+    is unaccounted for'
+  epistemic_scope: A reviewer could reasonably seek the supplier's account before escalating.
+    A disposition resting on a clerical explanation would not be supported, since that explanation
+    is not evidenced.
+not_provided_inventory:
+- any explanation from the customer or supplier for the duplication
+- any seventh or eighth invoice
+- any credit note or refund
+- the ownership of the supplier
+- any prior trade finance exception on this relationship
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

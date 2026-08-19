@@ -1,0 +1,24 @@
+fixture_id: TXN-5001
+fixture_type: transaction_set
+record:
+  account_ref: CUST-5001
+  currency: USD
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 300000
+  channel: domestic wire
+  counterparty_name: Ulpiath Tosketh
+  direction: inbound
+  narrative: no reference
+  txn_id: TXN-5001-A01
+  value_date: '2026-05-19'
+- amount: 175000
+  channel: domestic wire
+  counterparty_name: Ulpiath Tosketh
+  direction: inbound
+  narrative: no reference
+  txn_id: TXN-5001-A02
+  value_date: '2026-06-09'

@@ -1,0 +1,16 @@
+fixture_id: CN-7001
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-7001-P01
+  text: Periodic review completed on the register, the nominee declaration and the manager
+    disclosure. Holdings aggregated by ultimate holder where the evidence permits.
+record:
+  author_role: analyst
+  note_date: '2026-06-26'
+scenario_ref: AML-S07
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

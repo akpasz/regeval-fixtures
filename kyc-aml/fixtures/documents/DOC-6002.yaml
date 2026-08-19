@@ -1,0 +1,15 @@
+doc_date: '2026-06-26'
+fixture_id: DOC-6002
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: table
+  passage_id: DOC-6002-P01
+  text: SHP-9902 departed 2026-02-27, one container, mixed woven goods. SHP-9915, SHP-9938,
+    SHP-9951, SHP-9967 each one container. No second consignment is recorded against SHP-9902.
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Shipping schedule extract

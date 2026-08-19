@@ -1,0 +1,17 @@
+fixture_id: CN-6002
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-6002-P01
+  text: Invoice file received 26 June. Six payments match six invoices. Payments P05 and P08
+    carry the same amounts as P01 and P03 and the invoice file contains no seventh or eighth
+    invoice. Invoices INV-4410 and INV-4416 both reference shipment SHP-9902.
+record:
+  author_role: analyst
+  note_date: '2026-06-29'
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

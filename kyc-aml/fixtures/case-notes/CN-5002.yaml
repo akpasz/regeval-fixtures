@@ -1,0 +1,17 @@
+fixture_id: CN-5002
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-5002-P01
+  text: Loan agreement and board minute obtained for the May and June transfers. Both are
+    executed and dated before the transfers. No documentation was located for the 2025 transfers
+    and the customer has not been asked again.
+record:
+  author_role: analyst
+  note_date: '2026-06-24'
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

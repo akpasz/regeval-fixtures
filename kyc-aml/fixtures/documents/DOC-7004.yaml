@@ -1,0 +1,15 @@
+doc_date: '2025-10-08'
+fixture_id: DOC-7004
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-7004-P01
+  text: Two coastal vessels registered to Pyxadri Marine Ltd. Certificates held on file for
+    the relationship record.
+scenario_ref: AML-S07
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Vessel registration certificate

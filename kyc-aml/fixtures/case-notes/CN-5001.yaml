@@ -1,0 +1,19 @@
+fixture_id: CN-5001
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-5001-P01
+  text: Prior case closure, alert of 2025-03-06. Two inbound wires from the same individual
+    totalling 260,000 in February and March 2025. The customer stated that the funds were
+    shareholder loans to fund a product launch and undertook to provide the loan documentation.
+    The documentation was not received. Case closed on the customer's explanation. The explanation
+    was not independently verified.
+record:
+  author_role: analyst
+  note_date: '2025-04-02'
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

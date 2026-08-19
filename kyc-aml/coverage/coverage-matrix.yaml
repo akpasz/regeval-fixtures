@@ -4,18 +4,28 @@ dimensions:
   - AML-S02
   - AML-S03
   - AML-S04
+  - AML-S05
+  - AML-S06
+  - AML-S07
   citation:
   - AML-S01
   - AML-S02
   - AML-S03
+  - AML-S05
+  - AML-S06
   claim_decomposition:
   - AML-S01
   - AML-S04
+  - AML-S05
+  - AML-S07
   disposition:
   - AML-S01
   - AML-S02
   - AML-S03
   - AML-S04
+  - AML-S05
+  - AML-S06
+  - AML-S07
   entity_resolution:
   - AML-S01
   - AML-S04
@@ -23,24 +33,30 @@ dimensions:
   - AML-S01
   - AML-S03
   - AML-S04
+  - AML-S06
   negative_control:
   - AML-S02
   - AML-S04
+  - AML-S07
   numerical:
   - AML-S01
   - AML-S02
+  - AML-S06
+  - AML-S07
   ownership:
   - AML-S01
   - AML-S03
+  - AML-S07
   qualifier:
   - AML-S01
+  - AML-S05
   temporal_update:
   - AML-S02
+  - AML-S05
+  - AML-S06
 note: single-point-of-proof dimensions are a finding, not a pass
-scenarios: 4
-single_point_of_proof:
-- qualifier
-- temporal_update
+scenarios: 7
+single_point_of_proof: []
 synthetic:
   corpus_version: 0.1.0-dev
   marker: REGEVAL_SYNTHETIC

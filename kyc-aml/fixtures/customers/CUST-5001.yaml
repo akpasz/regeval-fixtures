@@ -1,0 +1,12 @@
+fixture_id: CUST-5001
+fixture_type: customer
+record:
+  as_of: '2026-06-30'
+  business_description: industrial control software
+  customer_since: '2019-09-30'
+  domicile: domestic
+  legal_name: Melqeld Systems Ltd
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

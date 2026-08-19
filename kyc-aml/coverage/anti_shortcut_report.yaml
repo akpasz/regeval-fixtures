@@ -2,25 +2,25 @@ disclaimer: PASS indicates only that the implemented check found no material ass
   It does not establish statistical independence or prove absence of leakage. At this corpus
   size the audit detects obvious leakage only.
 features:
-  alert_codes: 'WARN: executed on 4 scenarios, no automated check implemented for this feature
+  alert_codes: 'WARN: executed on 7 scenarios, no automated check implemented for this feature
     yet'
-  amount_buckets: 'WARN: executed on 4 scenarios, no automated check implemented for this
+  amount_buckets: 'WARN: executed on 7 scenarios, no automated check implemented for this
     feature yet'
-  difficulty_tier: 'FAIL: feature value partitions the evaluation target'
+  difficulty_tier: 'WARN: executed, no material association found, sample too small to distinguish'
   document_count: 'WARN: executed, no material association found, sample too small to distinguish'
-  geography: 'WARN: executed on 4 scenarios, no automated check implemented for this feature
+  geography: 'WARN: executed on 7 scenarios, no automated check implemented for this feature
     yet'
-  loaded_vocabulary: 'WARN: executed on 4 scenarios, no automated check implemented for this
+  loaded_vocabulary: 'WARN: executed on 7 scenarios, no automated check implemented for this
     feature yet'
-  missing_evidence_patterns: 'WARN: executed on 4 scenarios, no automated check implemented
+  missing_evidence_patterns: 'WARN: executed on 7 scenarios, no automated check implemented
     for this feature yet'
-  name_morphology: 'WARN: executed on 4 scenarios, no automated check implemented for this
+  name_morphology: 'WARN: executed on 7 scenarios, no automated check implemented for this
     feature yet'
   narrative_length: 'WARN: executed, no material association found, sample too small to distinguish'
-  ownership_depth: 'WARN: executed on 4 scenarios, no automated check implemented for this
+  ownership_depth: 'WARN: executed on 7 scenarios, no automated check implemented for this
     feature yet'
   scenario_id_order: 'WARN: executed, no material association found, sample too small to distinguish'
-scenarios_examined: 4
+scenarios_examined: 7
 synthetic:
   corpus_version: 0.1.0-dev
   marker: REGEVAL_SYNTHETIC

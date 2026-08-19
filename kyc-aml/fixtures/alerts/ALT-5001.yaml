@@ -1,0 +1,17 @@
+fixture_id: ALT-5001
+fixture_type: alert
+passages:
+- locator:
+    index: 1
+    type: narrative
+  passage_id: ALT-5001-P01
+  text: Scenario IND-07. Two inbound wires from an individual totalling 475,000 over 22 days.
+    Prior alert on comparable activity closed 2025-04-02.
+record:
+  alert_date: '2026-06-11'
+  rule_ref: IND-07
+  subject_ref: CUST-5001
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

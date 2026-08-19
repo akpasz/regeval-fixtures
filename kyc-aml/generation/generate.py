@@ -104,10 +104,12 @@ def main() -> None:
     sys.path.insert(0, str(pathlib.Path(__file__).parent))
     import scenario_s01
     import scenarios_b1
+    import scenarios_b2
     me = sys.modules[__name__]
     files = scenario_s01.build(me)
-    for builder in scenarios_b1.BUILDERS:
-        files.update(builder(me))
+    for mod in (scenarios_b1, scenarios_b2):
+        for builder in mod.BUILDERS:
+            files.update(builder(me))
     for rel, obj in sorted(files.items()):
         write(ROOT / rel, obj)
     write(ROOT / "generation" / "name-registry.yaml",

@@ -1,0 +1,22 @@
+fixture_id: POL-7001
+fixture_type: policy_context
+passages:
+- locator:
+    index: 1
+    type: clause
+  passage_id: POL-7001-P01
+  text: Where no holder reaches the threshold, the record states that no beneficial owner
+    is identified. That is a complete answer, not an unresolved one.
+record:
+  decision_rules:
+  - record no beneficial owner where no ultimate holder reaches the threshold on aggregation
+  - do not treat the absence of a controller as a reason for escalation
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - beneficial ownership is assessed at 25 percent for this synthetic institution, aggregating
+    holdings held by or for the same ultimate holder (illustrative synthetic ownership arithmetic)
+  - dispersed ownership is a finding of fact, not a risk indicator in itself
+scenario_ref: AML-S07
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

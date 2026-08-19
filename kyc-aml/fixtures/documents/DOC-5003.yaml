@@ -1,0 +1,14 @@
+doc_date: '2026-03-02'
+fixture_id: DOC-5003
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-5003-P01
+  text: 'Sole registered member: Ulpiath Tosketh, 100 percent.'
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Share register extract

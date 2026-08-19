@@ -1,0 +1,16 @@
+doc_date: '2026-05-11'
+fixture_id: DOC-5001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-5001-P01
+  text: Ulpiath Tosketh agrees to advance up to 500,000 to Melqeld Systems Ltd by way of unsecured
+    shareholder loan, drawable in tranches, repayable on demand after 2028. Executed 11 May
+    2026.
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Shareholder loan agreement

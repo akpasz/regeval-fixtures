@@ -1,0 +1,16 @@
+doc_date: '2026-05-28'
+fixture_id: DOC-7001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: table
+  passage_id: DOC-7001-P01
+  text: 'Registered members: Treluva Capital, 11.4 percent; Sorneska Partners, 9.8 percent;
+    Kelbilva Nominees, 18.2 percent; 214 individual members holding the remaining 60.6 percent,
+    none above 2 percent.'
+scenario_ref: AML-S07
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Share register extract

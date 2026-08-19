@@ -1,0 +1,20 @@
+fixture_id: POL-5001
+fixture_type: policy_context
+passages:
+- locator:
+    index: 1
+    type: clause
+  passage_id: POL-5001-P01
+  text: An earlier closure reached on an unverified explanation does not convert that explanation
+    into an established fact.
+record:
+  decision_rules:
+  - close where the activity under review is documented
+  - record, but do not re-open on, an earlier explanation that was never verified
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - a prior closure is case history, not a determination that binds a later review
+scenario_ref: AML-S05
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

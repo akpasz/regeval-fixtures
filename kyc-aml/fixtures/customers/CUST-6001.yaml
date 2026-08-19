@@ -1,0 +1,12 @@
+fixture_id: CUST-6001
+fixture_type: customer
+record:
+  as_of: '2026-06-30'
+  business_description: apparel wholesale
+  customer_since: '2015-01-22'
+  domicile: domestic
+  legal_name: Treluva Textiles Ltd
+scenario_ref: AML-S06
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

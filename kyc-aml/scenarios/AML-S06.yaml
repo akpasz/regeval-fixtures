@@ -1,0 +1,30 @@
+corpus_version: 0.1.0-dev
+coverage_labels:
+- temporal_update
+- numerical
+- absence
+- evidence_sufficiency
+- citation
+- disposition
+difficulty_tier: 2
+fixture_ids:
+- CUST-6001
+- TXN-6001
+- ALT-6001
+- CN-6001
+- CN-6002
+- DOC-6001
+- DOC-6002
+- POL-6001
+policy_context:
+  decision_rules:
+  - see POL-6001
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - see POL-6001
+scenario_id: AML-S06
+scenario_version: '1'
+schema_version: '1'
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

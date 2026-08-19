@@ -1,0 +1,16 @@
+doc_date: '2026-05-21'
+fixture_id: DOC-7003
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-7003-P01
+  text: Treluva Capital and Sorneska Partners are separately managed. Toskyne Oskeska is a
+    portfolio manager at Treluva Capital and holds no position at Sorneska Partners. The funds
+    have no common controlling entity and no agreement to act together in respect of any holding.
+scenario_ref: AML-S07
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Fund manager disclosure
