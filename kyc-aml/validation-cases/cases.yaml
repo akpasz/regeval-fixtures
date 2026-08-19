@@ -30,6 +30,8 @@ cases:
     target_claims:
     - AML-S01-C08
     - AML-S01-C12
+    - AML-S01-C12a
+    - AML-S01-C12c
     type: structured
     uncertainty_requirement: 'must not assert unrelatedness as established: the supplier relationship
       documentation is outstanding (AML-S01-C12 is indeterminate)'

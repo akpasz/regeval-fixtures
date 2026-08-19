@@ -106,18 +106,47 @@ claims:
     it as a customer assertion.
   status: supported
 - evidence:
-  - evidence_type: stated_by_customer
-    fixture_id: CN-1001
-    passage_id: CN-1001-P01
   - evidence_type: documented
     fixture_id: DOC-1005
     passage_id: DOC-1005-P02
   id: AML-S01-C12
-  proposition: Trelilva Holding S.A. has no relationship to Sornuva Components Ltd or its
-    principals beyond arm's length trade.
-  rationale: Registry data shows no shareholding link and the customer asserts unrelatedness,
-    but relationship documentation was requested and not received. Dropping the unverified
-    qualifier converts this into C11's stronger cousin; the distinction is the qualifier test.
+  proposition: The corporate registry records no shareholding relationship between Trelilva
+    Holding S.A. and Trelilva Holdings Ltd.
+  rationale: 'Stated directly in the registry extract. Atomic: a fact about what the registry
+    records, not about what relationships exist.'
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1005
+    passage_id: DOC-1005-P02
+  id: AML-S01-C12a
+  proposition: Trelilva Holding S.A. has no ownership or control relationship with Sornuva
+    Components Ltd.
+  rationale: The registry extract covers shareholding between the two named entities only.
+    It does not exclude other ownership or control links, and no further ownership evidence
+    for the payee is in the corpus.
+  status: indeterminate
+- evidence: []
+  id: AML-S01-C12b
+  proposition: Trelilva Holding S.A. has no relationship with the principals of Sornuva Components
+    Ltd personally.
+  rationale: 'No evidence in the corpus addresses relationships between the payee and the
+    individual principals. Distinct from C12a: the registry speaks to entities, not persons.'
+  status: not_provided
+- evidence:
+  - evidence_type: stated_by_customer
+    fixture_id: CN-1001
+    passage_id: CN-1001-P01
+  - evidence_type: documented
+    fixture_id: DOC-1004
+    passage_id: DOC-1004-P02
+  id: AML-S01-C12c
+  proposition: Dealings between Sornuva Components Ltd and Trelilva Holding S.A. are arm's
+    length commercial trade.
+  rationale: Invoices support trade for five wires and the customer asserts an ordinary supplier
+    relationship, but the assertion is unverified and supplier documentation was requested
+    and not received. Dropping the unverified qualifier is the qualifier-loss failure this
+    claim tests.
   status: indeterminate
 - evidence:
   - evidence_type: derived

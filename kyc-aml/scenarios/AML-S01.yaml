@@ -6,6 +6,8 @@ coverage_labels:
 - qualifier
 - numerical
 - entity_resolution
+- claim_decomposition
+- evidence_sufficiency
 - disposition
 difficulty_tier: 4
 fixture_ids:

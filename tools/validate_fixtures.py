@@ -111,6 +111,11 @@ def main() -> int:
         ok &= gate("claims: all four epistemic statuses exercised (canonical req)",
                    statuses == {"supported", "contradicted", "not_provided",
                                 "indeterminate"}, str(statuses))
+        conj = [c.id for c in claims
+                if re.search(r"\b(and|or)\b.*\b(no|not|beyond)\b", c.proposition)
+                or c.proposition.count(" and ") > 1]
+        ok &= gate("claims: no unreviewed conjunctive propositions (atomicity)",
+                   not conj, ", ".join(conj))
         ok &= gate("answer key: not_provided inventory populated",
                    len(ak["not_provided_inventory"]) >= 5)
         cases = yaml.safe_load((ROOT / "kyc-aml" / "validation-cases" /

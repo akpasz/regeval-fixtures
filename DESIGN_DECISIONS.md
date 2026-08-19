@@ -79,3 +79,18 @@ anti-shortcut audit). Impact: generate.py, all scenarios.
 No dated artifact may contain a date later than its own. Found by external
 review of AML-S01 (a case note knew the reference date twelve days in its
 future); fixed in content and converted into a permanent validator gate.
+
+## DD-017 C12 decomposition and atomicity gate
+An external review found AML-S01-C12 bundled three propositions carrying
+different statuses (registry silence, entity-level relationship, personal
+relationships with principals, arm's length character). Decomposed into C12,
+C12a, C12b, C12c and converted into a validator gate flagging conjunctive
+propositions for review. The scenario gained claim_decomposition and
+evidence_sufficiency coverage as a result.
+
+## DD-018 Numerical construction variety (Stage 3 constraint)
+AML-S01 places an undocumented USD 98,000 against a USD 100,000 threshold.
+The near-threshold construction is retained as a deliberate numerical trap,
+with a Stage 3 constraint: no more than two scenarios may use a near-miss
+threshold construction, and no two may use the same margin or the same round
+threshold, so the pattern does not become recognizable corpus grammar.

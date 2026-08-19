@@ -3,12 +3,14 @@ dimensions:
   - AML-S01
   citation:
   - AML-S01
-  claim_decomposition: []
+  claim_decomposition:
+  - AML-S01
   disposition:
   - AML-S01
   entity_resolution:
   - AML-S01
-  evidence_sufficiency: []
+  evidence_sufficiency:
+  - AML-S01
   negative_control: []
   numerical:
   - AML-S01
