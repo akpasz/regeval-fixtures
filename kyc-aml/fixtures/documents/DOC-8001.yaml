@@ -1,0 +1,16 @@
+doc_date: '2026-04-13'
+fixture_id: DOC-8001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-8001-P01
+  text: 'Sale of residential property by Oskadri Vrenyne to Brexyrel Waltuva completed 13
+    April 2026. Net proceeds to the seller after costs and redemption: 140,000, payable by
+    the buyer''s conveyancer.'
+scenario_ref: AML-S08
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Property sale completion statement

@@ -1,0 +1,38 @@
+fixture_id: TXN-8001
+fixture_type: transaction_set
+record:
+  account_ref: CUST-8001
+  currency: USD
+scenario_ref: AML-S08
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 140000
+  channel: domestic wire
+  counterparty_name: Brexyrel Waltuva
+  direction: inbound
+  narrative: no reference
+  txn_id: TXN-8001-C01
+  value_date: '2026-04-14'
+- amount: 95000
+  channel: domestic wire
+  counterparty_name: Toskyne Farnorin
+  direction: inbound
+  narrative: no reference
+  txn_id: TXN-8001-C02
+  value_date: '2026-04-28'
+- amount: 95000
+  channel: domestic wire
+  counterparty_name: Toskyne Farnorin
+  direction: inbound
+  narrative: no reference
+  txn_id: TXN-8001-C03
+  value_date: '2026-05-12'
+- amount: 70000
+  channel: domestic wire
+  counterparty_name: Toskyne Farnorin
+  direction: inbound
+  narrative: no reference
+  txn_id: TXN-8001-C04
+  value_date: '2026-05-26'

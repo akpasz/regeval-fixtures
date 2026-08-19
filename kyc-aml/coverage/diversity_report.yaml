@@ -3,8 +3,8 @@ findings:
 note: Observational. Structural variation is reported, not proven; at this corpus size only
   repetition is detectable.
 observations:
-- coarse topology 'accdpt' appears in 4 of 7 scenarios, which is expected and not a finding
-scenarios: 7
+- coarse topology 'accdpt' appears in 6 of 10 scenarios, which is expected and not a finding
+scenarios: 10
 signatures:
   AML-S01:
     case_note_count: 1
@@ -109,6 +109,51 @@ signatures:
     has_transactions: false
     has_watchlist: false
     status_profile: contradicted4/not_provided1/supported2
+    temporal_phases: 1
+    tier: 4
+  AML-S08:
+    case_note_count: 1
+    claim_count: 6
+    derived_claims: 0
+    disposition_shape: escalate
+    document_count: 1
+    evidence_type_variety: 3
+    fixture_types: accdpt
+    has_ownership_model: false
+    has_prior_case: false
+    has_transactions: true
+    has_watchlist: false
+    status_profile: contradicted1/not_provided2/supported3
+    temporal_phases: 1
+    tier: 3
+  AML-S09:
+    case_note_count: 1
+    claim_count: 6
+    derived_claims: 0
+    disposition_shape: close the documentation review
+    document_count: 2
+    evidence_type_variety: 3
+    fixture_types: accdp
+    has_ownership_model: false
+    has_prior_case: false
+    has_transactions: false
+    has_watchlist: false
+    status_profile: contradicted3/indeterminate1/not_provided1/supported1
+    temporal_phases: 1
+    tier: 2
+  AML-S10:
+    case_note_count: 1
+    claim_count: 6
+    derived_claims: 2
+    disposition_shape: escalate
+    document_count: 3
+    evidence_type_variety: 2
+    fixture_types: accdpt
+    has_ownership_model: false
+    has_prior_case: false
+    has_transactions: true
+    has_watchlist: false
+    status_profile: contradicted2/not_provided1/supported3
     temporal_phases: 1
     tier: 4
 synthetic:

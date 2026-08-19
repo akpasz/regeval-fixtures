@@ -1,0 +1,68 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-8001
+    passage_id: DOC-8001-P01
+  - evidence_type: documented
+    fixture_id: TXN-8001
+    passage_id: TXN-8001-C01
+  id: AML-S08-C01
+  proposition: The April credit of 140,000 corresponds to the documented property sale.
+  rationale: Amount, date and payer all correspond.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-8001
+    passage_id: DOC-8001-P01
+  - evidence_type: stated_by_customer
+    fixture_id: CN-8001
+    passage_id: CN-8001-P01
+  id: AML-S08-C02
+  proposition: The three later credits of 260,000 relate to the same property sale.
+  rationale: The completion statement records one payment of 140,000 from the buyer's conveyancer.
+    The customer's explanation is inconsistent with the document it relies on.
+  status: contradicted
+- evidence:
+  - evidence_type: stated_by_customer
+    fixture_id: CN-8001
+    passage_id: CN-8001-P01
+  id: AML-S08-C03
+  proposition: The customer said the later credits related to the same sale.
+  rationale: The statement was made and is recorded, whatever its accuracy.
+  status: supported
+- evidence: []
+  id: AML-S08-C04
+  proposition: The source of the 260,000 is documented.
+  rationale: Nothing in the corpus evidences it.
+  status: not_provided
+- evidence: []
+  id: AML-S08-C05
+  proposition: The customer holds a corporate interest relevant to this review.
+  rationale: This is a personal account and no corporate structure appears anywhere in the
+    corpus. Ownership analysis has no subject here.
+  status: not_provided
+- evidence:
+  - evidence_type: system_observation
+    fixture_id: ALT-8001
+    passage_id: ALT-8001-P01
+  id: AML-S08-C06
+  proposition: The recorded income profile is pension receipts only.
+  rationale: Recorded in the alert.
+  status: supported
+evaluation_target:
+  basis: C01 supported for the first credit only. C02 contradicted, C04 not provided. POL-8001
+    directs escalation where credits materially exceed a documented source.
+  disposition_expected: 'escalate: credits exceed the documented source by 260,000 and the
+    explanation is contradicted by the document relied on'
+  epistemic_scope: A reviewer could seek the conveyancer's ledger before escalating. Treating
+    the completion statement as partial support for all four credits would not be supported.
+not_provided_inventory:
+- the source of the three later credits
+- the identity or relationship of the second remitter
+- any second property, asset sale or loan
+- any prior alert on this account
+- the customer's wider financial position
+scenario_ref: AML-S08
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

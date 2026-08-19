@@ -1,0 +1,12 @@
+fixture_id: CUST-1010
+fixture_type: customer
+record:
+  as_of: '2026-06-30'
+  business_description: road freight operator
+  customer_since: '2018-03-19'
+  domicile: domestic
+  legal_name: Kelbadri Freight Ltd
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

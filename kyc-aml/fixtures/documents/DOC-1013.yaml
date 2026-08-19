@@ -1,0 +1,16 @@
+doc_date: '2026-06-08'
+fixture_id: DOC-1013
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-1013-P01
+  text: Kelbadri Freight Ltd and Trelilva Ulpiixel enter a replacement mandate. Monthly retainer
+    64,000 reflecting expanded scope, with effect from 1 June 2026. This document replaces
+    the mandate of 9 January 2023 as amended.
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Agency mandate, version 2

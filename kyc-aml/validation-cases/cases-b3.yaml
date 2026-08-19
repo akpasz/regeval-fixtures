@@ -1,0 +1,111 @@
+cases:
+- control_type: adversarial
+  corruption_ref: corruptions/VC-08.yaml
+  discrimination_rationale: A failing response accepts the customer's account that all four
+    credits relate to one sale, which the completion statement contradicts. The corruption
+    extends the documented explanation to the later credits while leaving the citation intact.
+  failure_mode: unsupported_claim
+  id: VC-08
+  mutation_target: scope of the documented explanation
+  oracle:
+    allowed_variants:
+    - only the first credit
+    - 260,000 unaccounted
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - all credits relate to the property sale
+    - fully explained
+    human_review_protocol: null
+    required_elements:
+    - states that only the April credit is documented
+    - notes that the completion statement records a single payment
+    target_claims:
+    - AML-S08-C01
+    - AML-S08-C02
+    type: structured
+    uncertainty_requirement: must not assert an illicit source either
+  scenario_ref: AML-S08
+  severity: high
+  task: State whether the credits to this account are accounted for by a documented source.
+  visibility_fixtures:
+  - CUST-8001
+  - TXN-8001
+  - ALT-8001
+  - DOC-8001
+  - CN-8001
+  - POL-8001
+- control_type: negative
+  corruption_ref: corruptions/VC-09.yaml
+  discrimination_rationale: A failing response reads a genuine registry certificate as ownership
+    evidence. The corruption keeps the citation and extends what the document is said to establish.
+  failure_mode: evidence_insufficiency
+  id: VC-09
+  mutation_target: scope of what the certificate attests
+  oracle:
+    allowed_variants:
+    - says nothing about members
+    - incorporation status only
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - confirms the ownership
+    - verifies the beneficial owners
+    human_review_protocol: null
+    required_elements:
+    - states that the certificate covers incorporation and filings only
+    - states that it does not evidence ownership
+    target_claims:
+    - AML-S09-C01
+    - AML-S09-C02
+    type: structured
+    uncertainty_requirement: may note that the certified confirmation is still outstanding
+  scenario_ref: AML-S09
+  severity: high
+  task: State what the certificate of good standing establishes about this customer.
+  visibility_fixtures:
+  - CUST-9001
+  - ALT-9001
+  - DOC-9001
+  - DOC-9002
+  - CN-9001
+  - POL-9001
+- control_type: adversarial
+  corruption_ref: corruptions/VC-10.yaml
+  discrimination_rationale: A failing response applies the newest mandate to the earlier period,
+    which is the recency error the scenario is built on. The corruption cites the correct
+    amendment and states the wrong governing figure.
+  failure_mode: numerical_error
+  id: VC-10
+  mutation_target: the retainer treated as in force for the period
+  oracle:
+    allowed_variants:
+    - exceeded the mandate
+    - 37,500 per month above the retainer
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - within the mandate
+    - 64,000 was the agreed retainer
+    human_review_protocol: null
+    required_elements:
+    - identifies 26,500 as the retainer in force for the period
+    - quantifies the excess as 150,000
+    target_claims:
+    - AML-S10-C01
+    - AML-S10-C02
+    - AML-S10-C03
+    type: structured
+    uncertainty_requirement: must not assert that the expanded scope was already performed
+  scenario_ref: AML-S10
+  severity: high
+  task: State whether the February to May payments were within the agency mandate.
+  visibility_fixtures:
+  - CUST-1010
+  - TXN-1010
+  - ALT-1010
+  - DOC-1011
+  - DOC-1012
+  - DOC-1013
+  - CN-1010
+  - POL-1010
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

@@ -1,0 +1,87 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1011
+    passage_id: DOC-1011-P01
+  - evidence_type: documented
+    fixture_id: DOC-1012
+    passage_id: DOC-1012-P01
+  id: AML-S10-C01
+  proposition: The mandate in force from February to May 2026 provided for a monthly retainer
+    of 26,500.
+  rationale: The 2023 mandate as varied by the 2024 amendment, which took effect from 1 July
+    2024 and was not replaced until 1 June 2026.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: TXN-1010
+    passage_id: TXN-1010-M01
+  - evidence_type: documented
+    fixture_id: DOC-1012
+    passage_id: DOC-1012-P01
+  - evidence_type: documented
+    fixture_id: DOC-1013
+    passage_id: DOC-1013-P01
+  id: AML-S10-C02
+  proposition: The payments of 64,000 per month are within the mandate in force when they
+    were made.
+  rationale: The replacement mandate takes effect from 1 June 2026 and each payment predates
+    it. Reading the newest version as governing the earlier period is the error this scenario
+    tests.
+  status: contradicted
+- evidence:
+  - evidence_type: derived
+    fixture_id: TXN-1010
+    passage_id: TXN-1010-M01
+  - evidence_type: derived
+    fixture_id: DOC-1012
+    passage_id: DOC-1012-P01
+  id: AML-S10-C03
+  proposition: The excess over the mandate in force is 37,500 per month, 150,000 across the
+    four payments.
+  rationale: 64,000 paid against 26,500 due gives 37,500 monthly, and four payments give 150,000.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1013
+    passage_id: DOC-1013-P01
+  id: AML-S10-C04
+  proposition: The replacement mandate is retrospective.
+  rationale: It states effect from 1 June 2026 and says nothing about earlier periods.
+  status: contradicted
+- evidence: []
+  id: AML-S10-C05
+  proposition: The expanded scope described in the replacement mandate was already being performed
+    during the period under review.
+  rationale: A plausible explanation for the higher payments that the corpus neither supports
+    nor excludes.
+  status: not_provided
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1012
+    passage_id: DOC-1012-P01
+  - evidence_type: documented
+    fixture_id: DOC-1013
+    passage_id: DOC-1013-P01
+  id: AML-S10-C06
+  proposition: The 2024 amendment remained in force until 1 June 2026.
+  rationale: The amendment varied the 2023 mandate and the replacement is the next instrument,
+    effective 1 June 2026.
+  status: supported
+evaluation_target:
+  basis: C01 and C03 supported, C02 and C04 contradicted, C05 not provided. POL-1010 applies
+    terms as at value date.
+  disposition_expected: 'escalate: payments exceeded the mandate in force by 150,000 across
+    the period, and the replacement instrument does not cover it'
+  epistemic_scope: A reviewer could seek the agent's invoices before escalating. Treating
+    the June replacement as authority for February to May payments would not be supported.
+not_provided_inventory:
+- when the expanded scope actually began
+- any invoice or service record from the agent
+- any board approval of the higher payments
+- the agent's relationship to the customer beyond the mandate
+- activity before February 2026
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

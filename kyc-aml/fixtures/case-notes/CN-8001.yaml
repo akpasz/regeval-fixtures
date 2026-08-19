@@ -1,0 +1,17 @@
+fixture_id: CN-8001
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-8001-P01
+  text: Customer provided the completion statement for the April credit. Asked about the three
+    later credits from a different remitter, the customer said they related to the same sale.
+    No further documentation was offered and the completion statement records a single payment.
+record:
+  author_role: analyst
+  note_date: '2026-06-20'
+scenario_ref: AML-S08
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

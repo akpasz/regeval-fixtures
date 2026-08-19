@@ -1,0 +1,71 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-9001
+    passage_id: DOC-9001-P01
+  id: AML-S09-C01
+  proposition: The company is duly incorporated and has filed all returns due.
+  rationale: Certified by the registrar.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-9001
+    passage_id: DOC-9001-P02
+  id: AML-S09-C02
+  proposition: The certificate of good standing evidences the company's beneficial ownership.
+  rationale: 'The certificate states that it speaks only to the matters stated and says nothing
+    about members. Evidence sufficiency: the document is genuine and cited correctly, and
+    it does not support the proposition.'
+  status: contradicted
+- evidence:
+  - evidence_type: stated_by_customer
+    fixture_id: DOC-9002
+    passage_id: DOC-9002-P01
+  id: AML-S09-C03
+  proposition: The company is a wholly owned subsidiary of the group.
+  rationale: The only support is an unsigned customer supplied chart from 2024. It may well
+    be accurate; it is not verified, and the certified confirmation is outstanding.
+  status: indeterminate
+- evidence:
+  - evidence_type: analyst_observation
+    fixture_id: CN-9001
+    passage_id: CN-9001-P01
+  - evidence_type: documented
+    fixture_id: POL-9001
+    passage_id: POL-9001-P01
+  id: AML-S09-C04
+  proposition: The certified beneficial ownership confirmation is overdue.
+  rationale: It was requested with a 60 day deadline that has not expired. Within its window
+    it is a tracked item.
+  status: contradicted
+- evidence:
+  - evidence_type: analyst_observation
+    fixture_id: CN-9001
+    passage_id: CN-9001-P01
+  id: AML-S09-C05
+  proposition: Transaction activity was reviewed as part of this review.
+  rationale: The note records that transaction review is out of scope for this review type,
+    and no transaction fixture exists.
+  status: contradicted
+- evidence: []
+  id: AML-S09-C06
+  proposition: The company's current directors are recorded in the corpus.
+  rationale: The 2024 chart names a director; nothing evidences the present position.
+  status: not_provided
+evaluation_target:
+  basis: C01 supported, C04 contradicted, C05 contradicted. POL-9001 directs closure where
+    the outstanding item is within its window.
+  disposition_expected: 'close the documentation review: the outstanding item is within its
+    deadline and no other concern is recorded'
+  epistemic_scope: A reviewer could hold the review open until the confirmation returns. Recording
+    the certificate as ownership evidence would not be supported.
+not_provided_inventory:
+- the company's current directors
+- any transaction activity
+- the group's ownership above the parent
+- any adverse information about the company or the group
+- the reason the confirmation has not yet been returned
+scenario_ref: AML-S09
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

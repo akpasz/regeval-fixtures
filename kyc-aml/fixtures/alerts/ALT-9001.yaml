@@ -1,0 +1,17 @@
+fixture_id: ALT-9001
+fixture_type: alert
+passages:
+- locator:
+    index: 1
+    type: narrative
+  passage_id: ALT-9001-P01
+  text: Scheduled documentation review. The relationship file was flagged for a missing certified
+    beneficial ownership confirmation. No transaction concern is recorded.
+record:
+  alert_date: '2026-06-04'
+  rule_ref: periodic review
+  subject_ref: CUST-9001
+scenario_ref: AML-S09
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

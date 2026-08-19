@@ -1,0 +1,38 @@
+fixture_id: TXN-1010
+fixture_type: transaction_set
+record:
+  account_ref: CUST-1010
+  currency: USD
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 64000
+  channel: international wire
+  counterparty_name: Trelilva Ulpiixel
+  direction: outbound
+  narrative: agency fees Toskixel
+  txn_id: TXN-1010-M01
+  value_date: '2026-02-17'
+- amount: 64000
+  channel: international wire
+  counterparty_name: Trelilva Ulpiixel
+  direction: outbound
+  narrative: agency fees Toskixel
+  txn_id: TXN-1010-M02
+  value_date: '2026-03-17'
+- amount: 64000
+  channel: international wire
+  counterparty_name: Trelilva Ulpiixel
+  direction: outbound
+  narrative: agency fees Toskixel
+  txn_id: TXN-1010-M03
+  value_date: '2026-04-16'
+- amount: 64000
+  channel: international wire
+  counterparty_name: Trelilva Ulpiixel
+  direction: outbound
+  narrative: agency fees Toskixel
+  txn_id: TXN-1010-M04
+  value_date: '2026-05-18'

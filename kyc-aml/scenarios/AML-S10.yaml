@@ -1,0 +1,30 @@
+corpus_version: 0.1.0-dev
+coverage_labels:
+- temporal_update
+- numerical
+- citation
+- claim_decomposition
+- absence
+- disposition
+difficulty_tier: 4
+fixture_ids:
+- CUST-1010
+- TXN-1010
+- ALT-1010
+- DOC-1011
+- DOC-1012
+- DOC-1013
+- CN-1010
+- POL-1010
+policy_context:
+  decision_rules:
+  - see POL-1010
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - see POL-1010
+scenario_id: AML-S10
+scenario_version: '1'
+schema_version: '1'
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

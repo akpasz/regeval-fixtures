@@ -1,0 +1,16 @@
+doc_date: '2024-02-09'
+fixture_id: DOC-9002
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-9002-P01
+  text: Chart supplied by the customer showing Treladri Foods Ltd as a wholly owned subsidiary
+    of Zilmorm Group, with Vrenyrel Toskyrel as sole director of both. The chart is unsigned
+    and undated except for the file stamp.
+scenario_ref: AML-S09
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Group structure chart, customer provided

@@ -1,0 +1,16 @@
+fixture_id: CN-1010
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-1010-P01
+  text: Three mandate documents are on file. The replacement was signed on 8 June 2026 and
+    takes effect from 1 June 2026. The payments under review fall in February to May 2026.
+record:
+  author_role: analyst
+  note_date: '2026-06-30'
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

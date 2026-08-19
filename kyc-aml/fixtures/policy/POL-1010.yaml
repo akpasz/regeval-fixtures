@@ -1,0 +1,19 @@
+fixture_id: POL-1010
+fixture_type: policy_context
+passages:
+- locator:
+    index: 1
+    type: clause
+  passage_id: POL-1010-P01
+  text: Terms are applied as at the value date of the payment, not as at the date of review.
+record:
+  decision_rules:
+  - escalate where payments exceed the mandate in force for the period and the excess is unexplained
+  - a later instrument does not evidence earlier payments unless it says so
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - a payment is assessed against the terms in force on its value date
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

@@ -1,0 +1,20 @@
+fixture_id: POL-9001
+fixture_type: policy_context
+passages:
+- locator:
+    index: 1
+    type: clause
+  passage_id: POL-9001-P01
+  text: An outstanding document within its deadline is a tracked item. It is not a finding.
+record:
+  decision_rules:
+  - close a documentation review where the outstanding item is within its deadline and no
+    other concern is recorded
+  - do not treat a registry certificate as evidence of ownership
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - a documentation gap inside its remediation window is managed, not adverse
+scenario_ref: AML-S09
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

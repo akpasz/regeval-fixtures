@@ -1,0 +1,17 @@
+fixture_id: ALT-8001
+fixture_type: alert
+passages:
+- locator:
+    index: 1
+    type: narrative
+  passage_id: ALT-8001-P01
+  text: Scenario PRS-05. Personal account credits of 400,000 across four inbound wires in
+    seven weeks against a recorded income profile of pension receipts only.
+record:
+  alert_date: '2026-06-01'
+  rule_ref: PRS-05
+  subject_ref: CUST-8001
+scenario_ref: AML-S08
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

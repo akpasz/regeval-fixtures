@@ -1,0 +1,15 @@
+doc_date: '2023-01-09'
+fixture_id: DOC-1011
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-1011-P01
+  text: Kelbadri Freight Ltd appoints Trelilva Ulpiixel as clearing agent in Toskixel. Monthly
+    retainer 22,000, payable in arrears. Term three years.
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Agency mandate, version 1

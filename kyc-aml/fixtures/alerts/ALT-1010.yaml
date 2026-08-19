@@ -1,0 +1,17 @@
+fixture_id: ALT-1010
+fixture_type: alert
+passages:
+- locator:
+    index: 1
+    type: narrative
+  passage_id: ALT-1010-P01
+  text: Scenario AGT-02. Four monthly payments of 64,000 to an individual agent overseas,
+    February to May 2026. Standing mandate on file.
+record:
+  alert_date: '2026-06-05'
+  rule_ref: AGT-02
+  subject_ref: CUST-1010
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

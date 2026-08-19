@@ -1,0 +1,21 @@
+doc_date: '2026-05-18'
+fixture_id: DOC-9001
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-9001-P01
+  text: The registrar certifies that Treladri Foods Ltd is duly incorporated, has filed all
+    returns due, and is not in the course of being struck off as at the date of this certificate.
+- locator:
+    index: 2
+    type: paragraph
+  passage_id: DOC-9001-P02
+  text: This certificate speaks only to the matters stated. It is not a statement about the
+    company's members, officers, trading activity or financial position.
+scenario_ref: AML-S09
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Certificate of good standing

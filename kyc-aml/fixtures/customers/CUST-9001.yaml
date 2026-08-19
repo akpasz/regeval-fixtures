@@ -1,0 +1,12 @@
+fixture_id: CUST-9001
+fixture_type: customer
+record:
+  as_of: '2026-06-30'
+  business_description: food importer
+  customer_since: '2022-07-11'
+  domicile: domestic
+  legal_name: Treladri Foods Ltd
+scenario_ref: AML-S09
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

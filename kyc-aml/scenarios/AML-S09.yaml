@@ -1,0 +1,28 @@
+corpus_version: 0.1.0-dev
+coverage_labels:
+- evidence_sufficiency
+- qualifier
+- negative_control
+- absence
+- citation
+- disposition
+difficulty_tier: 2
+fixture_ids:
+- CUST-9001
+- ALT-9001
+- DOC-9001
+- DOC-9002
+- CN-9001
+- POL-9001
+policy_context:
+  decision_rules:
+  - see POL-9001
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - see POL-9001
+scenario_id: AML-S09
+scenario_version: '1'
+schema_version: '1'
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

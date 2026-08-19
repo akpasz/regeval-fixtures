@@ -1,0 +1,15 @@
+doc_date: '2024-06-30'
+fixture_id: DOC-1012
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-1012-P01
+  text: The retainer under the mandate of 9 January 2023 is varied to 26,500 monthly with
+    effect from 1 July 2024. All other terms are unchanged.
+scenario_ref: AML-S10
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Agency mandate, amendment 1

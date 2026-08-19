@@ -1,0 +1,21 @@
+fixture_id: POL-8001
+fixture_type: policy_context
+passages:
+- locator:
+    index: 1
+    type: clause
+  passage_id: POL-8001-P01
+  text: An explanation that the supporting document contradicts is not treated as partial
+    support.
+record:
+  decision_rules:
+  - escalate where credits materially exceed the documented source and the excess is unexplained
+  - a customer explanation inconsistent with the document it relies on does not evidence the
+    activity
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - a documented one off receipt may explain a credit of the same amount from the same payer
+scenario_ref: AML-S08
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

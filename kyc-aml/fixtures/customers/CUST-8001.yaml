@@ -1,0 +1,12 @@
+fixture_id: CUST-8001
+fixture_type: customer
+record:
+  as_of: '2026-06-30'
+  business_description: personal account, retired schoolteacher
+  customer_since: '2011-05-16'
+  domicile: domestic
+  legal_name: Oskadri Vrenyne
+scenario_ref: AML-S08
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

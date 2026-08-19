@@ -105,9 +105,10 @@ def main() -> None:
     import scenario_s01
     import scenarios_b1
     import scenarios_b2
+    import scenarios_b3
     me = sys.modules[__name__]
     files = scenario_s01.build(me)
-    for mod in (scenarios_b1, scenarios_b2):
+    for mod in (scenarios_b1, scenarios_b2, scenarios_b3):
         for builder in mod.BUILDERS:
             files.update(builder(me))
     for rel, obj in sorted(files.items()):

@@ -1,0 +1,27 @@
+corpus_version: 0.1.0-dev
+coverage_labels:
+- citation
+- absence
+- qualifier
+- numerical
+- disposition
+difficulty_tier: 3
+fixture_ids:
+- CUST-8001
+- TXN-8001
+- ALT-8001
+- DOC-8001
+- CN-8001
+- POL-8001
+policy_context:
+  decision_rules:
+  - see POL-8001
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - see POL-8001
+scenario_id: AML-S08
+scenario_version: '1'
+schema_version: '1'
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
