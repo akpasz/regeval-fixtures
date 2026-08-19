@@ -1,3 +1,6 @@
+audit_status: PARTIAL
+audit_status_note: 'limited heuristic screen: 4 of 11 features have an implemented check.
+  The audit has not passed; it has been performed within these limits.'
 disclaimer: PASS indicates only that the implemented check found no material association.
   It does not establish statistical independence or prove absence of leakage. At this corpus
   size the audit detects obvious leakage only.

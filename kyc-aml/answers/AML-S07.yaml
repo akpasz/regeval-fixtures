@@ -37,10 +37,11 @@ claims:
     passage_id: DOC-7003-P01
   id: AML-S07-C04
   proposition: No ultimate holder reaches 25 percent of the issued capital.
-  rationale: 'Derived: the largest ultimate positions are 11.4 percent, 9.8 percent, 1.9 percent
-    through the nominee, and 2 percent among individual members. The calculation matters because
-    it determines whether a beneficial owner exists, and it is reached by aggregating correctly
-    rather than by summing registered lines.'
+  rationale: 'Derived: the two identified fund holdings are 11.4 and 9.8 percent; the nominee''s
+    largest underlying holder is 1.9 percent; and each individual member is recorded as below
+    2 percent, which is a ceiling rather than a documented position. The calculation matters
+    because it determines whether a beneficial owner exists, and it is reached by aggregating
+    correctly rather than by summing registered lines.'
   status: supported
 - evidence:
   - evidence_type: documented

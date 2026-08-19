@@ -115,14 +115,10 @@ def main() -> None:
     write(ROOT / "generation" / "name-registry.yaml",
           {"synthetic": {"marker": MARKER, "corpus_version": CORPUS_VERSION},
            "names": sorted(collect_names(files))})
-    sys.path.insert(0, str(ROOT.parent / "tools" / "reports"))
-    import coverage as _cov
-    import anti_shortcut as _as
-    import diversity as _div
-    _cov.run()
-    _as.run()
-    _div.run()
-    print(f"generated {len(files)} artifacts, coverage and audit refreshed")
+    # Source artifacts only. Derived reports are owned by tools/reports/*
+    # and orchestrated by tools/build.py (DD-023), so no artifact has two
+    # producers and none can be silently refreshed out of sequence.
+    print(f"generated {len(files)} artifacts")
 
 
 if __name__ == "__main__":

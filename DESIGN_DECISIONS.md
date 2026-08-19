@@ -136,3 +136,13 @@ which scenarios were current and coverage, diversity, or the audit described
 an earlier corpus. tools/build.py runs generate, reports, manifest, and
 validate in order, and generate.py refreshes every derived report itself, so
 no path produces a stale artifact.
+
+## DD-024 Construction profile, not coarse topology
+The diversity gate first treated (fixture types, transactions, ownership) as a
+topology signature and reported REVIEW because four scenarios shared it. That
+signature is coarse: most KYC scenarios legitimately have a customer, an alert
+and documents. The gate now tests a construction profile combining topology
+with prior-case and watchlist presence, document and note count buckets,
+temporal phase count, derived-claim presence, evidence-type variety and claim
+status profile. Coarse topology repetition is reported as an observation, not
+a finding.

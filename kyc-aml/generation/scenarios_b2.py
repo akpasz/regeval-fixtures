@@ -401,7 +401,7 @@ def build_s07(g) -> dict:
       "status": "supported", "evidence": [ev("DOC-7001", "DOC-7001-P01", "derived"),
                                           ev("DOC-7002", "DOC-7002-P01", "derived"),
                                           ev("DOC-7003", "DOC-7003-P01", "derived")],
-      "rationale": "Derived: the largest ultimate positions are 11.4 percent, 9.8 percent, 1.9 percent through the nominee, and 2 percent among individual members. The calculation matters because it determines whether a beneficial owner exists, and it is reached by aggregating correctly rather than by summing registered lines."},
+      "rationale": "Derived: the two identified fund holdings are 11.4 and 9.8 percent; the nominee's largest underlying holder is 1.9 percent; and each individual member is recorded as below 2 percent, which is a ceiling rather than a documented position. The calculation matters because it determines whether a beneficial owner exists, and it is reached by aggregating correctly rather than by summing registered lines."},
      {"id": f"{S}-C05", "proposition": "The portfolio manager controls both funds' holdings.",
       "status": "contradicted", "evidence": [ev("DOC-7003", "DOC-7003-P01", "documented")],
       "rationale": "He holds a position at one fund only."},

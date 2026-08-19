@@ -1,7 +1,9 @@
 findings:
-- topology ('accdpt', True, False) repeated in 4 scenarios
+- no repeated structural signature
 note: Observational. Structural variation is reported, not proven; at this corpus size only
   repetition is detectable.
+observations:
+- coarse topology 'accdpt' appears in 4 of 7 scenarios, which is expected and not a finding
 scenarios: 7
 signatures:
   AML-S01:
@@ -13,8 +15,11 @@ signatures:
     evidence_type_variety: 4
     fixture_types: accdptw
     has_ownership_model: true
+    has_prior_case: false
     has_transactions: true
+    has_watchlist: true
     status_profile: contradicted2/indeterminate3/not_provided2/supported10
+    temporal_phases: 1
     tier: 4
   AML-S02:
     case_note_count: 3
@@ -25,8 +30,11 @@ signatures:
     evidence_type_variety: 2
     fixture_types: accdpt
     has_ownership_model: false
+    has_prior_case: false
     has_transactions: true
+    has_watchlist: false
     status_profile: contradicted2/not_provided2/supported3
+    temporal_phases: 3
     tier: 2
   AML-S03:
     case_note_count: 2
@@ -37,8 +45,11 @@ signatures:
     evidence_type_variety: 2
     fixture_types: accdpt
     has_ownership_model: false
+    has_prior_case: false
     has_transactions: true
+    has_watchlist: false
     status_profile: contradicted1/indeterminate1/not_provided2/supported2
+    temporal_phases: 2
     tier: 3
   AML-S04:
     case_note_count: 1
@@ -49,8 +60,11 @@ signatures:
     evidence_type_variety: 2
     fixture_types: accdpw
     has_ownership_model: false
+    has_prior_case: false
     has_transactions: false
+    has_watchlist: true
     status_profile: contradicted3/indeterminate1/not_provided1/supported1
+    temporal_phases: 1
     tier: 5
   AML-S05:
     case_note_count: 2
@@ -61,8 +75,11 @@ signatures:
     evidence_type_variety: 3
     fixture_types: accdpt
     has_ownership_model: false
+    has_prior_case: true
     has_transactions: true
+    has_watchlist: false
     status_profile: contradicted2/indeterminate1/not_provided1/supported2
+    temporal_phases: 2
     tier: 3
   AML-S06:
     case_note_count: 2
@@ -73,8 +90,11 @@ signatures:
     evidence_type_variety: 2
     fixture_types: accdpt
     has_ownership_model: false
+    has_prior_case: false
     has_transactions: true
+    has_watchlist: false
     status_profile: contradicted2/not_provided2/supported3
+    temporal_phases: 2
     tier: 2
   AML-S07:
     case_note_count: 1
@@ -85,10 +105,13 @@ signatures:
     evidence_type_variety: 2
     fixture_types: accdp
     has_ownership_model: false
+    has_prior_case: false
     has_transactions: false
+    has_watchlist: false
     status_profile: contradicted4/not_provided1/supported2
+    temporal_phases: 1
     tier: 4
 synthetic:
   corpus_version: 0.1.0-dev
   marker: REGEVAL_SYNTHETIC
-verdict: REVIEW
+verdict: PASS

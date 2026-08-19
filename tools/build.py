@@ -9,9 +9,13 @@ import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+# One owner per derived artifact: generate.py writes source artifacts only,
+# each report is produced by its own tool, and this list is the whole pipeline.
 STEPS = [
     ("generate", ROOT / "kyc-aml" / "generation" / "generate.py"),
+    ("coverage", ROOT / "tools" / "reports" / "coverage.py"),
     ("diversity", ROOT / "tools" / "reports" / "diversity.py"),
+    ("anti-shortcut", ROOT / "tools" / "reports" / "anti_shortcut.py"),
     ("manifest", ROOT / "tools" / "manifest.py"),
     ("validate", ROOT / "tools" / "validate_fixtures.py"),
 ]

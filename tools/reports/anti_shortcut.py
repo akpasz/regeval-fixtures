@@ -67,7 +67,13 @@ def run() -> dict:
         for f in FEATURES:
             findings.setdefault(f, f"NOT-IMPLEMENTED: no automated heuristic for this feature; "
                                    f"{n} scenarios available for future audit")
-    report = {"synthetic": {"marker": "REGEVAL_SYNTHETIC", "corpus_version": "0.1.0-dev"},
+    implemented = sum(1 for v in findings.values() if not v.startswith("NOT-IMPLEMENTED"))
+    report = {"audit_status": "PARTIAL",
+              "audit_status_note": (f"limited heuristic screen: {implemented} of "
+                                    f"{len(findings)} features have an implemented "
+                                    "check. The audit has not passed; it has been "
+                                    "performed within these limits."),
+              "synthetic": {"marker": "REGEVAL_SYNTHETIC", "corpus_version": "0.1.0-dev"},
               "scenarios_examined": n,
               "disclaimer": ("PASS indicates only that the implemented check found no "
                              "material association. It does not establish statistical "
