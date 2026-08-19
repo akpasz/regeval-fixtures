@@ -42,6 +42,16 @@ def main() -> int:
         leaked = ANSWER_ONLY_FIELDS & set(data.get("record", {}))
         ok &= gate(f"{f.name}: ground-truth isolation", not leaked, ", ".join(leaked))
 
+    # schema drift: published JSON Schemas must match the pydantic source of
+    # truth exactly (found when models were edited without regenerating)
+    import json
+    from _schema_models import SCHEMAS
+    drift = [n for n, m in SCHEMAS.items()
+             if json.loads((ROOT / "schemas" / f"{n}.schema.json").read_text())
+             != m.model_json_schema()]
+    ok &= gate("schemas match the pydantic source of truth", not drift,
+               ", ".join(drift))
+
     # temporal consistency: a dated artifact cannot contain knowledge of a
     # later date (found by external review of AML-S01; now a permanent gate)
     import datetime

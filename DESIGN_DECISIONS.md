@@ -94,3 +94,11 @@ The near-threshold construction is retained as a deliberate numerical trap,
 with a Stage 3 constraint: no more than two scenarios may use a near-miss
 threshold construction, and no two may use the same margin or the same round
 threshold, so the pattern does not become recognizable corpus grammar.
+
+## DD-019 Schema regeneration drift gate
+The published JSON Schemas are generated from tools/_schema_models.py. An
+external review found the repository shipped with scenario.schema.json stale
+after the models changed: the generation step had been run in the build
+environment but the regenerated artifact was not carried into the delivered
+archive. The validator now compares every published schema against the source
+model on every run, so drift fails a gate rather than a test alone.
