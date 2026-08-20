@@ -146,3 +146,19 @@ with prior-case and watchlist presence, document and note count buckets,
 temporal phase count, derived-claim presence, evidence-type variety and claim
 status profile. Coarse topology repetition is reported as an observation, not
 a finding.
+
+## DD-025 Measured independence invariants
+Tier and disposition independence was previously confirmed by reading a table.
+The audit now measures two invariants directly: difficulty tier must not
+determine the disposition, and construction type (transaction presence,
+watchlist presence, document-heavy or not) must not determine it either. Both
+report EXECUTED-CLEAN, EXECUTED-PARTIAL or FAIL, with EXECUTED-PARTIAL
+distinguishing a small-sample artefact from established leakage.
+
+## DD-026 Semantic mutation class deferred to Stage 5
+The single-defect gate measures textual change loci, which is a proxy for one
+semantic mutation rather than the property itself. VC-01's original defect was
+one textual locus and two semantic changes. A mutation_class field on each
+corruption, checked against the affected claim and evidence target, is the
+right instrument and is deferred to Stage 5 so the corpus content is not
+disturbed while it is added.

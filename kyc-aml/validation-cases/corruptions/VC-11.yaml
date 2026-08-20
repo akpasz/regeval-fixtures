@@ -1,0 +1,13 @@
+case_ref: VC-11
+corrupted_answer: The counterparty matches the designated party. The payment instruction records
+  a spelling closely resembling that used by watchlist entry SW-0714 [DOC-1102-P01], notwithstanding
+  the clear screening result.
+defect_description: 'Exactly one semantic defect, plausible in isolation: the attribute relied
+  on for identity is altered while the surrounding answer stays correct.'
+known_good_answer: The counterparty matches the designated party. The payment instruction
+  records passport T4419887 and the same date of birth as watchlist entry SW-0714 [DOC-1102-P01],
+  notwithstanding the clear screening result.
+mutation_target: the attribute relied on for identity
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

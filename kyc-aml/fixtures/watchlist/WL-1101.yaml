@@ -1,0 +1,16 @@
+fixture_id: WL-1101
+fixture_type: watchlist
+passages:
+- locator:
+    index: 1
+    type: entry
+  passage_id: WL-1101-P01
+  text: 'Entry SW-0714. Name: Waltilva Vrenyne. Date of birth 1974-09-08. Passport number
+    T4419887. Basis: designated under a synthetic sanctions programme 2024. Known alternative
+    renderings are not recorded on this list.'
+record:
+  list_name: synthetic internal watchlist
+scenario_ref: AML-S11
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

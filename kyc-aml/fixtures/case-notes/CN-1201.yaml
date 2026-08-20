@@ -1,0 +1,17 @@
+fixture_id: CN-1201
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-1201-P01
+  text: Compared the payer against the recorded customer profile. The company numbers on the
+    invoices and on the profile extract are the same. A change of name certificate is on file
+    dated March 2026.
+record:
+  author_role: analyst
+  note_date: '2026-06-21'
+scenario_ref: AML-S12
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

@@ -1,0 +1,30 @@
+corpus_version: 0.1.0-dev
+coverage_labels:
+- entity_resolution
+- temporal_update
+- negative_control
+- claim_decomposition
+- absence
+- disposition
+difficulty_tier: 3
+fixture_ids:
+- CUST-1201
+- TXN-1201
+- ALT-1201
+- DOC-1201
+- DOC-1202
+- DOC-1203
+- CN-1201
+- POL-1201
+policy_context:
+  decision_rules:
+  - see POL-1201
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - see POL-1201
+scenario_id: AML-S12
+scenario_version: '1'
+schema_version: '1'
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

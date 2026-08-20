@@ -1,0 +1,15 @@
+doc_date: '2025-09-14'
+fixture_id: DOC-1202
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-1202-P01
+  text: 'Principal customers recorded at last review: Vrenyne Wholesale Ltd (company number
+    C-55210, approximately 30 percent of turnover) and two regional accounts.'
+scenario_ref: AML-S12
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Customer profile extract

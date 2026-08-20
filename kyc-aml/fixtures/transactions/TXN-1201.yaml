@@ -1,0 +1,24 @@
+fixture_id: TXN-1201
+fixture_type: transaction_set
+record:
+  account_ref: CUST-1201
+  currency: USD
+scenario_ref: AML-S12
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 132400
+  channel: domestic wire
+  counterparty_name: Kelbeska Supply Ltd
+  direction: inbound
+  narrative: invoice settlement
+  txn_id: TXN-1201-R01
+  value_date: '2026-05-11'
+- amount: 118900
+  channel: domestic wire
+  counterparty_name: Kelbeska Supply Ltd
+  direction: inbound
+  narrative: invoice settlement
+  txn_id: TXN-1201-R02
+  value_date: '2026-06-08'

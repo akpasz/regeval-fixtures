@@ -1,0 +1,83 @@
+claims:
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1201
+    passage_id: DOC-1201-P01
+  - evidence_type: documented
+    fixture_id: DOC-1202
+    passage_id: DOC-1202-P01
+  - evidence_type: documented
+    fixture_id: DOC-1203
+    passage_id: DOC-1203-P01
+  id: AML-S12-C01
+  proposition: The payer is a counterparty absent from the customer's recorded profile.
+  rationale: The payer's company number C-55210 is the number recorded for the profile's principal
+    customer. The change of name certificate accounts for the different name. Derived from
+    three source facts; no document states the identity.
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1203
+    passage_id: DOC-1203-P01
+  - evidence_type: documented
+    fixture_id: DOC-1202
+    passage_id: DOC-1202-P01
+  id: AML-S12-C02
+  proposition: The company number on the invoices matches the number in the profile extract.
+  rationale: Both record C-55210.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1203
+    passage_id: DOC-1203-P01
+  - evidence_type: documented
+    fixture_id: TXN-1201
+    passage_id: TXN-1201-R01
+  id: AML-S12-C03
+  proposition: The settlements correspond to invoices for goods supplied.
+  rationale: Amounts and dates correspond to two invoices under standing terms.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1202
+    passage_id: DOC-1202-P01
+  - evidence_type: documented
+    fixture_id: DOC-1201
+    passage_id: DOC-1201-P01
+  id: AML-S12-C04
+  proposition: The customer profile is current.
+  rationale: The profile predates the change of name and records the former name. This is
+    a maintenance finding, not a risk finding.
+  status: contradicted
+- evidence: []
+  id: AML-S12-C05
+  proposition: The change of name reflects a change in ownership or control of the payer.
+  rationale: The certificate records the name change and nothing about ownership. A system
+    inferring a restructuring is fabricating.
+  status: not_provided
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1202
+    passage_id: DOC-1202-P01
+  id: AML-S12-C06
+  proposition: The payer accounts for approximately 30 percent of the customer's turnover.
+  rationale: That figure is from the September 2025 review. Nothing evidences the current
+    proportion.
+  status: indeterminate
+evaluation_target:
+  basis: C01 contradicted, C02 and C03 supported, C05 not provided. POL-1201 directs closure
+    on identifier resolution and a profile update.
+  disposition_expected: 'close: the unrecognised payer resolves to a recorded customer on
+    registration identifiers, with a profile update raised'
+  epistemic_scope: A reviewer could confirm the change with the payer before closing. Treating
+    the name change as evidence of restructuring would not be supported.
+not_provided_inventory:
+- any change in ownership or control of the payer
+- the payer's current turnover share
+- why the profile was not updated in March
+- any other counterparty affected by a name change
+- activity before May 2026
+scenario_ref: AML-S12
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

@@ -39,21 +39,30 @@ files:
 - bytes: 3319
   path: kyc-aml/answers/AML-S10.yaml
   sha256: 3dccb5725fdf9ff056085235aa46363e19a0814ef4fd02b49a666d426b2f41f8
-- bytes: 1646
+- bytes: 2925
+  path: kyc-aml/answers/AML-S11.yaml
+  sha256: 8a834a268a6b826ef785fe92827e116bfa69746cf97d431bb8f5b20111d3bc5c
+- bytes: 3191
+  path: kyc-aml/answers/AML-S12.yaml
+  sha256: 6b7bf6921714069db60c7b22874df7cc36ac70622779f3c97e2e5a5a7dc655cd
+- bytes: 1928
   path: kyc-aml/coverage/anti_shortcut_report.yaml
-  sha256: 61a45f7f25f173bc2debb128943dd7d86099bce021bda656768b2ecd5dcea8bf
-- bytes: 1114
+  sha256: fe5a4d5c3584cdf90a45f52890d9db9526c954e3a9198c5fa159e1577290b896
+- bytes: 1246
   path: kyc-aml/coverage/coverage-matrix.yaml
-  sha256: 6d9f19189992298130f12793f9e0a9b51c288337f4c82d93cb2aa7ce0e1fe3d5
-- bytes: 4382
+  sha256: ebe5f739df4a8cd1464a5df47738257b42f78a42f1b8706f52057aad1e3f75aa
+- bytes: 5167
   path: kyc-aml/coverage/diversity_report.yaml
-  sha256: 176a8e4113d2a883d7f1e22e86a96579cf0e695cfa363cafda4137bc73555575
+  sha256: a8b847c8ede4c561d0d849509cb940188354c81ba8a1665257ec15bab9927e82
 - bytes: 747
   path: kyc-aml/fixtures/alerts/ALT-1001.yaml
   sha256: 25ced3cdd824d87ec6b557d2546eec9fc94d5e07f7772c02418c412b9a3744bf
 - bytes: 432
   path: kyc-aml/fixtures/alerts/ALT-1010.yaml
   sha256: 5105fdec90b52f03e80a2b4d20e368d866d283f321cd1aef38855130d5c5e43d
+- bytes: 474
+  path: kyc-aml/fixtures/alerts/ALT-1201.yaml
+  sha256: 0bcf06dc0681c23e17a75b682f8e52e62e33e67089141d2fa6127c181d8a7042
 - bytes: 512
   path: kyc-aml/fixtures/alerts/ALT-2001.yaml
   sha256: 3e1f40a0c2c4c8df511d8973f7f9b6d6ad1e985dba1f7105581d22ab04440be2
@@ -84,6 +93,12 @@ files:
 - bytes: 447
   path: kyc-aml/fixtures/case-notes/CN-1010.yaml
   sha256: f039a8ced7a0e9e2c85dedb354f1048eff0c4edc94bf922d302be6e64c5725f6
+- bytes: 478
+  path: kyc-aml/fixtures/case-notes/CN-1101.yaml
+  sha256: 01695ca2aac11e45ab7ac36698f431c53ba60b6c1f6e230e8986551a3c6f6eda
+- bytes: 474
+  path: kyc-aml/fixtures/case-notes/CN-1201.yaml
+  sha256: cc1513f79622c07d452b9c91c6bd0f1bfcb0a09a271d9097afd0a1cf81222468
 - bytes: 540
   path: kyc-aml/fixtures/case-notes/CN-2001.yaml
   sha256: 1b5c2d06d509499f1c484ffa9e1f8ea1811b6455d582e1f2ff4ada6689c7d1bc
@@ -129,6 +144,12 @@ files:
 - bytes: 297
   path: kyc-aml/fixtures/customers/CUST-1010.yaml
   sha256: ebddef79b8d5be41a34f7d7edfad065e7eb1663ad764248f4a0461b6653d02da
+- bytes: 293
+  path: kyc-aml/fixtures/customers/CUST-1101.yaml
+  sha256: 602a4f9deecd15e2761b813dafe64edc7127a2e1c6c419afe73735c9f180865f
+- bytes: 304
+  path: kyc-aml/fixtures/customers/CUST-1201.yaml
+  sha256: 129b55f5b6047c175a181a7afcd8844770554e0aa03a3a9ed577a59314dfb4a6
 - bytes: 310
   path: kyc-aml/fixtures/customers/CUST-2001.yaml
   sha256: 5071aa733e1ad7c1fd48564284649cde789e160581766a4a0a4ae58eff9e1f76
@@ -180,6 +201,24 @@ files:
 - bytes: 504
   path: kyc-aml/fixtures/documents/DOC-1013.yaml
   sha256: f98212efc666406c8a203f94b33ed428985a7bc772248f3017b3ec77c8675847
+- bytes: 430
+  path: kyc-aml/fixtures/documents/DOC-1101.yaml
+  sha256: df55587dad2b34c5d3b841dc8c9690305f72c1fa1f0a2f4af16faaed8c8c9a0f
+- bytes: 444
+  path: kyc-aml/fixtures/documents/DOC-1102.yaml
+  sha256: 729d72ea979ec7b1cddcf60695a23c0839e22ddcdecf746edb387338735613af
+- bytes: 446
+  path: kyc-aml/fixtures/documents/DOC-1103.yaml
+  sha256: b767c44c6221b3096b02c11d704d0c76eebb7f5cda8bde5f1b9213bc77babbac
+- bytes: 471
+  path: kyc-aml/fixtures/documents/DOC-1201.yaml
+  sha256: 0dc6844c52d501b30e3339a75bd7a928a85dc86e3bfbf8e9c3999003a89e0aa1
+- bytes: 440
+  path: kyc-aml/fixtures/documents/DOC-1202.yaml
+  sha256: 4899105364dcc4039df21ca02cc939f4e27e14bba914f39dec9766a015ae9600
+- bytes: 474
+  path: kyc-aml/fixtures/documents/DOC-1203.yaml
+  sha256: 4fe082523caac881b80ccc6b63fb6ec2630ee9127be0c9a0ac9a04c99f11683d
 - bytes: 402
   path: kyc-aml/fixtures/documents/DOC-2001.yaml
   sha256: 372229e1e6441a8c23a8a82ec56278a16a56371af9254d2916a33842e8511f44
@@ -246,6 +285,12 @@ files:
 - bytes: 660
   path: kyc-aml/fixtures/policy/POL-1010.yaml
   sha256: 4c5664055d5ce13291dd5c56ce81487f6f004d1ba080d2e89367db9286e654d7
+- bytes: 726
+  path: kyc-aml/fixtures/policy/POL-1101.yaml
+  sha256: 29ff15fa9e2e4abecc39efb1ba7f12939f248956a40c1991cacc355e431bf735
+- bytes: 635
+  path: kyc-aml/fixtures/policy/POL-1201.yaml
+  sha256: d73007eb69c6d3f69d836642fab71fdcd80266b0e2db0eaa22f2817f7517a652
 - bytes: 627
   path: kyc-aml/fixtures/policy/POL-2001.yaml
   sha256: d8c134d6549e4fad2d0f9c1c6b65397ebef08066c92ed1645922b9ac5fcad1d5
@@ -276,6 +321,12 @@ files:
 - bytes: 967
   path: kyc-aml/fixtures/transactions/TXN-1010.yaml
   sha256: d9fa38aaf2ab58a320c308a1113332e2e309a6806cc7e79742bd9bc7d6aea40b
+- bytes: 569
+  path: kyc-aml/fixtures/transactions/TXN-1101.yaml
+  sha256: cad41a8c2850db7d029bc0ca16be70c691092e70f7010ba04435ed25bf06deb1
+- bytes: 575
+  path: kyc-aml/fixtures/transactions/TXN-1201.yaml
+  sha256: 432923301a708025d8bef89a209459349135f69dc2dd1a3d2f54a4b7760beb84
 - bytes: 1563
   path: kyc-aml/fixtures/transactions/TXN-2001.yaml
   sha256: b28b91c3b6970a9c87ae17be7e996be9e9763a0c68e5b70ae279f558c7f37151
@@ -294,12 +345,15 @@ files:
 - bytes: 197
   path: kyc-aml/fixtures/watchlist/WL-1001.yaml
   sha256: fb503eab9cd8c129cfa15b8be3e010b4c599afb55786158c7e06b74de40dcbcf
+- bytes: 490
+  path: kyc-aml/fixtures/watchlist/WL-1101.yaml
+  sha256: 019135bcbb2024f026cc5cc060b93f751ee29b5c8f4f3f9b5e734417fb2ba7b9
 - bytes: 432
   path: kyc-aml/fixtures/watchlist/WL-4001.yaml
   sha256: ae811f6d700a3b48555e906fefb012aa9c5769fdde104b0a0396b7e1c1133e56
-- bytes: 584
+- bytes: 676
   path: kyc-aml/generation/name-registry.yaml
-  sha256: bf615293c208ebe50dc2d96253fa0063c22363e78ca05cfcf2d4fbbe9c1e193a
+  sha256: 52d332bc35e3a188d92c1cb7e30ff04343608abc2b20eb8a1008ded10512cc34
 - bytes: 605
   path: kyc-aml/scenarios/AML-S01.yaml
   sha256: 347ef503e9a9c151c52e98ee26268c269947ac86eca93bce4983415b5b90867a
@@ -330,6 +384,12 @@ files:
 - bytes: 524
   path: kyc-aml/scenarios/AML-S10.yaml
   sha256: 1cf309f98de0bd5f0b7684981ea613bf60007d39565d71bdb812ea7fa564acbb
+- bytes: 514
+  path: kyc-aml/scenarios/AML-S11.yaml
+  sha256: f07d8b326a67b583a31ce42ee905879f045bc5147a90a44f6b630204adcf7b72
+- bytes: 540
+  path: kyc-aml/scenarios/AML-S12.yaml
+  sha256: ddbdfe5624a808d642ccc2d06f4af2ede0463ecced00a754dfb0971523bcba16
 - bytes: 553
   path: kyc-aml/validation-cases/README.md
   sha256: ad4725aada0b0564557ba3d937d8bce737a74c2bbcfda968c67543bc86b24a01
@@ -339,6 +399,9 @@ files:
 - bytes: 3732
   path: kyc-aml/validation-cases/cases-b3.yaml
   sha256: cb3fa7f7983ab293fd4df94ae35105fb7ff282d4d827b5c170f67164ff1f9a92
+- bytes: 2584
+  path: kyc-aml/validation-cases/cases-b4.yaml
+  sha256: ab538c334c15df4ff7edc015cd483334e18d1c097fd0f6bbb208b2ca34c0d338
 - bytes: 2184
   path: kyc-aml/validation-cases/cases.yaml
   sha256: 4a7a2de7d9bb70ae243fccdf7263e4d4d5e545c8493baa1a5aee637379c5d0cf
@@ -372,6 +435,12 @@ files:
 - bytes: 825
   path: kyc-aml/validation-cases/corruptions/VC-10.yaml
   sha256: cdf0c148a626c7d4c0a17e77e0b6394d67c9dc16fc8ebf084b6cec9927ae0426
+- bytes: 768
+  path: kyc-aml/validation-cases/corruptions/VC-11.yaml
+  sha256: 91bf5d99e5ab72cf9b9966f259892ea1778e826432a86c688f0d58667b8e22a2
+- bytes: 715
+  path: kyc-aml/validation-cases/corruptions/VC-12.yaml
+  sha256: 29ec9393cbf670d1600b4c428f98de5b48023599d54216e1ac1c6347ed73520d
 - bytes: 4857
   path: schemas/answer-key.schema.json
   sha256: 72e6c6cdd0435f581f364be4580c9740a8aa32bb9026928e8b36146ec0e63522

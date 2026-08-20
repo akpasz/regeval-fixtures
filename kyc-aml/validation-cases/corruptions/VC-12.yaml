@@ -1,0 +1,13 @@
+case_ref: VC-12
+corrupted_answer: The certificate establishes that the recorded customer was restructured
+  in March 2026 and retained company number C-55210 [DOC-1201-P01], so the payer is the same
+  counterparty.
+defect_description: 'Exactly one semantic defect, plausible in isolation: what the certificate
+  is said to establish is altered while the surrounding answer stays correct.'
+known_good_answer: The certificate establishes that the recorded customer changed its name
+  in March 2026 and retained company number C-55210 [DOC-1201-P01], so the payer is the same
+  counterparty.
+mutation_target: what the certificate is said to establish
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

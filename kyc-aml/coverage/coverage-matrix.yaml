@@ -10,6 +10,8 @@ dimensions:
   - AML-S08
   - AML-S09
   - AML-S10
+  - AML-S11
+  - AML-S12
   citation:
   - AML-S01
   - AML-S02
@@ -19,12 +21,14 @@ dimensions:
   - AML-S08
   - AML-S09
   - AML-S10
+  - AML-S11
   claim_decomposition:
   - AML-S01
   - AML-S04
   - AML-S05
   - AML-S07
   - AML-S10
+  - AML-S12
   disposition:
   - AML-S01
   - AML-S02
@@ -36,20 +40,26 @@ dimensions:
   - AML-S08
   - AML-S09
   - AML-S10
+  - AML-S11
+  - AML-S12
   entity_resolution:
   - AML-S01
   - AML-S04
+  - AML-S11
+  - AML-S12
   evidence_sufficiency:
   - AML-S01
   - AML-S03
   - AML-S04
   - AML-S06
   - AML-S09
+  - AML-S11
   negative_control:
   - AML-S02
   - AML-S04
   - AML-S07
   - AML-S09
+  - AML-S12
   numerical:
   - AML-S01
   - AML-S02
@@ -71,8 +81,9 @@ dimensions:
   - AML-S05
   - AML-S06
   - AML-S10
+  - AML-S12
 note: single-point-of-proof dimensions are a finding, not a pass
-scenarios: 10
+scenarios: 12
 single_point_of_proof: []
 synthetic:
   corpus_version: 0.1.0-dev

@@ -3,8 +3,10 @@ names:
 - Darvath Logistics Ltd
 - Darveld Mills
 - Darvunt Ltd
+- Farnombra Distribution Ltd
 - Farnombra Ltd
 - Kelbadri Freight Ltd
+- Kelbeska Supply Ltd
 - Melqeld Systems Ltd
 - Oskadri Vrenyne
 - Pyxadri Marine Ltd
@@ -19,12 +21,14 @@ names:
 - Trelilva Holdings Ltd
 - Trelilva Hospitality Ltd
 - Trelilva Ulpiixel
+- Treluva Metals Ltd
 - Treluva Textiles Ltd
 - Ulpiath Tosketh
 - Ulpield Quonath
 - Ulpiunt Trading Partners
 - Waltast Brexyrel
 - Waltilva Ltd
+- Waltilva Vreninea
 synthetic:
   corpus_version: 0.1.0-dev
   marker: REGEVAL_SYNTHETIC

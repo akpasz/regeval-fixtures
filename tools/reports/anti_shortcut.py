@@ -28,8 +28,15 @@ def _load():
         target = a["evaluation_target"]["disposition_expected"].split(":")[0].strip()
         fx = [f for f in (ROOT / "kyc-aml" / "fixtures").rglob("*.yaml")
               if yaml.safe_load(f.read_text()).get("scenario_ref") == sc["scenario_id"]]
+        types = {yaml.safe_load(f.read_text())["fixture_type"] for f in fx}
         rows.append({"id": sc["scenario_id"], "tier": sc["difficulty_tier"],
                      "target": target, "fixtures": fx,
+                     "labels": tuple(sorted(sc["coverage_labels"])),
+                     # construction type: what kinds of evidence the scenario is
+                     # built from, independent of its story
+                     "construction": (("transaction_set" in types),
+                                      ("watchlist" in types),
+                                      sum(1 for f in fx if "/documents/" in str(f)) > 2),
                      "doc_count": sum(1 for f in fx if "/documents/" in str(f))})
     return rows
 
@@ -64,6 +71,28 @@ def run() -> dict:
         findings["document_count"] = _verdict(by_docs, n)
         findings["narrative_length"] = _verdict(by_len, n)
         findings["difficulty_tier"] = _verdict(by_tier, n)
+
+        # Two invariants the design objective states explicitly, measured
+        # rather than inspected (DD-025). Both ask the same question: can an
+        # observable or metadata property determine the disposition without
+        # reading the evidence?
+        def independence(keyfn, label):
+            groups: dict = {}
+            for r in rows:
+                groups.setdefault(keyfn(r), set()).add(r["target"])
+            determined = [k for k, v in groups.items() if len(v) == 1 and len(groups) > 1]
+            if not determined:
+                return f"EXECUTED-CLEAN: no {label} value determines the disposition"
+            if all(len(v) == 1 for v in groups.values()):
+                return (f"FAIL: {label} determines the disposition for every value")
+            return (f"EXECUTED-PARTIAL: {len(determined)} of {len(groups)} {label} "
+                    f"values have a single disposition, which at n={n} may be "
+                    "sample size rather than leakage")
+
+        findings["difficulty_outcome_independence"] = independence(
+            lambda r: r["tier"], "difficulty tier")
+        findings["construction_outcome_independence"] = independence(
+            lambda r: r["construction"], "construction type")
         for f in FEATURES:
             findings.setdefault(f, f"NOT-IMPLEMENTED: no automated heuristic for this feature; "
                                    f"{n} scenarios available for future audit")

@@ -1,0 +1,79 @@
+cases:
+- control_type: adversarial
+  corruption_ref: corruptions/VC-11.yaml
+  discrimination_rationale: A failing response accepts the clear screening result, or reasons
+    from the differing name strings to different parties. A passing response uses the corroborating
+    attributes. The corruption keeps the correct conclusion and rests it on the name strings,
+    which would not support it.
+  failure_mode: entity_resolution
+  id: VC-11
+  mutation_target: the attribute relied on for identity
+  oracle:
+    allowed_variants:
+    - same passport number
+    - attributes correspond
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - screening returned no match, so there is no match
+    - the names differ, so the parties differ
+    human_review_protocol: null
+    required_elements:
+    - concludes the counterparty matches the designated party
+    - relies on the passport number and date of birth
+    target_claims:
+    - AML-S11-C02
+    - AML-S11-C03
+    type: structured
+    uncertainty_requirement: may note that a certified identity document was not obtained
+  scenario_ref: AML-S11
+  severity: high
+  task: State whether the counterparty is the party designated in the watchlist entry.
+  visibility_fixtures:
+  - CUST-1101
+  - TXN-1101
+  - WL-1101
+  - DOC-1101
+  - DOC-1102
+  - DOC-1103
+  - CN-1101
+  - POL-1101
+- control_type: negative
+  corruption_ref: corruptions/VC-12.yaml
+  discrimination_rationale: A failing response reads a name change as evidence of restructuring.
+    The corruption adds that inference while keeping the correct identity conclusion and citation.
+  failure_mode: unsupported_claim
+  id: VC-12
+  mutation_target: what the certificate is said to establish
+  oracle:
+    allowed_variants:
+    - same company number
+    - renamed entity
+    evidence_requirement: passage level citation
+    forbidden_elements:
+    - restructuring
+    - new owners
+    - change of control
+    human_review_protocol: null
+    required_elements:
+    - states that the payer is the recorded customer under a new name
+    - does not infer any change of ownership or control
+    target_claims:
+    - AML-S12-C01
+    - AML-S12-C05
+    type: structured
+    uncertainty_requirement: must not treat the name change as a risk indicator
+  scenario_ref: AML-S12
+  severity: high
+  task: State what the change of name certificate establishes about the payer.
+  visibility_fixtures:
+  - CUST-1201
+  - TXN-1201
+  - ALT-1201
+  - DOC-1201
+  - DOC-1202
+  - DOC-1203
+  - CN-1201
+  - POL-1201
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

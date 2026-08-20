@@ -3,8 +3,8 @@ findings:
 note: Observational. Structural variation is reported, not proven; at this corpus size only
   repetition is detectable.
 observations:
-- coarse topology 'accdpt' appears in 6 of 10 scenarios, which is expected and not a finding
-scenarios: 10
+- coarse topology 'accdpt' appears in 7 of 12 scenarios, which is expected and not a finding
+scenarios: 12
 signatures:
   AML-S01:
     case_note_count: 1
@@ -156,6 +156,36 @@ signatures:
     status_profile: contradicted2/not_provided1/supported3
     temporal_phases: 1
     tier: 4
+  AML-S11:
+    case_note_count: 1
+    claim_count: 6
+    derived_claims: 0
+    disposition_shape: escalate
+    document_count: 3
+    evidence_type_variety: 2
+    fixture_types: ccdptw
+    has_ownership_model: false
+    has_prior_case: false
+    has_transactions: true
+    has_watchlist: true
+    status_profile: contradicted4/not_provided1/supported1
+    temporal_phases: 1
+    tier: 5
+  AML-S12:
+    case_note_count: 1
+    claim_count: 6
+    derived_claims: 0
+    disposition_shape: close
+    document_count: 3
+    evidence_type_variety: 1
+    fixture_types: accdpt
+    has_ownership_model: false
+    has_prior_case: false
+    has_transactions: true
+    has_watchlist: false
+    status_profile: contradicted2/indeterminate1/not_provided1/supported2
+    temporal_phases: 1
+    tier: 3
 synthetic:
   corpus_version: 0.1.0-dev
   marker: REGEVAL_SYNTHETIC

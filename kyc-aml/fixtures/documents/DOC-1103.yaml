@@ -1,0 +1,15 @@
+doc_date: '2026-04-28'
+fixture_id: DOC-1103
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: paragraph
+  passage_id: DOC-1103-P01
+  text: Treluva Metals Ltd engages Waltilva Vreninea to advise on regional supply contracts.
+    Fee 200,000 on signature and 200,000 on completion. No deliverables are specified.
+scenario_ref: AML-S11
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Consultancy agreement

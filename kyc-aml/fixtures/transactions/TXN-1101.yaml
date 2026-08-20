@@ -1,0 +1,24 @@
+fixture_id: TXN-1101
+fixture_type: transaction_set
+record:
+  account_ref: CUST-1101
+  currency: USD
+scenario_ref: AML-S11
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+transactions:
+- amount: 210000
+  channel: international wire
+  counterparty_name: Waltilva Vreninea
+  direction: outbound
+  narrative: consultancy
+  txn_id: TXN-1101-B01
+  value_date: '2026-05-06'
+- amount: 185000
+  channel: international wire
+  counterparty_name: Waltilva Vreninea
+  direction: outbound
+  narrative: consultancy
+  txn_id: TXN-1101-B02
+  value_date: '2026-06-03'

@@ -1,0 +1,17 @@
+fixture_id: CN-1101
+fixture_type: case_note
+passages:
+- locator:
+    index: 1
+    type: note
+  passage_id: CN-1101-P01
+  text: Reviewed the payment instruction attachment against the watchlist entry. The recorded
+    names differ. The passport number and date of birth on the instruction are the same as
+    those on entry SW-0714.
+record:
+  author_role: analyst
+  note_date: '2026-06-25'
+scenario_ref: AML-S11
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

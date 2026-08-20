@@ -1,0 +1,20 @@
+fixture_id: POL-1201
+fixture_type: policy_context
+passages:
+- locator:
+    index: 1
+    type: clause
+  passage_id: POL-1201-P01
+  text: A change of name does not create a new counterparty.
+record:
+  decision_rules:
+  - close where an unrecognised counterparty resolves to a recorded party on registration
+    identifiers
+  - update the customer profile where a recorded party has changed name
+  jurisdiction: United States (synthetic institution)
+  policy_assumptions:
+  - a registered company number identifies a company across a change of name
+scenario_ref: AML-S12
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

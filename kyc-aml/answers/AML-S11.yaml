@@ -1,0 +1,73 @@
+claims:
+- evidence:
+  - evidence_type: system_observation
+    fixture_id: DOC-1101
+    passage_id: DOC-1101-P01
+  id: AML-S11-C01
+  proposition: Automated screening returned no match for the counterparty.
+  rationale: Recorded in the screening record.
+  status: supported
+- evidence:
+  - evidence_type: documented
+    fixture_id: WL-1101
+    passage_id: WL-1101-P01
+  - evidence_type: documented
+    fixture_id: DOC-1102
+    passage_id: DOC-1102-P01
+  id: AML-S11-C02
+  proposition: The counterparty is not the party designated in entry SW-0714.
+  rationale: Passport number and date of birth are identical on both records. The names differ
+    as transliterations of one name differ. Derived from source facts; no document states
+    the identity.
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1101
+    passage_id: DOC-1101-P01
+  - evidence_type: documented
+    fixture_id: POL-1101
+    passage_id: POL-1101-P01
+  id: AML-S11-C03
+  proposition: The clear screening result establishes that the counterparty is not listed.
+  rationale: Evidence sufficiency. The screening record states the comparison performed was
+    on the recorded name only, and the policy says a clear result is not a determination.
+  status: contradicted
+- evidence:
+  - evidence_type: documented
+    fixture_id: DOC-1103
+    passage_id: DOC-1103-P01
+  id: AML-S11-C04
+  proposition: The consultancy agreement specifies deliverables.
+  rationale: The agreement states that no deliverables are specified.
+  status: contradicted
+- evidence: []
+  id: AML-S11-C05
+  proposition: Consultancy services were performed.
+  rationale: No report, correspondence or work product appears in the corpus.
+  status: not_provided
+- evidence:
+  - evidence_type: documented
+    fixture_id: WL-1101
+    passage_id: WL-1101-P01
+  id: AML-S11-C06
+  proposition: The watchlist records alternative renderings of the designated name.
+  rationale: The entry states that alternative renderings are not recorded, which is why the
+    string comparison cleared.
+  status: contradicted
+evaluation_target:
+  basis: C02 contradicted on corroborating attributes; C03 contradicted; C05 not provided.
+    POL-1101 directs escalation on attribute match whatever the name rendering.
+  disposition_expected: 'escalate: the counterparty matches a designated party on passport
+    number and date of birth notwithstanding the clear screening result'
+  epistemic_scope: A reviewer could seek a certified identity document before escalating.
+    Relying on the clear screening result would not be supported.
+not_provided_inventory:
+- any work product under the consultancy agreement
+- the counterparty's address or nationality
+- how the customer selected this counterparty
+- any prior payments to the same party
+- whether the finance director knew of the designation
+scenario_ref: AML-S11
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC

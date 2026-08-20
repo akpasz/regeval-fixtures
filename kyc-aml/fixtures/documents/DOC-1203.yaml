@@ -1,0 +1,16 @@
+doc_date: '2026-06-09'
+fixture_id: DOC-1203
+fixture_type: document
+passages:
+- locator:
+    index: 1
+    type: table
+  passage_id: DOC-1203-P01
+  text: INV-7781 132,400 to Kelbeska Supply Ltd, company number C-55210; INV-7794 118,900
+    to Kelbeska Supply Ltd, company number C-55210. Both for packaging supplied under the
+    standing terms.
+scenario_ref: AML-S12
+synthetic:
+  corpus_version: 0.1.0-dev
+  marker: REGEVAL_SYNTHETIC
+title: Sales invoices, May and June 2026
