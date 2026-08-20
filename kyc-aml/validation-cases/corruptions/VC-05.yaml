@@ -6,6 +6,7 @@ defect_description: 'Exactly one semantic defect, plausible in isolation: eviden
   formed.'
 known_good_answer: The 2025 transfers remain unverified. The customer stated they were shareholder
   loans [CN-5001-P01] and the promised documentation never arrived.
+mutation_class: qualifier_flattening
 mutation_target: evidence type attributed to the 2025 explanation
 synthetic:
   corpus_version: 0.1.0-dev

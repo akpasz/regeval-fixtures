@@ -7,6 +7,7 @@ defect_description: 'Exactly one semantic defect, plausible in isolation: what t
 known_good_answer: The certificate establishes that the recorded customer changed its name
   in March 2026 and retained company number C-55210 [DOC-1201-P01], so the payer is the same
   counterparty.
+mutation_class: scope_extension
 mutation_target: what the certificate is said to establish
 synthetic:
   corpus_version: 0.1.0-dev

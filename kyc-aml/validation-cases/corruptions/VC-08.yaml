@@ -7,6 +7,7 @@ defect_description: 'Exactly one semantic defect, plausible in isolation: scope 
 known_good_answer: Only the April credit of 140,000 is documented. The completion statement
   [DOC-8001-P01] records a single payment from the buyer's conveyancer, so the three later
   credits of 260,000 are unaccounted for.
+mutation_class: scope_extension
 mutation_target: scope of the documented explanation
 synthetic:
   corpus_version: 0.1.0-dev

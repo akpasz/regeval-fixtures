@@ -13,6 +13,8 @@ splits), S12 tier 3 close.
 """
 from __future__ import annotations
 
+MUTATION_CLASS = {'VC-01': 'citation_swap', 'VC-02': 'reasoning_substitution', 'VC-03': 'reasoning_substitution', 'VC-04': 'fabricated_activity', 'VC-05': 'qualifier_flattening', 'VC-06': 'value_alteration', 'VC-07': 'value_alteration', 'VC-08': 'scope_extension', 'VC-09': 'scope_extension', 'VC-10': 'value_alteration', 'VC-11': 'reasoning_substitution', 'VC-12': 'scope_extension'}
+
 
 def _mk(g, scenario_id):
     M = {"marker": g.MARKER, "corpus_version": g.CORPUS_VERSION}
@@ -353,7 +355,8 @@ def build_cases_b4(g) -> dict:
             "corruption_ref": f"corruptions/{s['id']}.yaml",
             "mutation_target": s["mt"]})
         f[f"validation-cases/corruptions/{s['id']}.yaml"] = {
-            "case_ref": s["id"], "synthetic": dict(M),
+            "case_ref": s["id"], "mutation_class": MUTATION_CLASS[s["id"]],
+            "synthetic": dict(M),
             "known_good_answer": s["good"], "corrupted_answer": s["bad"],
             "mutation_target": s["mt"],
             "defect_description": ("Exactly one semantic defect, plausible in "

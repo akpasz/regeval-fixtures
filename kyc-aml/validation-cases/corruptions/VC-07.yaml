@@ -8,6 +8,7 @@ defect_description: 'Exactly one semantic defect, plausible in isolation: aggreg
 known_good_answer: No beneficial owner is identified. The largest ultimate holdings are 11.4
   and 9.8 percent, held by separately managed funds [DOC-7003-P01], and the nominee holds
   for 46 underlying holders, none above 1.9 percent [DOC-7002-P01].
+mutation_class: value_alteration
 mutation_target: aggregation of two separately managed holdings
 synthetic:
   corpus_version: 0.1.0-dev

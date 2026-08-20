@@ -187,6 +187,24 @@ def main() -> int:
                 corr.corrupted_answer.split()).get_opcodes() if op[0] != "equal"]
             ok &= gate(f"{vc.id}: corruption is a single change locus",
                        len(blocks) == 1, f"{len(blocks)} change loci")
+            # The textual locus count is a proxy; the declared mutation class
+            # says what KIND of defect was introduced, and must be consistent
+            # with the words that actually changed (DD-026).
+            ga = corr.known_good_answer.split(); ba = corr.corrupted_answer.split()
+            changed = " ".join(w for op in blocks
+                               for w in ga[op[1]:op[2]] + ba[op[3]:op[4]])
+            has_cite = bool(re.search(r"\[[A-Z]+-\d+-P\d+\]", changed))
+            has_num = bool(re.search(r"\d", changed))
+            consistent = {
+                "citation_swap": has_cite,
+                "value_alteration": has_num,
+                "qualifier_flattening": not has_cite,
+                "scope_extension": not has_cite,
+                "reasoning_substitution": not has_cite,
+                "fabricated_activity": not has_cite,
+            }[corr.mutation_class]
+            ok &= gate(f"{vc.id}: mutation class {corr.mutation_class} matches the edit",
+                       consistent, f"changed text: {changed[:60]}")
         # scenario record exists outside the observable world
         srec = ROOT / "kyc-aml" / "scenarios"
         ok &= gate("scenario records live outside fixtures/ (difficulty not observable)",

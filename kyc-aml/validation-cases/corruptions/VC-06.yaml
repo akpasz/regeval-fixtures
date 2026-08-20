@@ -7,6 +7,7 @@ defect_description: 'Exactly one semantic defect, plausible in isolation: the qu
 known_good_answer: Not all payments are supported. Six invoices are held for eight payments
   [DOC-6001-P02], leaving 183,150 without documented trade, and two invoices cite the same
   shipment [DOC-6001-P01].
+mutation_class: value_alteration
 mutation_target: the quantified unsupported amount
 synthetic:
   corpus_version: 0.1.0-dev

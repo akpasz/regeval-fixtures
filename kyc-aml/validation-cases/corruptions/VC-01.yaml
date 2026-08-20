@@ -17,6 +17,7 @@ known_good_answer: The payee Trelilva Holding S.A. and the shareholder Trelilva 
   Pyxorin. The payee's recorded shareholders [DOC-1005-P02] do not include Trelilva Holdings
   Ltd. The customer's statement that the payee is an unrelated supplier remains unverified,
   so unrelatedness beyond these records is not established.
+mutation_class: citation_swap
 mutation_target: evidence citation passage
 synthetic:
   corpus_version: 0.1.0-dev

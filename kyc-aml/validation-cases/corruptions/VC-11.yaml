@@ -7,6 +7,7 @@ defect_description: 'Exactly one semantic defect, plausible in isolation: the at
 known_good_answer: The counterparty matches the designated party. The payment instruction
   records passport T4419887 and the same date of birth as watchlist entry SW-0714 [DOC-1102-P01],
   notwithstanding the clear screening result.
+mutation_class: reasoning_substitution
 mutation_target: the attribute relied on for identity
 synthetic:
   corpus_version: 0.1.0-dev

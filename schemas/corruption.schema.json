@@ -17,6 +17,18 @@
       "title": "Known Good Answer",
       "type": "string"
     },
+    "mutation_class": {
+      "enum": [
+        "citation_swap",
+        "value_alteration",
+        "qualifier_flattening",
+        "scope_extension",
+        "reasoning_substitution",
+        "fabricated_activity"
+      ],
+      "title": "Mutation Class",
+      "type": "string"
+    },
     "mutation_target": {
       "title": "Mutation Target",
       "type": "string"
@@ -24,6 +36,7 @@
   },
   "required": [
     "case_ref",
+    "mutation_class",
     "known_good_answer",
     "corrupted_answer",
     "mutation_target",

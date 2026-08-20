@@ -123,8 +123,14 @@ class ValidationCase(Base):
     corruption_ref: str
     mutation_target: str
 
+MutationClass = Literal["citation_swap", "value_alteration", "qualifier_flattening",
+                        "scope_extension", "reasoning_substitution",
+                        "fabricated_activity"]
+
+
 class Corruption(Base):
     case_ref: str
+    mutation_class: MutationClass
     known_good_answer: str
     corrupted_answer: str
     mutation_target: str
