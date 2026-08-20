@@ -21,7 +21,7 @@ def run() -> dict:
            "note": "single-point-of-proof dimensions are a finding, not a pass"}
     (ROOT / "kyc-aml" / "coverage" / "coverage-matrix.yaml").write_text(
         yaml.safe_dump({"synthetic": {"marker": "REGEVAL_SYNTHETIC",
-                                       "corpus_version": "0.1.0-dev"}, **out},
+                                       "corpus_version": "0.1.0"}, **out},
                        sort_keys=True, width=88), newline="\n")
     return out
 

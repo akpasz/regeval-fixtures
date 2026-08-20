@@ -9,6 +9,6 @@ passages:
   text: 'Sole registered member: Ulpiath Tosketh, 100 percent.'
 scenario_ref: AML-S05
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Share register extract

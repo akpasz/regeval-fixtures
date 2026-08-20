@@ -18,5 +18,5 @@ record:
   - dispersed ownership is a finding of fact, not a risk indicator in itself
 scenario_ref: AML-S07
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

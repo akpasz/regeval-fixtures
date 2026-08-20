@@ -69,5 +69,5 @@ not_provided_inventory:
 - whether the finance director knew of the designation
 scenario_ref: AML-S11
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

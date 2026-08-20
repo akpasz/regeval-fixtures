@@ -20,7 +20,7 @@ import yaml
 GENERATOR_VERSION = "0.2.0"
 SEED = 20260630
 REFERENCE_DATE = "2026-06-30"
-CORPUS_VERSION = "0.1.0-dev"
+CORPUS_VERSION = "0.1.0"
 MARKER = "REGEVAL_SYNTHETIC"
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 

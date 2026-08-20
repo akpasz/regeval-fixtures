@@ -1,6 +1,45 @@
 audit_status: PARTIAL
 audit_status_note: 'limited heuristic screen: 6 of 13 features have an implemented check.
   The audit has not passed; it has been performed within these limits.'
+construction_outcome_detail:
+  no_transactions_document_heavy:
+    dispositions:
+    - close the periodic review
+    scenarios:
+    - AML-S07
+  no_transactions_document_light:
+    dispositions:
+    - close the documentation review
+    scenarios:
+    - AML-S09
+  no_transactions_watchlist_document_heavy:
+    dispositions:
+    - split
+    scenarios:
+    - AML-S04
+  transactions_document_heavy:
+    dispositions:
+    - close
+    - escalate
+    scenarios:
+    - AML-S02
+    - AML-S05
+    - AML-S10
+    - AML-S12
+  transactions_document_light:
+    dispositions:
+    - escalate
+    scenarios:
+    - AML-S03
+    - AML-S06
+    - AML-S08
+  transactions_watchlist_document_heavy:
+    dispositions:
+    - continue with enhanced due diligence
+    - escalate
+    scenarios:
+    - AML-S01
+    - AML-S11
 disclaimer: PASS indicates only that the implemented check found no material association.
   It does not establish statistical independence or prove absence of leakage. At this corpus
   size the audit detects obvious leakage only.
@@ -29,5 +68,5 @@ features:
   scenario_id_order: 'EXECUTED-CLEAN: no material association found'
 scenarios_examined: 12
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

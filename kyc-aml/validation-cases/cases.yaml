@@ -55,5 +55,5 @@ cases:
   - WL-1001
   - POL-1001
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

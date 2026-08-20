@@ -10,5 +10,5 @@ record:
   - a family connection to a public official is a due diligence factor, not an adverse finding
 scenario_ref: AML-S04
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

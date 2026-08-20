@@ -16,6 +16,6 @@ passages:
     Each references a bill of lading in the shipment schedule.'
 scenario_ref: AML-S01
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Commercial invoice bundle, Trelilva Holding S.A. to Sornuva Components Ltd

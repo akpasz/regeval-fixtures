@@ -74,5 +74,5 @@ not_provided_inventory:
 - the company's financial position
 scenario_ref: AML-S05
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

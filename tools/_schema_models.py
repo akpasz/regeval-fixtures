@@ -131,6 +131,8 @@ MutationClass = Literal["citation_swap", "value_alteration", "qualifier_flatteni
 class Corruption(Base):
     case_ref: str
     mutation_class: MutationClass
+    expected_original: str
+    expected_corrupted: str
     known_good_answer: str
     corrupted_answer: str
     mutation_target: str

@@ -10,6 +10,6 @@ passages:
     and authorised drawdown as required for the production release.
 scenario_ref: AML-S05
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Board minute

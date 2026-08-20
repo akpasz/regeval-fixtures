@@ -10,6 +10,6 @@ passages:
     Fee 200,000 on signature and 200,000 on completion. No deliverables are specified.
 scenario_ref: AML-S11
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Consultancy agreement

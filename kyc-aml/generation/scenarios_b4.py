@@ -13,6 +13,8 @@ splits), S12 tier 3 close.
 """
 from __future__ import annotations
 
+SPANS = {'VC-01': ('[DOC-1005-P02]', '[DOC-1004-P01]'), 'VC-02': ('supplies information missing', 'postdates everything recorded'), 'VC-03': ('does not establish purpose', 'nonetheless establishes purpose'), 'VC-04': ('that no transaction review', 'that a transaction review'), 'VC-05': ('The customer stated they were', 'The file documents they were'), 'VC-06': ('leaving 183,150 without', 'leaving 94,750 without'), 'VC-07': ('are 11.4 and 9.8 percent,', 'are 21.2 percent,'), 'VC-08': ('records a single payment', 'records four scheduled payments'), 'VC-09': ('and says nothing about the members', 'and also confirms the members'), 'VC-10': ('was 26,500 monthly', 'was 22,000 monthly'), 'VC-11': ('passport T4419887 and the same date of birth as', 'a spelling closely resembling that used by'), 'VC-12': ('changed its name in March 2026', 'was restructured in March 2026')}
+
 MUTATION_CLASS = {'VC-01': 'citation_swap', 'VC-02': 'reasoning_substitution', 'VC-03': 'reasoning_substitution', 'VC-04': 'fabricated_activity', 'VC-05': 'qualifier_flattening', 'VC-06': 'value_alteration', 'VC-07': 'value_alteration', 'VC-08': 'scope_extension', 'VC-09': 'scope_extension', 'VC-10': 'value_alteration', 'VC-11': 'reasoning_substitution', 'VC-12': 'scope_extension'}
 
 
@@ -356,6 +358,8 @@ def build_cases_b4(g) -> dict:
             "mutation_target": s["mt"]})
         f[f"validation-cases/corruptions/{s['id']}.yaml"] = {
             "case_ref": s["id"], "mutation_class": MUTATION_CLASS[s["id"]],
+            "expected_original": SPANS[s["id"]][0],
+            "expected_corrupted": SPANS[s["id"]][1],
             "synthetic": dict(M),
             "known_good_answer": s["good"], "corrupted_answer": s["bad"],
             "mutation_target": s["mt"],

@@ -76,7 +76,7 @@ def run() -> dict:
         top, n = c.most_common(1)[0]
         if n > max(2, len(sids) // 2):
             findings.append(f"{field}={top!r} dominates ({n} of {len(sids)})")
-    report = {"observations": observations, "synthetic": {"marker": "REGEVAL_SYNTHETIC", "corpus_version": "0.1.0-dev"},
+    report = {"observations": observations, "synthetic": {"marker": "REGEVAL_SYNTHETIC", "corpus_version": "0.1.0"},
               "scenarios": len(sids),
               "verdict": "PASS" if not findings else "REVIEW",
               "findings": findings or ["no repeated structural signature"],

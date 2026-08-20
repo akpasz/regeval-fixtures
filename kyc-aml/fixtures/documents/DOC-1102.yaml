@@ -10,6 +10,6 @@ passages:
     services. Instruction signed by the customer's finance director.
 scenario_ref: AML-S11
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Payment instruction attachment

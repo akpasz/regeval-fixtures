@@ -13,6 +13,14 @@
       "title": "Defect Description",
       "type": "string"
     },
+    "expected_corrupted": {
+      "title": "Expected Corrupted",
+      "type": "string"
+    },
+    "expected_original": {
+      "title": "Expected Original",
+      "type": "string"
+    },
     "known_good_answer": {
       "title": "Known Good Answer",
       "type": "string"
@@ -37,6 +45,8 @@
   "required": [
     "case_ref",
     "mutation_class",
+    "expected_original",
+    "expected_corrupted",
     "known_good_answer",
     "corrupted_answer",
     "mutation_target",

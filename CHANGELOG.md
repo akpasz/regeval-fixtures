@@ -31,6 +31,6 @@ state than the corpus.
 about banking practice recorded as unratified and not in force.
 
 **Known limitations.** Domain texture unvalidated; anti-shortcut audit
-implemented for four of eleven feature classes and reported as PARTIAL;
+implemented for six of thirteen feature checks and reported as PARTIAL;
 construction outcome independence reported EXECUTED-PARTIAL, with document
 light transaction scenarios currently all escalating.

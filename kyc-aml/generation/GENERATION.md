@@ -1,8 +1,9 @@
 # Generation
 
 Seed 20260630, reference date 2026-06-30, environment per
-environment.lock.yaml. Regenerate: `python kyc-aml/generation/generate.py`
-then `python tools/manifest.py`. Two clean runs are byte-identical under the
+environment.lock.yaml. Regenerate with `python tools/build.py`, which is the only supported
+build path (DD-023). Individual generators are implementation detail and
+must not be invoked for a release build. Two clean runs are byte-identical under the
 pinned environment. Names come from invented morphology with deterministic
 collision avoidance (DD-015); name-registry.yaml is the screening reference.
 

@@ -334,7 +334,9 @@ def build(g) -> dict:
             "mutation_target": "evidence citation passage"}]}
 
     files["validation-cases/corruptions/VC-01.yaml"] = {
-        "case_ref": "VC-01", "mutation_class": "citation_swap", "synthetic": dict(M),
+        "case_ref": "VC-01", "mutation_class": "citation_swap",
+        "expected_original": "[DOC-1005-P02]", "expected_corrupted": "[DOC-1004-P01]",
+        "synthetic": dict(M),
         "known_good_answer": (
             f"The payee {payee_sa} and the shareholder {hold_ltd} are distinct legal "
             f"entities. The registry extract [DOC-1005-P01] records the payee as "

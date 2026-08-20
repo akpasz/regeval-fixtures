@@ -1,4 +1,4 @@
-corpus_version: 0.1.0-dev
+corpus_version: 0.1.0
 coverage_labels:
 - entity_resolution
 - evidence_sufficiency
@@ -25,5 +25,5 @@ scenario_id: AML-S11
 scenario_version: '1'
 schema_version: '1'
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

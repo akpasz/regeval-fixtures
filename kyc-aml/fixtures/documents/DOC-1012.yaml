@@ -10,6 +10,6 @@ passages:
     effect from 1 July 2024. All other terms are unchanged.
 scenario_ref: AML-S10
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Agency mandate, amendment 1

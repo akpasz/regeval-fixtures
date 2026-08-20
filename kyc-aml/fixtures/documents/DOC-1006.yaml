@@ -10,6 +10,6 @@ passages:
     2026 to 31 January 2027. Sum insured USD 2,400,000. Held on file for KYC refresh purposes.
 scenario_ref: AML-S01
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Insurance certificate, Sornuva Components Ltd premises

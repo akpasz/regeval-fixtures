@@ -10,6 +10,6 @@ passages:
     20 January 2025: Pyxadri Trust, 60 percent; Waltast Brexyrel, 40 percent.'
 scenario_ref: AML-S01
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Share register extract, Trelilva Holdings Ltd

@@ -16,6 +16,6 @@ passages:
     company's members, officers, trading activity or financial position.
 scenario_ref: AML-S09
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Certificate of good standing

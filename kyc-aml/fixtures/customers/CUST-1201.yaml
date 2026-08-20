@@ -8,5 +8,5 @@ record:
   legal_name: Farnombra Distribution Ltd
 scenario_ref: AML-S12
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

@@ -69,5 +69,5 @@ not_provided_inventory:
 - any other watchlist entry relating to any party
 scenario_ref: AML-S04
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

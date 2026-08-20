@@ -10,6 +10,6 @@ passages:
     SHP-9951, SHP-9967 each one container. No second consignment is recorded against SHP-9902.
 scenario_ref: AML-S06
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Shipping schedule extract

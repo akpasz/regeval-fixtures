@@ -26,7 +26,7 @@ def entries():
 
 def main():
     env = yaml.safe_load((ROOT / "environment.lock.yaml").read_text())
-    m = {"corpus_id": "regeval-fixtures/kyc-aml", "corpus_version": "0.1.0-dev",
+    m = {"corpus_id": "regeval-fixtures/kyc-aml", "corpus_version": "0.1.0",
          "generator_version": "0.2.0", "schema_version": "1",
          "seed": env["seed"],
          "environment": {"python": env["python"], "dependencies": env["dependencies"]},

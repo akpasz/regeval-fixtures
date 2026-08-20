@@ -15,5 +15,5 @@ record:
   note_date: '2025-04-02'
 scenario_ref: AML-S05
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

@@ -10,6 +10,6 @@ passages:
     retainer 22,000, payable in arrears. Term three years.
 scenario_ref: AML-S10
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Agency mandate, version 1

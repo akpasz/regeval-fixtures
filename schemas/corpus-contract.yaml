@@ -5,7 +5,7 @@
 # authoritative for shapes.
 contract_version: "1"
 corpus_id: "regeval-fixtures/kyc-aml"
-corpus_version: "0.1.0-dev"
+corpus_version: "0.1.0"
 schema_version: "1"
 synthetic_marker: "REGEVAL_SYNTHETIC"
 reference_date: "2026-06-30"
@@ -43,6 +43,21 @@ scenario_lifecycle:
     patch: "documentation or non-semantic metadata only"
     minor: "added content that does not invalidate existing claims"
     major: "changed claim status, evidence, evaluation target, observable fixture, or answer semantics; retires the scenario ID"
+
+mutation_classes:
+  citation_swap: replaces one evidence reference with another
+  value_alteration: replaces one factual value with another
+  qualifier_flattening: removes an epistemic attribution or qualification
+  scope_extension: extends a claim beyond what the evidence covers
+  reasoning_substitution: replaces the inferential basis while keeping the conclusion
+  fabricated_activity: introduces activity absent from the observable world
+
+mutation_declaration:
+  required_fields: [mutation_class, mutation_target, expected_original, expected_corrupted]
+  invariant: >
+    Replacing expected_original with expected_corrupted in the known good
+    answer must reproduce the corrupted answer exactly, and the declared class
+    must match what those spans do.
 
 mutation_rules:
   defects_per_corruption: 1

@@ -4,11 +4,13 @@ corrupted_answer: The payments exceeded the mandate. The retainer in force from 
   June 2026, so the four payments exceeded the mandate by 150,000.
 defect_description: 'Exactly one semantic defect, plausible in isolation: the retainer treated
   as in force for the period is altered while the surrounding answer stays correct.'
+expected_corrupted: was 22,000 monthly
+expected_original: was 26,500 monthly
 known_good_answer: The payments exceeded the mandate. The retainer in force from July 2024
   was 26,500 monthly [DOC-1012-P01], and the replacement at 64,000 took effect only from 1
   June 2026, so the four payments exceeded the mandate by 150,000.
 mutation_class: value_alteration
 mutation_target: the retainer treated as in force for the period
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

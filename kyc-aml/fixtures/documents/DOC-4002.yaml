@@ -10,6 +10,6 @@ passages:
     address on file since 2016. Certified copies retained.'
 scenario_ref: AML-S04
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Director identity documentation

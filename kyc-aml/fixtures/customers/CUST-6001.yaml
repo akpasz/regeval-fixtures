@@ -8,5 +8,5 @@ record:
   legal_name: Treluva Textiles Ltd
 scenario_ref: AML-S06
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

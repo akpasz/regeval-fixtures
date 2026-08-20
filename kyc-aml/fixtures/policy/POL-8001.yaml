@@ -17,5 +17,5 @@ record:
   - a documented one off receipt may explain a credit of the same amount from the same payer
 scenario_ref: AML-S08
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

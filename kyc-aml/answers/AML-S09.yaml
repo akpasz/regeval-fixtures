@@ -67,5 +67,5 @@ not_provided_inventory:
 - the reason the confirmation has not yet been returned
 scenario_ref: AML-S09
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

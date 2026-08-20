@@ -17,6 +17,6 @@ passages:
     unit at the time of each payment instruction.
 scenario_ref: AML-S06
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Invoice file, March to June 2026

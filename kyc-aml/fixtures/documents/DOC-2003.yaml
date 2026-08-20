@@ -10,6 +10,6 @@ passages:
     on file.
 scenario_ref: AML-S02
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Liquor licence renewal

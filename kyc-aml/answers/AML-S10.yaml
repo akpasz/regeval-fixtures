@@ -83,5 +83,5 @@ not_provided_inventory:
 - activity before February 2026
 scenario_ref: AML-S10
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

@@ -93,16 +93,28 @@ def run() -> dict:
             lambda r: r["tier"], "difficulty tier")
         findings["construction_outcome_independence"] = independence(
             lambda r: r["construction"], "construction type")
+        groups: dict = {}
+        for r in rows:
+            k = ("transactions" if r["construction"][0] else "no_transactions") + \
+                ("_watchlist" if r["construction"][1] else "") + \
+                ("_document_heavy" if r["construction"][2] else "_document_light")
+            groups.setdefault(k, {"scenarios": [], "dispositions": set()})
+            groups[k]["scenarios"].append(r["id"])
+            groups[k]["dispositions"].add(r["target"])
+        detail = {k: {"scenarios": sorted(v["scenarios"]),
+                      "dispositions": sorted(v["dispositions"])}
+                  for k, v in sorted(groups.items())}
         for f in FEATURES:
             findings.setdefault(f, f"NOT-IMPLEMENTED: no automated heuristic for this feature; "
                                    f"{n} scenarios available for future audit")
     implemented = sum(1 for v in findings.values() if not v.startswith("NOT-IMPLEMENTED"))
     report = {"audit_status": "PARTIAL",
+              "construction_outcome_detail": detail if rows else {},
               "audit_status_note": (f"limited heuristic screen: {implemented} of "
                                     f"{len(findings)} features have an implemented "
                                     "check. The audit has not passed; it has been "
                                     "performed within these limits."),
-              "synthetic": {"marker": "REGEVAL_SYNTHETIC", "corpus_version": "0.1.0-dev"},
+              "synthetic": {"marker": "REGEVAL_SYNTHETIC", "corpus_version": "0.1.0"},
               "scenarios_examined": n,
               "disclaimer": ("PASS indicates only that the implemented check found no "
                              "material association. It does not establish statistical "

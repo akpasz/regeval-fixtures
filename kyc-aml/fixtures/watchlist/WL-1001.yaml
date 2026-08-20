@@ -5,5 +5,5 @@ record:
   list_name: synthetic internal watchlist
 scenario_ref: AML-S01
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

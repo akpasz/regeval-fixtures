@@ -13,5 +13,5 @@ record:
   note_date: '2026-05-21'
 scenario_ref: AML-S03
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

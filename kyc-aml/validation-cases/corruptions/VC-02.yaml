@@ -5,11 +5,13 @@ corrupted_answer: The deposits were not structured to avoid the threshold. The p
 defect_description: 'Exactly one semantic defect, plausible in isolation: reason given for
   the updated conclusion is altered while the surrounding answer remains correct and well
   formed.'
+expected_corrupted: postdates everything recorded
+expected_original: supplies information missing
 known_good_answer: The deposits were not structured to avoid the threshold. The point of sale
   summaries [DOC-2002-P01] show each deposit equals the cash component of takings for the
   preceding collection period, which supplies information missing earlier.
 mutation_class: reasoning_substitution
 mutation_target: reason given for the updated conclusion
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

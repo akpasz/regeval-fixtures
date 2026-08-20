@@ -82,5 +82,5 @@ not_provided_inventory:
 - the ownership of the two funds
 scenario_ref: AML-S07
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

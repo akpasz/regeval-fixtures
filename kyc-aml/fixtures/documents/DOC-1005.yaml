@@ -22,6 +22,6 @@ passages:
     registry seal 2026-06-20. This extract reflects records current as at the date of issue.
 scenario_ref: AML-S01
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
 title: Corporate registry extract, Trelilva Holding S.A.

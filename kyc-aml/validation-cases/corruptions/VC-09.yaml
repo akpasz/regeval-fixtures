@@ -4,11 +4,13 @@ corrupted_answer: The certificate establishes that the company is incorporated a
   the members.
 defect_description: 'Exactly one semantic defect, plausible in isolation: scope of what the
   certificate attests is altered while the surrounding answer stays correct.'
+expected_corrupted: and also confirms the members
+expected_original: and says nothing about the members
 known_good_answer: The certificate establishes that the company is incorporated and has filed
   its returns [DOC-9001-P01]. It states that it speaks only to those matters and says nothing
   about the members.
 mutation_class: scope_extension
 mutation_target: scope of what the certificate attests
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

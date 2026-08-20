@@ -80,5 +80,5 @@ not_provided_inventory:
 - any adverse information about the owner or the business
 scenario_ref: AML-S02
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC

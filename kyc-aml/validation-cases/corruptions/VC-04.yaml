@@ -5,11 +5,13 @@ corrupted_answer: 'The screening hit was compared against held identity document
 defect_description: 'Exactly one semantic defect, plausible in isolation: an asserted transaction
   review that did not occur is altered while the surrounding answer remains correct and well
   formed.'
+expected_corrupted: that a transaction review
+expected_original: that no transaction review
 known_good_answer: 'The screening hit was compared against held identity documents and excluded:
   the dates of birth differ by seventeen years and the nationalities differ [DOC-4002-P01].
   The note records that no transaction review was undertaken.'
 mutation_class: fabricated_activity
 mutation_target: an asserted transaction review that did not occur
 synthetic:
-  corpus_version: 0.1.0-dev
+  corpus_version: 0.1.0
   marker: REGEVAL_SYNTHETIC
